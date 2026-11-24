@@ -1,0 +1,27 @@
+{
+  "verified_at": "2026-11-24T02:25:14.545Z",
+  "unit_tests": 17,
+  "generator_tests": 4,
+  "development_acceptance_cases": 41,
+  "scenario_definitions": 20,
+  "lint": {
+    "errors": 0,
+    "warnings": 8
+  },
+  "apk": {
+    "path": "app/build/outputs/apk/debug/app-debug.apk",
+    "sha256": "f951f0563c5dee744fee36a7d6cd4198b40e7b99ed6b55106aba7b2573842feb"
+  },
+  "deployment": {
+    "avd": "android-dev",
+    "serial": "emulator-5554",
+    "install": "passed_in_place",
+    "launch": "passed",
+    "data_preserved": true
+  },
+  "not_verified": [
+    "Android 17 GrapheneOS",
+    "External QA",
+    "Rendered Proton parity"
+  ]
+}

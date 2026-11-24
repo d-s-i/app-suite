@@ -1,0 +1,30 @@
+{
+  "id": "PERSISTENCE-001",
+  "title": "Preserve events and reminder settings in app-private local storage",
+  "status": "ready_for_specification",
+  "current_role": "specifier",
+  "current_feature": null,
+  "roles": {
+    "init-task": "completed",
+    "specifier": "not_run",
+    "coder": "not_run",
+    "cleaner": "not_run",
+    "architect": "not_run",
+    "hardener": "not_run",
+    "qa": "not_run"
+  },
+  "checks": {
+    "gherkin": "not_run",
+    "crap": "not_run",
+    "dry": "not_run",
+    "mutation": "not_run",
+    "qa": "not_run"
+  },
+  "open_questions": [
+    "Should backup/export be added, or remain outside this task?",
+    "What platform backup policy is consistent with the owner's fully local privacy requirement?",
+    "What should the user see after a failed write, unreadable data, or an unsupported data version?"
+  ],
+  "features": {},
+  "updated_at": "2026-11-23T23:36:18.416Z"
+}

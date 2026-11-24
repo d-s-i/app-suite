@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="app.local.calendar.CalendarDatesTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2026-11-24T00:35:46.398Z" hostname="desktop" time="0.029">
+  <properties/>
+  <testcase name="leapFebruaryHasSixConsecutiveMondayFirstRows" classname="app.local.calendar.CalendarDatesTest" time="0.01"/>
+  <testcase name="yearBoundaryDatesKeepTheirYear" classname="app.local.calendar.CalendarDatesTest" time="0.0"/>
+  <testcase name="sundayMonthStartIncludesThePreviousSixDays" classname="app.local.calendar.CalendarDatesTest" time="0.0"/>
+  <testcase name="nonLeapFebruaryDoesNotInventADate" classname="app.local.calendar.CalendarDatesTest" time="0.0"/>
+  <testcase name="titleUsesLocaleAndOnlyIncludesAnotherYear" classname="app.local.calendar.CalendarDatesTest" time="0.018"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -1,0 +1,12 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-24T02:25:14.545Z",
+  "scenario_definitions": 20,
+  "expanded_cases": 41,
+  "checks": [
+    "Existing parser IR valid",
+    "Active scenario-to-QA mapping",
+    "Examples parameters used and supplied"
+  ],
+  "scope": "Static specification consistency only"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "REMINDERS-001",
+  "title": "Deliver multiple local advance reminders for events",
+  "status": "ready_for_specification",
+  "current_role": "specifier",
+  "current_feature": null,
+  "roles": {
+    "init-task": "completed",
+    "specifier": "not_run",
+    "coder": "not_run",
+    "cleaner": "not_run",
+    "architect": "not_run",
+    "hardener": "not_run",
+    "qa": "not_run"
+  },
+  "checks": {
+    "gherkin": "not_run",
+    "crap": "not_run",
+    "dry": "not_run",
+    "mutation": "not_run",
+    "qa": "not_run"
+  },
+  "open_questions": [
+    "What delivery timing tolerance is acceptable, and what should the app show if reliable scheduling is unavailable?",
+    "Should past-due reminders be skipped or delivered after downtime or event creation?",
+    "How should day/week/30-day offsets behave across daylight-saving changes?",
+    "What notification content and sound behavior should be used for privacy and minimalism?"
+  ],
+  "features": {},
+  "updated_at": "2026-11-23T23:36:18.416Z"
+}

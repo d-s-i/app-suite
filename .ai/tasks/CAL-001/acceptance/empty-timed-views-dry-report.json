@@ -1,0 +1,314 @@
+{
+  "schema_version": 1,
+  "feature_name": "CAL-001-F02 Empty week and day time grids",
+  "summary": {
+    "step_occurrences": 35,
+    "unique_steps": 33,
+    "findings": 9
+  },
+  "findings": [
+    {
+      "kind": "duplicate-in-scenario",
+      "confidence": "high",
+      "canonical_candidate": "\u003cview\u003e displays the date range \u003cfirst_date\u003e through \u003clast_date\u003e",
+      "pattern_candidate": "^\u003cview\u003e displays the date range \u003cfirst_date\u003e through \u003clast_date\u003e$",
+      "members": [
+        {
+          "text": "\u003cview\u003e displays the date range \u003cfirst_date\u003e through \u003clast_date\u003e",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "CAL-001-S07 Scroll the time grid without changing dates",
+              "step_index": 0,
+              "keyword": "Given"
+            },
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "CAL-001-S07 Scroll the time grid without changing dates",
+              "step_index": 6,
+              "keyword": "And"
+            }
+          ]
+        }
+      ],
+      "reason": "same step text appears more than once in the same background or scenario",
+      "suggested_action": "Review the scenario for an accidental repeated step; keep it only if the repeated execution is intentional."
+    },
+    {
+      "kind": "duplicate-in-scenario",
+      "confidence": "high",
+      "canonical_candidate": "\u003cview\u003e remains the active view",
+      "pattern_candidate": "^\u003cview\u003e remains the active view$",
+      "members": [
+        {
+          "text": "\u003cview\u003e remains the active view",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "CAL-001-S09 Expand and collapse the mini-calendar",
+              "step_index": 4,
+              "keyword": "And"
+            },
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "CAL-001-S09 Expand and collapse the mini-calendar",
+              "step_index": 7,
+              "keyword": "And"
+            }
+          ]
+        }
+      ],
+      "reason": "same step text appears more than once in the same background or scenario",
+      "suggested_action": "Review the scenario for an accidental repeated step; keep it only if the repeated execution is intentional."
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the owner activates the mini-calendar collapse control",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "CAL-001-S09 Expand and collapse the mini-calendar",
+              "step_index": 5,
+              "keyword": "When"
+            }
+          ]
+        },
+        {
+          "text": "the owner activates the mini-calendar expand control",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "CAL-001-S09 Expand and collapse the mini-calendar",
+              "step_index": 1,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.714
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "\u003cview\u003e is the active view",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 0,
+              "scenario_name": "CAL-001-S06 Switch from Month to an empty timed view",
+              "step_index": 2,
+              "keyword": "Then"
+            }
+          ]
+        },
+        {
+          "text": "\u003cview\u003e remains the active view",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "CAL-001-S09 Expand and collapse the mini-calendar",
+              "step_index": 4,
+              "keyword": "And"
+            },
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "CAL-001-S09 Expand and collapse the mini-calendar",
+              "step_index": 7,
+              "keyword": "And"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.667
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "\u003cview\u003e is the active view",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 0,
+              "scenario_name": "CAL-001-S06 Switch from Month to an empty timed view",
+              "step_index": 2,
+              "keyword": "Then"
+            }
+          ]
+        },
+        {
+          "text": "Day is the active view",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 2,
+              "scenario_name": "CAL-001-S08 Open a day from a week header",
+              "step_index": 2,
+              "keyword": "Then"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.667
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the hour label 01:00 is visible",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "CAL-001-S07 Scroll the time grid without changing dates",
+              "step_index": 3,
+              "keyword": "Then"
+            }
+          ]
+        },
+        {
+          "text": "the hour label 23:00 is visible",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "CAL-001-S07 Scroll the time grid without changing dates",
+              "step_index": 5,
+              "keyword": "Then"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.667
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the owner scrolls vertically to the end of the day",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "CAL-001-S07 Scroll the time grid without changing dates",
+              "step_index": 4,
+              "keyword": "When"
+            }
+          ]
+        },
+        {
+          "text": "the owner scrolls vertically to the start of the day",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "CAL-001-S07 Scroll the time grid without changing dates",
+              "step_index": 2,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.667
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the device uses 24-hour time",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "CAL-001-S07 Scroll the time grid without changing dates",
+              "step_index": 1,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "the device uses \u003ctime_format\u003e time",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 4,
+              "scenario_name": "CAL-001-S10 Follow the device time format",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.6
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "\u003cview\u003e remains the active view",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "CAL-001-S09 Expand and collapse the mini-calendar",
+              "step_index": 4,
+              "keyword": "And"
+            },
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "CAL-001-S09 Expand and collapse the mini-calendar",
+              "step_index": 7,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "Day is the active view",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 2,
+              "scenario_name": "CAL-001-S08 Open a day from a week header",
+              "step_index": 2,
+              "keyword": "Then"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.5
+    }
+  ]
+}

@@ -1,0 +1,383 @@
+{
+  "name": "CAL-001-F02 Empty week and day time grids",
+  "background": [
+    {
+      "keyword": "Given",
+      "text": "the calendar contains no events"
+    },
+    {
+      "keyword": "And",
+      "text": "the device date is 2028-02-15 in time zone UTC"
+    },
+    {
+      "keyword": "And",
+      "text": "the device locale is English United States"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "CAL-001-S06 Switch from Month to an empty timed view",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Month displays February 2028 with today selected"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens the navigation drawer and chooses \u003cview\u003e",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "\u003cview\u003e is the active view",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the drawer closes"
+        },
+        {
+          "keyword": "And",
+          "text": "the time grid has \u003ccolumn_count\u003e date columns from \u003cfirst_date\u003e through \u003clast_date\u003e",
+          "parameters": [
+            "column_count",
+            "first_date",
+            "last_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "hour labels appear to the left of horizontal hour separators"
+        },
+        {
+          "keyword": "And",
+          "text": "the default distance between successive hour separators is 60 density-independent pixels"
+        },
+        {
+          "keyword": "And",
+          "text": "no event blocks appear"
+        }
+      ],
+      "examples": [
+        {
+          "column_count": "7",
+          "first_date": "2028-02-14",
+          "last_date": "2028-02-20",
+          "view": "Week"
+        },
+        {
+          "column_count": "1",
+          "first_date": "2028-02-15",
+          "last_date": "2028-02-15",
+          "view": "Day"
+        }
+      ]
+    },
+    {
+      "name": "CAL-001-S07 Scroll the time grid without changing dates",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "\u003cview\u003e displays the date range \u003cfirst_date\u003e through \u003clast_date\u003e",
+          "parameters": [
+            "view",
+            "first_date",
+            "last_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the device uses 24-hour time"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner scrolls vertically to the start of the day"
+        },
+        {
+          "keyword": "Then",
+          "text": "the hour label 01:00 is visible"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner scrolls vertically to the end of the day"
+        },
+        {
+          "keyword": "Then",
+          "text": "the hour label 23:00 is visible"
+        },
+        {
+          "keyword": "And",
+          "text": "\u003cview\u003e displays the date range \u003cfirst_date\u003e through \u003clast_date\u003e",
+          "parameters": [
+            "view",
+            "first_date",
+            "last_date"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "first_date": "2028-02-14",
+          "last_date": "2028-02-20",
+          "view": "Week"
+        },
+        {
+          "first_date": "2028-02-15",
+          "last_date": "2028-02-15",
+          "view": "Day"
+        }
+      ]
+    },
+    {
+      "name": "CAL-001-S08 Open a day from a week header",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Week displays 2028-02-14 through 2028-02-20"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner taps the date header for 2028-02-18"
+        },
+        {
+          "keyword": "Then",
+          "text": "Day is the active view"
+        },
+        {
+          "keyword": "And",
+          "text": "its single date column is 2028-02-18"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "CAL-001-S17 Timed views have no month expansion control",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Month displays February 2028 with today selected"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens the navigation drawer and chooses \u003cview\u003e",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "\u003cview\u003e is the active view",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "no month expansion control or dropdown picker is displayed"
+        },
+        {
+          "keyword": "And",
+          "text": "the time grid remains visible"
+        }
+      ],
+      "examples": [
+        {
+          "view": "Week"
+        },
+        {
+          "view": "Day"
+        }
+      ]
+    },
+    {
+      "name": "CAL-001-S10 Follow the device time format",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the device uses \u003ctime_format\u003e time",
+          "parameters": [
+            "time_format"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "Day displays 2028-02-15"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner scrolls to the hour thirteen hours after midnight"
+        },
+        {
+          "keyword": "Then",
+          "text": "that hour label is \u003chour_label\u003e",
+          "parameters": [
+            "hour_label"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "hour_label": "13:00",
+          "time_format": "24-hour"
+        },
+        {
+          "hour_label": "1 PM",
+          "time_format": "12-hour"
+        }
+      ]
+    },
+    {
+      "name": "CAL-001-S19 Day labels occupy only the left time column",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Month displays February 2028 with today selected"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens the navigation drawer and chooses Day"
+        },
+        {
+          "keyword": "Then",
+          "text": "the Day weekday and date are centered over the left time column"
+        },
+        {
+          "keyword": "And",
+          "text": "the Day weekday uses 12sp text and its date uses 16sp text"
+        },
+        {
+          "keyword": "And",
+          "text": "no weekday strip is displayed above the Day header"
+        },
+        {
+          "keyword": "And",
+          "text": "the toolbar title is February"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "CAL-001-S20 Day hour labels follow the reference metrics",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the device uses \u003ctime_format\u003e time",
+          "parameters": [
+            "time_format"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "Day displays 2028-02-15"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner scrolls to the hour thirteen hours after midnight"
+        },
+        {
+          "keyword": "Then",
+          "text": "that hour label is \u003chour_label\u003e",
+          "parameters": [
+            "hour_label"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "Day hour labels use 12sp text centered vertically on hour lines"
+        },
+        {
+          "keyword": "And",
+          "text": "the Day time column fits the widest hour label with 10dp padding on each side"
+        }
+      ],
+      "examples": [
+        {
+          "hour_label": "13:00",
+          "time_format": "24-hour"
+        },
+        {
+          "hour_label": "1 PM",
+          "time_format": "12-hour"
+        }
+      ]
+    },
+    {
+      "name": "CAL-001-S21 Day initially shows one hour before the current time",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Month displays February 2028 with today selected"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens the navigation drawer and chooses Day"
+        },
+        {
+          "keyword": "Then",
+          "text": "the Day time grid starts one hour before the current local time within its scroll limits"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "CAL-001-S22 Header dividers continue the time grid boundaries",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Month displays February 2028 with today selected"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens the navigation drawer and chooses \u003cview\u003e",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "the time-column separator continues through the full date header"
+        },
+        {
+          "keyword": "And",
+          "text": "the date-header bottom divider spans the full calendar width"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner scrolls vertically to the start of the day"
+        },
+        {
+          "keyword": "Then",
+          "text": "the time-column separator continues through the full date header"
+        },
+        {
+          "keyword": "And",
+          "text": "the date-header bottom divider spans the full calendar width"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner scrolls vertically to the end of the day"
+        },
+        {
+          "keyword": "Then",
+          "text": "the time-column separator continues through the full date header"
+        },
+        {
+          "keyword": "And",
+          "text": "the date-header bottom divider spans the full calendar width"
+        }
+      ],
+      "examples": [
+        {
+          "view": "Day"
+        },
+        {
+          "view": "Week"
+        }
+      ]
+    }
+  ]
+}

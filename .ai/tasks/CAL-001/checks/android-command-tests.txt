@@ -1,0 +1,21 @@
+✔ start is idempotent for the right emulator (74.033644ms)
+✔ start creates missing AVD, selects host GPU and disables snapshots without wiping data (1108.90344ms)
+✔ stop refuses a different emulator instead of killing it (38.840853ms)
+✔ stop targets only android-dev on emulator-5554 (66.512416ms)
+✔ renamed helpers refuse a still-running legacy fake-msg AVD (76.83021ms)
+✔ install preserves APK paths with spaces and uses a specific emulator (98.251835ms)
+✔ missing APK does not touch any device (6.811702ms)
+✔ android help does not touch devices (7.264666ms)
+✔ failed installation is not reported as successful (105.704433ms)
+✔ android without arguments enters the SDK shell (35.933467ms)
+✔ start, stop and install dispatch safely through the same SDK shell (93.525781ms)
+✔ source replaces the old alias without alias-expanding the function definition (32.332565ms)
+✔ help and invalid actions do not enter Nix or touch devices (13.972867ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1657.098532

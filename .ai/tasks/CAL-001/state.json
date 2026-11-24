@@ -1,0 +1,129 @@
+{
+  "id": "CAL-001",
+  "title": "Browse empty month, week, and day calendar views",
+  "status": "ready_for_review",
+  "current_role": "coder",
+  "current_feature": null,
+  "roles": {
+    "init-task": "completed",
+    "specifier": "completed",
+    "coder": "completed",
+    "cleaner": "not_run",
+    "architect": "not_run",
+    "hardener": "not_run",
+    "qa": "not_run"
+  },
+  "checks": {
+    "gherkin": "passed",
+    "crap": "not_run",
+    "dry": "not_run",
+    "mutation": "not_run",
+    "qa": "not_run"
+  },
+  "open_questions": [],
+  "features": {
+    "CAL-001-F01": {
+      "status": "completed",
+      "path": "features/empty-month.feature",
+      "development_acceptance": {
+        "status": "passed",
+        "cases": 13,
+        "environment": "API 35 isolated calendar-ui-test emulator; real UI with injected inputs",
+        "report": "checks/coder-header-dividers-tests.xml"
+      },
+      "scenario_ids": [
+        "CAL-001-S01",
+        "CAL-001-S02",
+        "CAL-001-S03",
+        "CAL-001-S04",
+        "CAL-001-S05"
+      ]
+    },
+    "CAL-001-F02": {
+      "status": "completed",
+      "path": "features/empty-timed-views.feature",
+      "development_acceptance": {
+        "status": "passed",
+        "cases": 15,
+        "environment": "API 35 isolated calendar-ui-test emulator; real UI with injected inputs",
+        "report": "checks/coder-header-dividers-tests.xml"
+      },
+      "scenario_ids": [
+        "CAL-001-S06",
+        "CAL-001-S07",
+        "CAL-001-S08",
+        "CAL-001-S17",
+        "CAL-001-S10",
+        "CAL-001-S19",
+        "CAL-001-S20",
+        "CAL-001-S21",
+        "CAL-001-S22"
+      ]
+    },
+    "CAL-001-F03": {
+      "status": "completed",
+      "path": "features/calendar-navigation.feature",
+      "development_acceptance": {
+        "status": "passed",
+        "cases": 13,
+        "environment": "API 35 isolated calendar-ui-test emulator; real UI with injected inputs",
+        "report": "checks/coder-header-dividers-tests.xml"
+      },
+      "scenario_ids": [
+        "CAL-001-S11",
+        "CAL-001-S12",
+        "CAL-001-S14",
+        "CAL-001-S15",
+        "CAL-001-S16",
+        "CAL-001-S18"
+      ]
+    }
+  },
+  "updated_at": "2026-11-24T02:25:14.545Z",
+  "gherkin_validation": {
+    "status": "passed",
+    "parser": "parse-gherkin",
+    "dry_checker": "check-gherkin-dry",
+    "dry_review": "not_run_for_header_revision; repeated checks intentionally cover distinct scroll states",
+    "advisory_findings": null,
+    "report": "checks/coder-header-dividers.md",
+    "consistency_report": "checks/specification-consistency.json",
+    "scenario_definitions": 20,
+    "expanded_cases": 41
+  },
+  "human_approval": {
+    "status": "approved",
+    "scope": "CAL-001 implementation and reduced Gradle/Android/Kotlin/Compose UI+Foundation/JUnit/AndroidX runner+Compose UI test dependency set approved by owner; no Material3."
+  },
+  "coder_verification": {
+    "status": "passed",
+    "unit_tests": 17,
+    "generator_tests": 4,
+    "development_acceptance_cases": 41,
+    "lint_errors": 0,
+    "lint_warnings": 8,
+    "report": "checks/coder-header-dividers.md",
+    "results": "checks/coder-header-dividers.json",
+    "review": "pending",
+    "external_qa": "not_run",
+    "target_grapheneos_device": "unverified"
+  },
+  "ui_revision": {
+    "request": "System Back from Day returns to its month; remove the month expansion arrow and its dropdown picker.",
+    "status": "completed",
+    "retired_scenarios": [
+      "CAL-001-S09",
+      "CAL-001-S13"
+    ],
+    "report": "checks/coder-ui-revision.md"
+  },
+  "pending_feedback": {
+    "status": "resolved_from_source",
+    "report": "checks/coder-day-reference.md"
+  },
+  "header_dividers_revision": {
+    "status": "completed",
+    "scope": "User approved extending time-column/header-bottom dividers in Day and Week; keep today outline.",
+    "report": "checks/coder-header-dividers.md"
+  }
+}

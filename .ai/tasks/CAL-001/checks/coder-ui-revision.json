@@ -1,0 +1,39 @@
+{
+  "task": "CAL-001",
+  "revision": "system-back-and-remove-month-arrow",
+  "verified_at": "2026-11-24T01:28:57.563Z",
+  "unit_tests": {
+    "status": "passed",
+    "cases": 14
+  },
+  "generator_tests": {
+    "status": "passed",
+    "cases": 4
+  },
+  "development_acceptance": {
+    "status": "passed",
+    "cases": 35,
+    "scenario_definitions": 16
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 8
+  },
+  "apk": {
+    "path": "app/build/outputs/apk/debug/app-debug.apk",
+    "sha256": "5fa830919eedc70f124195fb7709f539b0efc093359be8609c8ac7c97211ebbe"
+  },
+  "deployment": {
+    "avd": "fake-msg",
+    "serial": "emulator-5554",
+    "install": "passed_in_place",
+    "launch": "passed",
+    "foreground": "app.local.calendar/.MainActivity",
+    "data_preserved": true
+  },
+  "not_verified": [
+    "Android 17 GrapheneOS",
+    "External QA",
+    "Proton screenshot parity"
+  ]
+}

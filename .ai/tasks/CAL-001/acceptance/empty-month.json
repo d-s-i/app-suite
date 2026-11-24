@@ -1,0 +1,276 @@
+{
+  "name": "CAL-001-F01 Empty month calendar",
+  "background": [
+    {
+      "keyword": "Given",
+      "text": "the calendar contains no events"
+    },
+    {
+      "keyword": "And",
+      "text": "the device date is 2028-02-15 in time zone UTC"
+    },
+    {
+      "keyword": "And",
+      "text": "the device locale is English United States"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "CAL-001-S01 First launch opens the current month offline",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the app has not been launched before"
+        },
+        {
+          "keyword": "And",
+          "text": "the device has no network connection and no Google Play services"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner launches the app"
+        },
+        {
+          "keyword": "Then",
+          "text": "Month is the active view"
+        },
+        {
+          "keyword": "And",
+          "text": "the toolbar title is February"
+        },
+        {
+          "keyword": "And",
+          "text": "the calendar has 7 equal-width columns and 6 equal-height rows"
+        },
+        {
+          "keyword": "And",
+          "text": "weekday headers run from Monday through Sunday"
+        },
+        {
+          "keyword": "And",
+          "text": "the 42 date cells run consecutively from 2028-01-31 through 2028-03-12"
+        },
+        {
+          "keyword": "And",
+          "text": "no event blocks appear"
+        },
+        {
+          "keyword": "And",
+          "text": "no sign-in or network requirement prevents calendar use"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "CAL-001-S02 Month styling follows the pinned empty-calendar reference",
+      "steps": [
+        {
+          "keyword": "When",
+          "text": "the owner opens Month for February 2028"
+        },
+        {
+          "keyword": "Then",
+          "text": "weekday headers occupy 24 density-independent pixels in height"
+        },
+        {
+          "keyword": "And",
+          "text": "month grid dividing lines are 1 density-independent pixel wide"
+        },
+        {
+          "keyword": "And",
+          "text": "day numbers use 12 scale-independent pixel text centered horizontally in each cell"
+        },
+        {
+          "keyword": "And",
+          "text": "day-number baselines are 18 density-independent pixels below the top of each row"
+        },
+        {
+          "keyword": "And",
+          "text": "adjacent-month date numbers are muted relative to February date numbers"
+        },
+        {
+          "keyword": "And",
+          "text": "February 15 has an accent-colored rounded outline 21 density-independent pixels wide and 20 high"
+        },
+        {
+          "keyword": "And",
+          "text": "the outline has a radius of 5 density-independent pixels and a stroke of 1"
+        },
+        {
+          "keyword": "And",
+          "text": "no other date cell has the today outline"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "CAL-001-S03 Navigate month boundaries without missing or inventing dates",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Month displays \u003cstarting_month\u003e",
+          "parameters": [
+            "starting_month"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner swipes the month grid \u003cdirection\u003e once",
+          "parameters": [
+            "direction"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "Month displays \u003cexpected_month\u003e",
+          "parameters": [
+            "expected_month"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the 42 date cells run consecutively from \u003cfirst_date\u003e through \u003clast_date\u003e",
+          "parameters": [
+            "first_date",
+            "last_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "\u003cboundary_date\u003e appears exactly once",
+          "parameters": [
+            "boundary_date"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "boundary_date": "2028-02-29",
+          "direction": "left",
+          "expected_month": "February 2028",
+          "first_date": "2028-01-31",
+          "last_date": "2028-03-12",
+          "starting_month": "January 2028"
+        },
+        {
+          "boundary_date": "2027-02-28",
+          "direction": "right",
+          "expected_month": "February 2027",
+          "first_date": "2027-02-01",
+          "last_date": "2027-03-14",
+          "starting_month": "March 2027"
+        },
+        {
+          "boundary_date": "2028-01-01",
+          "direction": "left",
+          "expected_month": "January 2028",
+          "first_date": "2027-12-27",
+          "last_date": "2028-02-06",
+          "starting_month": "December 2027"
+        },
+        {
+          "boundary_date": "2027-12-31",
+          "direction": "right",
+          "expected_month": "December 2027",
+          "first_date": "2027-11-29",
+          "last_date": "2028-01-09",
+          "starting_month": "January 2028"
+        }
+      ]
+    },
+    {
+      "name": "CAL-001-S04 Select an empty month date",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Month displays February 2028"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner taps the cell for \u003cselected_date\u003e",
+          "parameters": [
+            "selected_date"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "Day is the active view"
+        },
+        {
+          "keyword": "And",
+          "text": "its single date column is \u003cselected_date\u003e",
+          "parameters": [
+            "selected_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "no event blocks appear"
+        }
+      ],
+      "examples": [
+        {
+          "selected_date": "2028-02-20"
+        },
+        {
+          "selected_date": "2028-01-31"
+        },
+        {
+          "selected_date": "2028-03-01"
+        }
+      ]
+    },
+    {
+      "name": "CAL-001-S05 Format the month title using the device locale",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the device locale is \u003clocale\u003e",
+          "parameters": [
+            "locale"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens Month for \u003cmonth_date\u003e",
+          "parameters": [
+            "month_date"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "the toolbar title is \u003ctitle\u003e",
+          "parameters": [
+            "title"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "weekday headers run from Monday through Sunday"
+        }
+      ],
+      "examples": [
+        {
+          "locale": "English United States",
+          "month_date": "2028-02-01",
+          "title": "February"
+        },
+        {
+          "locale": "French France",
+          "month_date": "2028-02-01",
+          "title": "février"
+        },
+        {
+          "locale": "English United States",
+          "month_date": "2027-12-01",
+          "title": "December 2027"
+        },
+        {
+          "locale": "French France",
+          "month_date": "2027-12-01",
+          "title": "décembre 2027"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "task": "CAL-001",
+  "verified_at": "2026-11-24T02:04:13.075Z",
+  "unit_tests": 17,
+  "generator_tests": 4,
+  "development_acceptance_cases": 39,
+  "scenario_definitions": 19,
+  "lint": {
+    "errors": 0,
+    "warnings": 8
+  },
+  "android_command_tests": 13,
+  "home_manager_bashrc_build": "passed_not_activated",
+  "deployment": {
+    "avd": "android-dev",
+    "serial": "emulator-5554",
+    "install": "passed_in_place",
+    "launch": "passed",
+    "data_preserved": true
+  },
+  "apk": {
+    "path": "app/build/outputs/apk/debug/app-debug.apk",
+    "sha256": "6b3ea231c0fe82174419acd0f9b923397ddc7333d778b7782e1f2e19f52561ac"
+  },
+  "not_verified": [
+    "Android 17 GrapheneOS",
+    "External QA",
+    "Rendered Proton parity",
+    "Owner shell has not been automatically activated; source new function or apply Home Manager"
+  ]
+}

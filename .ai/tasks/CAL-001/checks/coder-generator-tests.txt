@@ -1,0 +1,12 @@
+✔ expands all rows and retains background and stable scenario ID (1.230936ms)
+✔ fails closed on missing and unused parameters (0.542337ms)
+✔ generates executable tests with safely escaped Kotlin strings (0.456076ms)
+✔ rejects duplicate scenario IDs (0.227333ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 77.347428

@@ -1,0 +1,31 @@
+{
+  "id": "EVENTS-001",
+  "title": "Create, edit, and delete one-time and recurring events",
+  "status": "ready_for_specification",
+  "current_role": "specifier",
+  "current_feature": null,
+  "roles": {
+    "init-task": "completed",
+    "specifier": "not_run",
+    "coder": "not_run",
+    "cleaner": "not_run",
+    "architect": "not_run",
+    "hardener": "not_run",
+    "qa": "not_run"
+  },
+  "checks": {
+    "gherkin": "not_run",
+    "crap": "not_run",
+    "dry": "not_run",
+    "mutation": "not_run",
+    "qa": "not_run"
+  },
+  "open_questions": [
+    "Which event fields are required or optional, and are all-day events needed?",
+    "Does editing/deleting a recurring event affect one occurrence, future occurrences, or the whole series?",
+    "What recurrence end options are needed?",
+    "How do event time zones, daylight-saving changes, and every-X-days recurrence interact?"
+  ],
+  "features": {},
+  "updated_at": "2026-11-23T23:36:18.416Z"
+}

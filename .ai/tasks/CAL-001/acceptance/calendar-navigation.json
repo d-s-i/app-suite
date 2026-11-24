@@ -1,0 +1,292 @@
+{
+  "name": "CAL-001-F03 Navigate empty calendar periods locally",
+  "background": [
+    {
+      "keyword": "Given",
+      "text": "the calendar contains no events"
+    },
+    {
+      "keyword": "And",
+      "text": "the device date is 2028-02-15 in time zone UTC"
+    },
+    {
+      "keyword": "And",
+      "text": "the device locale is English United States"
+    },
+    {
+      "keyword": "And",
+      "text": "the device has no network connection and no Google Play services"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "CAL-001-S11 Navigate timed periods across date boundaries",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "\u003cview\u003e displays the date range \u003cinitial_first\u003e through \u003cinitial_last\u003e",
+          "parameters": [
+            "view",
+            "initial_first",
+            "initial_last"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner swipes the time grid \u003cdirection\u003e by one complete period",
+          "parameters": [
+            "direction"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "\u003cview\u003e displays the date range \u003cexpected_first\u003e through \u003cexpected_last\u003e",
+          "parameters": [
+            "view",
+            "expected_first",
+            "expected_last"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "no event blocks appear"
+        }
+      ],
+      "examples": [
+        {
+          "direction": "left",
+          "expected_first": "2028-02-28",
+          "expected_last": "2028-03-05",
+          "initial_first": "2028-02-21",
+          "initial_last": "2028-02-27",
+          "view": "Week"
+        },
+        {
+          "direction": "right",
+          "expected_first": "2027-12-27",
+          "expected_last": "2028-01-02",
+          "initial_first": "2028-01-03",
+          "initial_last": "2028-01-09",
+          "view": "Week"
+        },
+        {
+          "direction": "left",
+          "expected_first": "2028-03-01",
+          "expected_last": "2028-03-01",
+          "initial_first": "2028-02-29",
+          "initial_last": "2028-02-29",
+          "view": "Day"
+        },
+        {
+          "direction": "right",
+          "expected_first": "2027-12-31",
+          "expected_last": "2027-12-31",
+          "initial_first": "2028-01-01",
+          "initial_last": "2028-01-01",
+          "view": "Day"
+        }
+      ]
+    },
+    {
+      "name": "CAL-001-S12 Return to today without changing the active view",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "\u003cview\u003e displays a period in December 2027",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner activates the Today control"
+        },
+        {
+          "keyword": "Then",
+          "text": "\u003cview\u003e remains the active view",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "its displayed date range is \u003cfirst_date\u003e through \u003clast_date\u003e",
+          "parameters": [
+            "first_date",
+            "last_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the Today control displays the number 15"
+        }
+      ],
+      "examples": [
+        {
+          "first_date": "2028-01-31",
+          "last_date": "2028-03-12",
+          "view": "Month"
+        },
+        {
+          "first_date": "2028-02-14",
+          "last_date": "2028-02-20",
+          "view": "Week"
+        },
+        {
+          "first_date": "2028-02-15",
+          "last_date": "2028-02-15",
+          "view": "Day"
+        }
+      ]
+    },
+    {
+      "name": "CAL-001-S14 Return from Day to Month using the view selector",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Day displays 2028-03-01"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens the navigation drawer and chooses Month"
+        },
+        {
+          "keyword": "Then",
+          "text": "Month is the active view"
+        },
+        {
+          "keyword": "And",
+          "text": "the drawer closes"
+        },
+        {
+          "keyword": "And",
+          "text": "the toolbar title is March"
+        },
+        {
+          "keyword": "And",
+          "text": "its 42 date cells run consecutively from 2028-02-28 through 2028-04-09"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "CAL-001-S15 Show the current time on today's timed grid",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "\u003cview\u003e displays a period containing 2028-02-15",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner scrolls the time grid to the current device time"
+        },
+        {
+          "keyword": "Then",
+          "text": "a current-time line and dot appear in the February 15 column at the device's current local time"
+        }
+      ],
+      "examples": [
+        {
+          "view": "Week"
+        },
+        {
+          "view": "Day"
+        }
+      ]
+    },
+    {
+      "name": "CAL-001-S16 System Back from Day opens the containing month",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Day displays \u003cselected_date\u003e",
+          "parameters": [
+            "selected_date"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner presses system Back"
+        },
+        {
+          "keyword": "Then",
+          "text": "Month is the active view"
+        },
+        {
+          "keyword": "And",
+          "text": "the toolbar title is \u003cmonth_title\u003e",
+          "parameters": [
+            "month_title"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the 42 date cells run consecutively from \u003cfirst_date\u003e through \u003clast_date\u003e",
+          "parameters": [
+            "first_date",
+            "last_date"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "first_date": "2028-01-31",
+          "last_date": "2028-03-12",
+          "month_title": "February",
+          "selected_date": "2028-02-20"
+        },
+        {
+          "first_date": "2028-02-28",
+          "last_date": "2028-04-09",
+          "month_title": "March",
+          "selected_date": "2028-03-01"
+        }
+      ]
+    },
+    {
+      "name": "CAL-001-S18 System Back closes the drawer before leaving Day",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Day displays 2028-02-20"
+        },
+        {
+          "keyword": "And",
+          "text": "the navigation drawer is open"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner presses system Back"
+        },
+        {
+          "keyword": "Then",
+          "text": "the drawer closes"
+        },
+        {
+          "keyword": "And",
+          "text": "Day remains the active view"
+        },
+        {
+          "keyword": "And",
+          "text": "its single date column is 2028-02-20"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner presses system Back"
+        },
+        {
+          "keyword": "Then",
+          "text": "Month is the active view"
+        },
+        {
+          "keyword": "And",
+          "text": "the toolbar title is February"
+        }
+      ],
+      "examples": []
+    }
+  ]
+}

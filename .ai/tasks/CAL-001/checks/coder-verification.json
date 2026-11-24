@@ -1,0 +1,46 @@
+{
+  "task": "CAL-001",
+  "role": "coder",
+  "verified_at": "2026-11-24T00:42:07.956Z",
+  "unit_tests": {
+    "status": "passed",
+    "cases": 14
+  },
+  "generator_tests": {
+    "status": "passed",
+    "cases": 4
+  },
+  "development_acceptance": {
+    "status": "passed",
+    "cases": 33,
+    "features": {
+      "app.local.calendar.acceptance.CAL001F01AcceptanceTest": 13,
+      "app.local.calendar.acceptance.CAL001F02AcceptanceTest": 9,
+      "app.local.calendar.acceptance.CAL001F03AcceptanceTest": 11
+    },
+    "environment": "API 35 AOSP emulator, offline, no Google Play services; injected clock/locale/time-format inputs with real Compose UI actions and rendered assertions"
+  },
+  "lint": {
+    "status": "passed_with_warnings",
+    "errors": 0,
+    "warnings": 8,
+    "categories": [
+      "OldTargetApi",
+      "AndroidGradlePluginVersion",
+      "GradleDependency"
+    ]
+  },
+  "debug_apk": {
+    "status": "built",
+    "path": "app/build/outputs/apk/debug/app-debug.apk",
+    "bytes": 7126658,
+    "sha256": "48442ea0e3dfce8cb6f9fd441cc3eaa08b354bec0ef4a912ebf289ef0ce039b8"
+  },
+  "not_verified": [
+    "Android 17 GrapheneOS / Pixel 9 Pro execution",
+    "External public-interface QA procedure",
+    "Rendered Proton screenshot parity",
+    "Production release signing",
+    "Other Android versions and configurations"
+  ]
+}
