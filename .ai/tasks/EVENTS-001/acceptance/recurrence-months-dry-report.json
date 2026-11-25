@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "feature_name": "EVENTS-001-F04 Select free monthly recurrence patterns",
+  "summary": {
+    "step_occurrences": 19,
+    "unique_steps": 18,
+    "findings": 5
+  },
+  "findings": [
+    {
+      "kind": "near-duplicate",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the owner creates all-day Course from \u003clower_bound\u003e every \u003cinterval\u003e months on day \u003cmonth_day\u003e ending after 3 occurrences",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 0,
+              "scenario_name": "EVENTS-001-S16 Repeat a freely chosen numbered day without date drift",
+              "step_index": 0,
+              "keyword": "When"
+            }
+          ]
+        },
+        {
+          "text": "the owner creates all-day Course from \u003clower_bound\u003e every \u003cinterval\u003e months on the \u003cordinal\u003e \u003cweekday\u003e ending after 3 occurrences",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S17 Repeat a freely chosen ordinal weekday",
+              "step_index": 0,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts are highly similar after placeholder normalization",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 1
+    },
+    {
+      "kind": "near-duplicate",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "its monthly rule still requests day \u003cmonth_day\u003e",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 0,
+              "scenario_name": "EVENTS-001-S16 Repeat a freely chosen numbered day without date drift",
+              "step_index": 3,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "its monthly rule still requests the \u003cordinal\u003e \u003cweekday\u003e",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S17 Repeat a freely chosen ordinal weekday",
+              "step_index": 2,
+              "keyword": "And"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts are highly similar after placeholder normalization",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.833
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the owner creates all-day Course from 2027-01-30 every 1 months on day 31 ending on 2027-04-30",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S19 Include a clamped monthly occurrence on the end date",
+              "step_index": 0,
+              "keyword": "When"
+            }
+          ]
+        },
+        {
+          "text": "the owner creates all-day Course from \u003clower_bound\u003e every \u003cinterval\u003e months on day \u003cmonth_day\u003e ending after 3 occurrences",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 0,
+              "scenario_name": "EVENTS-001-S16 Repeat a freely chosen numbered day without date drift",
+              "step_index": 0,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.588
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the owner creates all-day Course from 2027-01-30 every 1 months on day 31 ending on 2027-04-30",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S19 Include a clamped monthly occurrence on the end date",
+              "step_index": 0,
+              "keyword": "When"
+            }
+          ]
+        },
+        {
+          "text": "the owner creates all-day Course from \u003clower_bound\u003e every \u003cinterval\u003e months on the \u003cordinal\u003e \u003cweekday\u003e ending after 3 occurrences",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S17 Repeat a freely chosen ordinal weekday",
+              "step_index": 0,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.588
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "Course is all-day on exactly 2027-01-31, 2027-02-28, 2027-03-31 and 2027-04-30",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S19 Include a clamped monthly occurrence on the end date",
+              "step_index": 1,
+              "keyword": "Then"
+            }
+          ]
+        },
+        {
+          "text": "the owner creates all-day Course from 2027-01-30 every 1 months on day 31 ending on 2027-04-30",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S19 Include a clamped monthly occurrence on the end date",
+              "step_index": 0,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.474
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "verified_at": "2026-11-24T03:05:06.441Z",
+  "artifact": "app/build/outputs/apk/release/app-release.apk",
+  "version_name": "0.1.0",
+  "version_code": 1,
+  "application_id": "app.local.calendar",
+  "apk_sha256": "9c4e1ac82a0a2283cf8094b8de58cad9a1c6e1519ed668c72913950087cd2903",
+  "public_certificate_sha256": "2c7e0aee6bf1d8dbebc0e2741e7a5578c88700724e4dfb6ea739a4e1f04360b4",
+  "signature_scheme": "v2",
+  "key_algorithm": "RSA-4096",
+  "release_debuggable": false,
+  "artifact_tests": {
+    "status": "passed",
+    "cases": 3
+  },
+  "unit_tests": {
+    "status": "passed",
+    "cases": 17
+  },
+  "generator_tests": {
+    "status": "passed",
+    "cases": 4
+  },
+  "lint_debug": {
+    "errors": 0,
+    "warnings": 8
+  },
+  "lint_release": {
+    "errors": 0,
+    "warnings": 8
+  },
+  "missing_credential_guard": "assembleRelease refused before unsigned packaging",
+  "debug_certificate_unchanged": true,
+  "debug_emulator": {
+    "avd": "android-dev",
+    "serial": "emulator-5554",
+    "install": "passed_in_place",
+    "launch": "passed"
+  },
+  "github_publication": "not_performed",
+  "external_key_backup": "not_verified",
+  "grapheneos_device": "not_tested",
+  "ui_acceptance": "previous 41 passing cases unchanged; not rerun for signing-only change",
+  "release_runtime_smoke": {
+    "status": "passed",
+    "environment": "isolated API 35 calendar-ui-test, offline",
+    "installation": "fresh_release_install_passed",
+    "launch": "MainActivity_RESUMED",
+    "screenshot": "release-smoke.png",
+    "cleanup": "only fresh fixture release app uninstalled; test emulator stopped; owner data untouched"
+  }
+}

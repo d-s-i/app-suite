@@ -1,0 +1,573 @@
+{
+  "schema_version": 1,
+  "feature_name": "EVENTS-001-F01 Create and inspect local events",
+  "summary": {
+    "step_occurrences": 50,
+    "unique_steps": 44,
+    "findings": 16
+  },
+  "findings": [
+    {
+      "kind": "duplicate-in-scenario",
+      "confidence": "high",
+      "canonical_candidate": "Day displays the period containing 2027-02-06",
+      "pattern_candidate": "^Day displays the period containing 2027-02-06$",
+      "members": [
+        {
+          "text": "Day displays the period containing 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S03 Create a timed event offline with an automatic hour",
+              "step_index": 1,
+              "keyword": "And"
+            },
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S03 Create a timed event offline with an automatic hour",
+              "step_index": 3,
+              "keyword": "Then"
+            }
+          ]
+        }
+      ],
+      "reason": "same step text appears more than once in the same background or scenario",
+      "suggested_action": "Review the scenario for an accidental repeated step; keep it only if the repeated execution is intentional."
+    },
+    {
+      "kind": "duplicate-in-scenario",
+      "confidence": "high",
+      "canonical_candidate": "Month displays the period containing 2027-01-20",
+      "pattern_candidate": "^Month displays the period containing 2027-01-20$",
+      "members": [
+        {
+          "text": "Month displays the period containing 2027-01-20",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 5,
+              "scenario_name": "EVENTS-001-S05 Abandoning a draft restores the original calendar period",
+              "step_index": 0,
+              "keyword": "Given"
+            },
+            {
+              "section": "scenario",
+              "scenario_index": 5,
+              "scenario_name": "EVENTS-001-S05 Abandoning a draft restores the original calendar period",
+              "step_index": 4,
+              "keyword": "Then"
+            }
+          ]
+        }
+      ],
+      "reason": "same step text appears more than once in the same background or scenario",
+      "suggested_action": "Review the scenario for an accidental repeated step; keep it only if the repeated execution is intentional."
+    },
+    {
+      "kind": "near-duplicate",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "\u003cview\u003e displays the period containing 2027-01-20",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 2,
+              "scenario_name": "EVENTS-001-S02 Save an all-day event and return to the originating view",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        },
+        {
+          "text": "Month displays the period containing 2027-01-20",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 5,
+              "scenario_name": "EVENTS-001-S05 Abandoning a draft restores the original calendar period",
+              "step_index": 0,
+              "keyword": "Given"
+            },
+            {
+              "section": "scenario",
+              "scenario_index": 5,
+              "scenario_name": "EVENTS-001-S05 Abandoning a draft restores the original calendar period",
+              "step_index": 4,
+              "keyword": "Then"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts are highly similar after placeholder normalization",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.857
+    },
+    {
+      "kind": "near-duplicate",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "\u003cview\u003e displays the period containing 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 2,
+              "scenario_name": "EVENTS-001-S02 Save an all-day event and return to the originating view",
+              "step_index": 2,
+              "keyword": "Then"
+            },
+            {
+              "section": "scenario",
+              "scenario_index": 6,
+              "scenario_name": "EVENTS-001-S06 Empty time slots do not open event creation",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        },
+        {
+          "text": "Day displays the period containing 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S03 Create a timed event offline with an automatic hour",
+              "step_index": 1,
+              "keyword": "And"
+            },
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S03 Create a timed event offline with an automatic hour",
+              "step_index": 3,
+              "keyword": "Then"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts are highly similar after placeholder normalization",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.857
+    },
+    {
+      "kind": "near-duplicate",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the owner opened event creation with + for 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 4,
+              "scenario_name": "EVENTS-001-S04 Reject missing mandatory event input",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        },
+        {
+          "text": "the owner opened event creation with + for Dentist on 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 0,
+              "scenario_name": "EVENTS-001-S39 Timed events require an explicitly chosen hour",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts are highly similar after placeholder normalization",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.8
+    },
+    {
+      "kind": "near-duplicate",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the owner abandons the editor",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 0,
+              "scenario_name": "EVENTS-001-S39 Timed events require an explicitly chosen hour",
+              "step_index": 4,
+              "keyword": "When"
+            },
+            {
+              "section": "scenario",
+              "scenario_index": 4,
+              "scenario_name": "EVENTS-001-S04 Reject missing mandatory event input",
+              "step_index": 3,
+              "keyword": "When"
+            }
+          ]
+        },
+        {
+          "text": "the owner abandons the editor using \u003caction\u003e",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 5,
+              "scenario_name": "EVENTS-001-S05 Abandoning a draft restores the original calendar period",
+              "step_index": 3,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts are highly similar after placeholder normalization",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.75
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "Dentist is represented at 09:30 on 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S03 Create a timed event offline with an automatic hour",
+              "step_index": 4,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "the owner creates Dentist with + at 09:30 on 2027-02-06 without a description",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S03 Create a timed event offline with an automatic hour",
+              "step_index": 2,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.615
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the owner opened event creation with +",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 5,
+              "scenario_name": "EVENTS-001-S05 Abandoning a draft restores the original calendar period",
+              "step_index": 1,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "the owner opens event creation with +",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S01 Open the form with contextual defaults",
+              "step_index": 1,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.6
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the owner opens Dentist details",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S03 Create a timed event offline with an automatic hour",
+              "step_index": 5,
+              "keyword": "When"
+            }
+          ]
+        },
+        {
+          "text": "the owner opens Picnic details",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 2,
+              "scenario_name": "EVENTS-001-S02 Save an all-day event and return to the originating view",
+              "step_index": 4,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.6
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "\u003cview\u003e displays the period containing 2027-01-20",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 2,
+              "scenario_name": "EVENTS-001-S02 Save an all-day event and return to the originating view",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        },
+        {
+          "text": "\u003cview\u003e displays the period containing 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 2,
+              "scenario_name": "EVENTS-001-S02 Save an all-day event and return to the originating view",
+              "step_index": 2,
+              "keyword": "Then"
+            },
+            {
+              "section": "scenario",
+              "scenario_index": 6,
+              "scenario_name": "EVENTS-001-S06 Empty time slots do not open event creation",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.5
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "\u003cview\u003e displays the period containing 2027-01-20",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 2,
+              "scenario_name": "EVENTS-001-S02 Save an all-day event and return to the originating view",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        },
+        {
+          "text": "\u003cview\u003e displays the period containing \u003cview_date\u003e",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S01 Open the form with contextual defaults",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.5
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "\u003cview\u003e displays the period containing 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 2,
+              "scenario_name": "EVENTS-001-S02 Save an all-day event and return to the originating view",
+              "step_index": 2,
+              "keyword": "Then"
+            },
+            {
+              "section": "scenario",
+              "scenario_index": 6,
+              "scenario_name": "EVENTS-001-S06 Empty time slots do not open event creation",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        },
+        {
+          "text": "\u003cview\u003e displays the period containing \u003cview_date\u003e",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S01 Open the form with contextual defaults",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.5
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "Dentist is represented at 09:30 on 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S03 Create a timed event offline with an automatic hour",
+              "step_index": 4,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "Picnic is represented on 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 2,
+              "scenario_name": "EVENTS-001-S02 Save an all-day event and return to the originating view",
+              "step_index": 3,
+              "keyword": "And"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.5
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "Dentist is represented at 09:30 on 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S03 Create a timed event offline with an automatic hour",
+              "step_index": 4,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "the owner taps an empty time slot at 09:30 on 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 6,
+              "scenario_name": "EVENTS-001-S06 Empty time slots do not open event creation",
+              "step_index": 1,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.5
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the owner creates Dentist with + at 09:30 on 2027-02-06 without a description",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S03 Create a timed event offline with an automatic hour",
+              "step_index": 2,
+              "keyword": "When"
+            }
+          ]
+        },
+        {
+          "text": "the owner taps an empty time slot at 09:30 on 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 6,
+              "scenario_name": "EVENTS-001-S06 Empty time slots do not open event creation",
+              "step_index": 1,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.5
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the owner opened event creation with +",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 5,
+              "scenario_name": "EVENTS-001-S05 Abandoning a draft restores the original calendar period",
+              "step_index": 1,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "the owner opened event creation with + for 2027-02-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 4,
+              "scenario_name": "EVENTS-001-S04 Reject missing mandatory event input",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.5
+    }
+  ]
+}

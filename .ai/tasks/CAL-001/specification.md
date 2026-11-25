@@ -20,7 +20,7 @@ Stable scenario IDs occur in feature scenario names; matching QA IDs are in `qa/
 | Same empty month UI; pinned month drawing/resources | AC-CAL-02: Equal date cells, separators, typography dimensions, muted adjacent-month dates, and today's outlined number follow the extracted reference measurements. | F01 / CAL-001-S02 | QA-CAL-001-S02 |
 | Calendar navigation; source month pager | AC-CAL-03: Horizontal month paging produces exactly the adjacent month and its correct 42-date range, including leap/non-leap February and year transitions. | F01 / CAL-001-S03 | QA-CAL-001-S03 |
 | Same date interactions; source month click handler | AC-CAL-04: Tapping any visible date, including an adjacent-month date, opens its empty Day view. | F01 / CAL-001-S04 | QA-CAL-001-S04 |
-| Device-locale dates; source title formatter | AC-CAL-05: Month titles use device-locale names, omitting the current year and including another year, while Monday remains first. | F01 / CAL-001-S05 | QA-CAL-001-S05 |
+| Device-locale dates; source title formatter | AC-CAL-05: Month titles use device-locale names with a capital initial, preserving accents/language, omitting the current year and including another year, while Monday remains first. | F01 / CAL-001-S05 | QA-CAL-001-S05 |
 | Same Week/Day views; pinned layout/constants | AC-CAL-06: Drawer selection opens 7-column Week or 1-column Day, with dates, left-side time labels, hour separators at default 60dp spacing. | F02 / CAL-001-S06 | QA-CAL-001-S06 |
 | Same timed grid; source renderer | AC-CAL-07: Scrolling to the top exposes 01:00, the reference's first labeled hour, and scrolling to the bottom exposes 23:00 without changing dates. | F02 / CAL-001-S07 | QA-CAL-001-S07 |
 | Same week header interaction | AC-CAL-08: Tapping a Week date header opens that date's Day view. | F02 / CAL-001-S08 | QA-CAL-001-S08 |
@@ -38,10 +38,13 @@ Stable scenario IDs occur in feature scenario names; matching QA IDs are in `qa/
 | Approved hour-axis correction | AC-CAL-20: Day hours use 12sp, center on hour lines, and determine the time-column width with 10dp padding each side. | F02 / CAL-001-S20 | QA-CAL-001-S20 |
 | Approved initial-time correction | AC-CAL-21: Day initially shows one hour before now, bounded by midnight and the scroll range. | F02 / CAL-001-S21 | QA-CAL-001-S21 |
 | Owner approved header dividers in Day and Week | AC-CAL-22: The time-column separator extends through the full date header, aligned with the grid boundary; the header bottom line spans the full width including the time column, independently of vertical scrolling. Today outlines are retained. | F02 / CAL-001-S22 | QA-CAL-001-S22 |
+| Owner phone defect report / Proton measurement behavior | AC-CAL-23: Every displayed hour stays complete on one line, without overflow or ellipsis, in Day and Week with 12h/24h formats, fractional density and enlarged text. | F02 / CAL-001-S23 | QA-CAL-001-S23 |
 
 Feature IDs above abbreviate CAL-001-F01, CAL-001-F02, CAL-001-F03. Process sequentially in one workspace. These are behavior slices, not a module or implementation design.
 
 ## Boundaries
+
+The later 0.1.1 revision (`hour-labels-and-headings-v011.md`) extends hour measurement/padding/centering to Week as well as Day, fixes fractional-pixel wrapping, and capitalizes localized month headings. Other Week styling/navigation and the global toolbar are unchanged.
 
 The approved Day-only correction and its pinned-source evidence are in `day-reference-correction.md`. Week styling and the global month toolbar are retained. No screenshot is required to establish the verified source-level behavior; rendered parity remains a separate unperformed check.
 

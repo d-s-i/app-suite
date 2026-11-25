@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "feature_name": "MONOREPO-001-F03 Publish app-suite and its Calendar release on GitHub",
+  "summary": {
+    "step_occurrences": 14,
+    "unique_steps": 14,
+    "findings": 1
+  },
+  "findings": [
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the owner publishes the reviewed app-suite code to d-s-i/app-suite",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 0,
+              "scenario_name": "MONOREPO-001-S06 Publish the migrated code without renaming the original repository",
+              "step_index": 2,
+              "keyword": "When"
+            }
+          ]
+        },
+        {
+          "text": "the reviewed app-suite code is published to d-s-i/app-suite",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "MONOREPO-001-S07 Owner verifies the Calendar APK in the new repository release",
+              "step_index": 0,
+              "keyword": "Given"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.571
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<testsuite name="app.local.calendar.acceptance.CAL001F02AcceptanceTest" tests="23" failures="0" errors="0" skipped="0" time="13.013" timestamp="2026-11-24T03:31:36" hostname="localhost">
+  <properties>
+    <property name="device" value="calendar-ui-test(AVD) - 15" />
+    <property name="flavor" value="" />
+    <property name="project" value=":app" />
+  </properties>
+  <testcase name="CAL001S06_row1" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="1.328" />
+  <testcase name="CAL001S06_row2" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.925" />
+  <testcase name="CAL001S07_row1" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.703" />
+  <testcase name="CAL001S07_row2" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.555" />
+  <testcase name="CAL001S08_row1" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.687" />
+  <testcase name="CAL001S10_row1" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.45" />
+  <testcase name="CAL001S10_row2" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.433" />
+  <testcase name="CAL001S17_row1" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.452" />
+  <testcase name="CAL001S17_row2" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.406" />
+  <testcase name="CAL001S19_row1" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.477" />
+  <testcase name="CAL001S20_row1" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.454" />
+  <testcase name="CAL001S20_row2" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.406" />
+  <testcase name="CAL001S21_row1" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.429" />
+  <testcase name="CAL001S22_row1" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.682" />
+  <testcase name="CAL001S22_row2" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.705" />
+  <testcase name="CAL001S23_row1" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.426" />
+  <testcase name="CAL001S23_row2" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.404" />
+  <testcase name="CAL001S23_row3" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.403" />
+  <testcase name="CAL001S23_row4" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.403" />
+  <testcase name="CAL001S23_row5" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.43" />
+  <testcase name="CAL001S23_row6" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.403" />
+  <testcase name="CAL001S23_row7" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.405" />
+  <testcase name="CAL001S23_row8" classname="app.local.calendar.acceptance.CAL001F02AcceptanceTest" time="0.402" />
+</testsuite>

@@ -1,0 +1,395 @@
+{
+  "name": "EVENTS-001-F07 Keep event time meaning across zones and clock changes",
+  "background": [
+    {
+      "keyword": "Given",
+      "text": "the calendar contains no events"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone time zone is Europe/Paris"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone language is English United States"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone uses 24-hour time"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "EVENTS-001-S32 Convert display without changing the editing zone",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Dentist starts at 09:00 on 2027-01-15 with description Checkup"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner changes the phone time zone to \u003cdisplay_zone\u003e",
+          "parameters": [
+            "display_zone"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "Dentist is represented at \u003cdisplay_time\u003e on \u003cdisplay_date\u003e",
+          "parameters": [
+            "display_time",
+            "display_date"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens Dentist for editing"
+        },
+        {
+          "keyword": "Then",
+          "text": "the editing date and hour are 2027-01-15 and 09:00"
+        },
+        {
+          "keyword": "And",
+          "text": "the editing zone is identified as Europe/Paris"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner abandons the editor"
+        },
+        {
+          "keyword": "Then",
+          "text": "Dentist is represented at \u003cdisplay_time\u003e on \u003cdisplay_date\u003e",
+          "parameters": [
+            "display_time",
+            "display_date"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "display_date": "2027-01-15",
+          "display_time": "03:00",
+          "display_zone": "America/New_York"
+        },
+        {
+          "display_date": "2027-01-15",
+          "display_time": "17:00",
+          "display_zone": "Asia/Tokyo"
+        },
+        {
+          "display_date": "2027-01-14",
+          "display_time": "22:00",
+          "display_zone": "Pacific/Honolulu"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S33 Keep the origin clock time when DST offsets change",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Course starts at 09:00 on 2027-03-21 every 1 weeks ending after 3 occurrences"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner changes the phone time zone to America/New_York"
+        },
+        {
+          "keyword": "Then",
+          "text": "Course is represented at 04:00 on 2027-03-21"
+        },
+        {
+          "keyword": "And",
+          "text": "Course is represented at 03:00 on 2027-03-28 and 2027-04-04"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner inspects each occurrence for editing without saving"
+        },
+        {
+          "keyword": "Then",
+          "text": "each occurrence still requests 09:00 in Europe/Paris"
+        },
+        {
+          "keyword": "And",
+          "text": "each computed duration is 60 elapsed minutes"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "EVENTS-001-S34 All-day dates do not shift with the display zone",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Picnic is all-day on 2027-01-15 with description Outside"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner changes the phone time zone to \u003cdisplay_zone\u003e",
+          "parameters": [
+            "display_zone"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "Picnic is all-day on 2027-01-15"
+        },
+        {
+          "keyword": "And",
+          "text": "Picnic is not represented on 2027-01-14 or 2027-01-16"
+        }
+      ],
+      "examples": [
+        {
+          "display_zone": "Pacific/Honolulu"
+        },
+        {
+          "display_zone": "Pacific/Kiritimati"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S35 Adding an hour to an all-day event captures the current phone zone",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Picnic is all-day on 2027-01-15 with description Outside"
+        },
+        {
+          "keyword": "And",
+          "text": "the owner changes the phone time zone to Asia/Tokyo"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner edits Picnic to timed at 09:00 on 2027-01-15 and saves"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens Picnic for editing"
+        },
+        {
+          "keyword": "Then",
+          "text": "the editing zone is identified as Asia/Tokyo"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner abandons the editor"
+        },
+        {
+          "keyword": "And",
+          "text": "the owner changes the phone time zone to UTC"
+        },
+        {
+          "keyword": "Then",
+          "text": "Picnic is represented at 00:00 on 2027-01-15"
+        },
+        {
+          "keyword": "And",
+          "text": "exactly 1 event named Picnic exists"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "EVENTS-001-S36 Shift a nonexistent hour without drifting the recurrence clock",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the owner opened event creation with + for Course from 2027-03-28"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner selects daily recurrence at 02:30 ending after 2 occurrences"
+        },
+        {
+          "keyword": "Then",
+          "text": "the editor shows that the first start is adjusted to 03:30 in Europe/Paris"
+        },
+        {
+          "keyword": "And",
+          "text": "the requested recurrence clock remains 02:30"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner saves Course"
+        },
+        {
+          "keyword": "Then",
+          "text": "the computed interval is 2027-03-28 03:30 to 2027-03-28 04:30 in Europe/Paris"
+        },
+        {
+          "keyword": "And",
+          "text": "the next occurrence is 2027-03-29 02:30 to 2027-03-29 03:30 in Europe/Paris"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner changes the phone time zone to UTC"
+        },
+        {
+          "keyword": "Then",
+          "text": "Course starts at 01:30 on 2027-03-28 and at 00:30 on 2027-03-29"
+        },
+        {
+          "keyword": "And",
+          "text": "exactly 2 Course starts exist from 2027-03-28 through 2027-03-30"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "EVENTS-001-S37 Choose the first repeated local hour only once",
+      "steps": [
+        {
+          "keyword": "When",
+          "text": "the owner creates Night with + at 02:30 on 2026-10-25 without a description"
+        },
+        {
+          "keyword": "Then",
+          "text": "exactly 1 Night start exists on 2026-10-25"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner changes the phone time zone to UTC"
+        },
+        {
+          "keyword": "Then",
+          "text": "the computed interval is 2026-10-25 00:30 to 2026-10-25 01:30 in UTC"
+        },
+        {
+          "keyword": "And",
+          "text": "the computed duration is 60 elapsed minutes"
+        },
+        {
+          "keyword": "And",
+          "text": "no second Night start exists at 01:30 on 2026-10-25 in UTC"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "EVENTS-001-S38 Automatic midnight overlap is one occurrence",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "\u003cview\u003e displays the period containing 2027-01-15",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the phone time zone is UTC"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner creates Night with + at \u003cstart_time\u003e on 2027-01-15 without a description",
+          "parameters": [
+            "start_time"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "the computed interval is 2027-01-15 \u003cstart_time\u003e to \u003cend_date\u003e \u003cend_time\u003e in UTC",
+          "parameters": [
+            "start_time",
+            "end_date",
+            "end_time"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "Night is represented on 2027-01-15"
+        },
+        {
+          "keyword": "And",
+          "text": "its representation on 2027-01-16 is \u003cnext_day_presence\u003e",
+          "parameters": [
+            "next_day_presence"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "opening any visible fragment identifies the same start 2027-01-15 \u003cstart_time\u003e",
+          "parameters": [
+            "start_time"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner deletes Night once from its starting date and confirms"
+        },
+        {
+          "keyword": "Then",
+          "text": "Night is absent from both 2027-01-15 and 2027-01-16"
+        }
+      ],
+      "examples": [
+        {
+          "end_date": "2027-01-15",
+          "end_time": "23:59",
+          "next_day_presence": "absent",
+          "start_time": "22:59",
+          "view": "Month"
+        },
+        {
+          "end_date": "2027-01-16",
+          "end_time": "00:00",
+          "next_day_presence": "absent",
+          "start_time": "23:00",
+          "view": "Month"
+        },
+        {
+          "end_date": "2027-01-16",
+          "end_time": "00:30",
+          "next_day_presence": "present",
+          "start_time": "23:30",
+          "view": "Month"
+        },
+        {
+          "end_date": "2027-01-15",
+          "end_time": "23:59",
+          "next_day_presence": "absent",
+          "start_time": "22:59",
+          "view": "Week"
+        },
+        {
+          "end_date": "2027-01-16",
+          "end_time": "00:00",
+          "next_day_presence": "absent",
+          "start_time": "23:00",
+          "view": "Week"
+        },
+        {
+          "end_date": "2027-01-16",
+          "end_time": "00:30",
+          "next_day_presence": "present",
+          "start_time": "23:30",
+          "view": "Week"
+        },
+        {
+          "end_date": "2027-01-15",
+          "end_time": "23:59",
+          "next_day_presence": "absent",
+          "start_time": "22:59",
+          "view": "Day"
+        },
+        {
+          "end_date": "2027-01-16",
+          "end_time": "00:00",
+          "next_day_presence": "absent",
+          "start_time": "23:00",
+          "view": "Day"
+        },
+        {
+          "end_date": "2027-01-16",
+          "end_time": "00:30",
+          "next_day_presence": "present",
+          "start_time": "23:30",
+          "view": "Day"
+        }
+      ]
+    }
+  ]
+}

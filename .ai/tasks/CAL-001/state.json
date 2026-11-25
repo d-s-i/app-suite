@@ -28,8 +28,8 @@
       "development_acceptance": {
         "status": "passed",
         "cases": 13,
-        "environment": "API 35 isolated calendar-ui-test emulator; real UI with injected inputs",
-        "report": "checks/coder-header-dividers-tests.xml"
+        "environment": "API 35, 1080x2400 at 440 dpi; real UI with injected density/font-scale matrix",
+        "report": "checks/v011-acceptance-tests.xml"
       },
       "scenario_ids": [
         "CAL-001-S01",
@@ -44,9 +44,9 @@
       "path": "features/empty-timed-views.feature",
       "development_acceptance": {
         "status": "passed",
-        "cases": 15,
-        "environment": "API 35 isolated calendar-ui-test emulator; real UI with injected inputs",
-        "report": "checks/coder-header-dividers-tests.xml"
+        "cases": 23,
+        "environment": "API 35, 1080x2400 at 440 dpi; real UI with injected density/font-scale matrix",
+        "report": "checks/v011-acceptance-tests.xml"
       },
       "scenario_ids": [
         "CAL-001-S06",
@@ -57,7 +57,8 @@
         "CAL-001-S19",
         "CAL-001-S20",
         "CAL-001-S21",
-        "CAL-001-S22"
+        "CAL-001-S22",
+        "CAL-001-S23"
       ]
     },
     "CAL-001-F03": {
@@ -66,8 +67,8 @@
       "development_acceptance": {
         "status": "passed",
         "cases": 13,
-        "environment": "API 35 isolated calendar-ui-test emulator; real UI with injected inputs",
-        "report": "checks/coder-header-dividers-tests.xml"
+        "environment": "API 35, 1080x2400 at 440 dpi; real UI with injected density/font-scale matrix",
+        "report": "checks/v011-acceptance-tests.xml"
       },
       "scenario_ids": [
         "CAL-001-S11",
@@ -79,17 +80,17 @@
       ]
     }
   },
-  "updated_at": "2026-11-24T02:25:14.545Z",
+  "updated_at": "2026-11-24T03:57:47.887Z",
   "gherkin_validation": {
     "status": "passed",
     "parser": "parse-gherkin",
     "dry_checker": "check-gherkin-dry",
-    "dry_review": "not_run_for_header_revision; repeated checks intentionally cover distinct scroll states",
+    "dry_review": "not_run_for_v011_fix; previous reports historical",
     "advisory_findings": null,
-    "report": "checks/coder-header-dividers.md",
+    "report": "checks/coder-v011.md",
     "consistency_report": "checks/specification-consistency.json",
-    "scenario_definitions": 20,
-    "expanded_cases": 41
+    "scenario_definitions": 21,
+    "expanded_cases": 49
   },
   "human_approval": {
     "status": "approved",
@@ -97,16 +98,16 @@
   },
   "coder_verification": {
     "status": "passed",
-    "unit_tests": 17,
+    "unit_tests": 18,
     "generator_tests": 4,
-    "development_acceptance_cases": 41,
+    "development_acceptance_cases": 49,
     "lint_errors": 0,
     "lint_warnings": 8,
-    "report": "checks/coder-header-dividers.md",
-    "results": "checks/coder-header-dividers.json",
+    "report": "checks/coder-v011.md",
+    "results": "checks/coder-v011.json",
     "review": "pending",
     "external_qa": "not_run",
-    "target_grapheneos_device": "unverified"
+    "target_grapheneos_device": "owner_reported_initial_usage; post_fix_not_yet_revalidated"
   },
   "ui_revision": {
     "request": "System Back from Day returns to its month; remove the month expansion arrow and its dropdown picker.",
@@ -125,5 +126,25 @@
     "status": "completed",
     "scope": "User approved extending time-column/header-bottom dividers in Day and Week; keep today outline.",
     "report": "checks/coder-header-dividers.md"
+  },
+  "release_signing": {
+    "status": "prepared",
+    "owner_approved": true,
+    "public_certificate_pin": "app/release-certificate.sha256",
+    "artifact": "app/build/outputs/apk/release/app-release.apk",
+    "version_name": "0.1.1",
+    "version_code": 2,
+    "artifact_tests": "passed_3",
+    "private_material": "outside_Git_and_Nix_store",
+    "backup": "not_verified",
+    "publication": "not_performed_by_agent",
+    "report": "checks/coder-v011.md",
+    "results": "checks/coder-v011.json",
+    "runtime_smoke": "passed_api35_in_place_upgrade_and_large_fonts"
+  },
+  "phone_hour_feedback": {
+    "status": "corrected_pending_owner_phone_retest",
+    "owner_report": "On phone 24-hour labels such as 04:00 wrap the final zero; owner requests Proton-style sizing and capitalized localized month headings.",
+    "report": "checks/coder-v011.md"
   }
 }

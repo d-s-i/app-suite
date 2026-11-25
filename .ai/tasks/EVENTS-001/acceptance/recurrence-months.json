@@ -1,0 +1,243 @@
+{
+  "name": "EVENTS-001-F04 Select free monthly recurrence patterns",
+  "background": [
+    {
+      "keyword": "Given",
+      "text": "the calendar contains no events"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone time zone is UTC"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone language is English United States"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone uses 24-hour time"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "EVENTS-001-S16 Repeat a freely chosen numbered day without date drift",
+      "steps": [
+        {
+          "keyword": "When",
+          "text": "the owner creates all-day Course from \u003clower_bound\u003e every \u003cinterval\u003e months on day \u003cmonth_day\u003e ending after 3 occurrences",
+          "parameters": [
+            "lower_bound",
+            "interval",
+            "month_day"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "the calendar returns to the originating view on the first occurrence date \u003cfirst_date\u003e",
+          "parameters": [
+            "first_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "Course is all-day on exactly \u003cfirst_date\u003e, \u003csecond_date\u003e and \u003cthird_date\u003e",
+          "parameters": [
+            "first_date",
+            "second_date",
+            "third_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "its monthly rule still requests day \u003cmonth_day\u003e",
+          "parameters": [
+            "month_day"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "first_date": "2027-01-31",
+          "interval": "1",
+          "lower_bound": "2027-01-30",
+          "month_day": "31",
+          "second_date": "2027-02-28",
+          "third_date": "2027-03-31"
+        },
+        {
+          "first_date": "2028-01-31",
+          "interval": "1",
+          "lower_bound": "2028-01-01",
+          "month_day": "31",
+          "second_date": "2028-02-29",
+          "third_date": "2028-03-31"
+        },
+        {
+          "first_date": "2027-02-15",
+          "interval": "3",
+          "lower_bound": "2027-01-20",
+          "month_day": "15",
+          "second_date": "2027-05-15",
+          "third_date": "2027-08-15"
+        },
+        {
+          "first_date": "2027-02-28",
+          "interval": "2",
+          "lower_bound": "2027-01-31",
+          "month_day": "30",
+          "second_date": "2027-04-30",
+          "third_date": "2027-06-30"
+        },
+        {
+          "first_date": "2027-02-05",
+          "interval": "1",
+          "lower_bound": "2027-01-20",
+          "month_day": "5",
+          "second_date": "2027-03-05",
+          "third_date": "2027-04-05"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S17 Repeat a freely chosen ordinal weekday",
+      "steps": [
+        {
+          "keyword": "When",
+          "text": "the owner creates all-day Course from \u003clower_bound\u003e every \u003cinterval\u003e months on the \u003cordinal\u003e \u003cweekday\u003e ending after 3 occurrences",
+          "parameters": [
+            "lower_bound",
+            "interval",
+            "ordinal",
+            "weekday"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "Course is all-day on exactly \u003cfirst_date\u003e, \u003csecond_date\u003e and \u003cthird_date\u003e",
+          "parameters": [
+            "first_date",
+            "second_date",
+            "third_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "its monthly rule still requests the \u003cordinal\u003e \u003cweekday\u003e",
+          "parameters": [
+            "ordinal",
+            "weekday"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "first_date": "2027-02-01",
+          "interval": "1",
+          "lower_bound": "2027-01-20",
+          "ordinal": "first",
+          "second_date": "2027-03-01",
+          "third_date": "2027-04-05",
+          "weekday": "Monday"
+        },
+        {
+          "first_date": "2027-02-01",
+          "interval": "2",
+          "lower_bound": "2027-01-20",
+          "ordinal": "first",
+          "second_date": "2027-04-05",
+          "third_date": "2027-06-07",
+          "weekday": "Monday"
+        },
+        {
+          "first_date": "2027-01-12",
+          "interval": "1",
+          "lower_bound": "2027-01-01",
+          "ordinal": "second",
+          "second_date": "2027-02-09",
+          "third_date": "2027-03-09",
+          "weekday": "Tuesday"
+        },
+        {
+          "first_date": "2027-01-21",
+          "interval": "1",
+          "lower_bound": "2027-01-01",
+          "ordinal": "third",
+          "second_date": "2027-02-18",
+          "third_date": "2027-03-18",
+          "weekday": "Thursday"
+        },
+        {
+          "first_date": "2027-02-22",
+          "interval": "1",
+          "lower_bound": "2027-02-01",
+          "ordinal": "fourth",
+          "second_date": "2027-03-22",
+          "third_date": "2027-04-26",
+          "weekday": "Monday"
+        },
+        {
+          "first_date": "2027-02-22",
+          "interval": "1",
+          "lower_bound": "2027-02-01",
+          "ordinal": "fifth",
+          "second_date": "2027-03-29",
+          "third_date": "2027-04-26",
+          "weekday": "Monday"
+        },
+        {
+          "first_date": "2027-01-29",
+          "interval": "1",
+          "lower_bound": "2027-01-01",
+          "ordinal": "last",
+          "second_date": "2027-02-26",
+          "third_date": "2027-03-26",
+          "weekday": "Friday"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S18 Reject a monthly window with no matching occurrence",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the owner opened event creation with + for Course from 2027-01-20"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner selects every 2 months on the first Monday ending on 2027-01-31 and attempts to save"
+        },
+        {
+          "keyword": "Then",
+          "text": "the form identifies that no occurrence fits before the end date"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner abandons the editor"
+        },
+        {
+          "keyword": "Then",
+          "text": "no event named Course exists"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "EVENTS-001-S19 Include a clamped monthly occurrence on the end date",
+      "steps": [
+        {
+          "keyword": "When",
+          "text": "the owner creates all-day Course from 2027-01-30 every 1 months on day 31 ending on 2027-04-30"
+        },
+        {
+          "keyword": "Then",
+          "text": "Course is all-day on exactly 2027-01-31, 2027-02-28, 2027-03-31 and 2027-04-30"
+        },
+        {
+          "keyword": "And",
+          "text": "Course has no occurrence on 2027-05-31"
+        }
+      ],
+      "examples": []
+    }
+  ]
+}

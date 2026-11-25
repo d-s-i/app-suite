@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "feature_name": "MONOREPO-001-F01 Preserve Calendar when moving to app-suite",
+  "summary": {
+    "step_occurrences": 21,
+    "unique_steps": 20,
+    "findings": 0
+  },
+  "findings": []
+}

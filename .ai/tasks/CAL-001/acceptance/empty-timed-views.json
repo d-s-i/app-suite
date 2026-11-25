@@ -378,6 +378,86 @@
           "view": "Week"
         }
       ]
+    },
+    {
+      "name": "CAL-001-S23 Hour labels never wrap or clip on scaled displays",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the device uses \u003ctime_format\u003e time",
+          "parameters": [
+            "time_format"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the display uses pixel density 2.75 and font scale \u003cfont_scale\u003e",
+          "parameters": [
+            "font_scale"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "Month displays February 2028 with today selected"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens the navigation drawer and chooses \u003cview\u003e",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "every hour label is complete on a single line"
+        },
+        {
+          "keyword": "And",
+          "text": "every hour label fits inside the time column"
+        }
+      ],
+      "examples": [
+        {
+          "font_scale": "1.0",
+          "time_format": "24-hour",
+          "view": "Day"
+        },
+        {
+          "font_scale": "1.6",
+          "time_format": "24-hour",
+          "view": "Day"
+        },
+        {
+          "font_scale": "1.0",
+          "time_format": "12-hour",
+          "view": "Day"
+        },
+        {
+          "font_scale": "1.6",
+          "time_format": "12-hour",
+          "view": "Day"
+        },
+        {
+          "font_scale": "1.0",
+          "time_format": "24-hour",
+          "view": "Week"
+        },
+        {
+          "font_scale": "1.6",
+          "time_format": "24-hour",
+          "view": "Week"
+        },
+        {
+          "font_scale": "1.0",
+          "time_format": "12-hour",
+          "view": "Week"
+        },
+        {
+          "font_scale": "1.6",
+          "time_format": "12-hour",
+          "view": "Week"
+        }
+      ]
     }
   ]
 }

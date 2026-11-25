@@ -1,0 +1,156 @@
+{
+  "name": "EVENTS-001-F02 Find events in all calendar views",
+  "background": [
+    {
+      "keyword": "Given",
+      "text": "the calendar contains no events"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone time zone is UTC"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone language is English United States"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone uses 24-hour time"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "EVENTS-001-S07 Find all-day and timed events in each calendar view",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Picnic is all-day on 2027-02-06 with description Outside"
+        },
+        {
+          "keyword": "And",
+          "text": "Dentist starts at 09:30 on 2027-02-06 with description Checkup"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens \u003cview\u003e for 2027-02-06",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "Picnic and Dentist are represented on 2027-02-06"
+        },
+        {
+          "keyword": "And",
+          "text": "neither event is represented on 2027-02-05 or 2027-02-07"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens Picnic details"
+        },
+        {
+          "keyword": "Then",
+          "text": "the details show one all-day date 2027-02-06 without a requested hour"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens Dentist details"
+        },
+        {
+          "keyword": "Then",
+          "text": "the computed interval is 2027-02-06 09:30 to 2027-02-06 10:30 in UTC"
+        }
+      ],
+      "examples": [
+        {
+          "view": "Month"
+        },
+        {
+          "view": "Week"
+        },
+        {
+          "view": "Day"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S08 Keep simultaneous events independently accessible",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Alpha starts at 09:30 on 2027-02-06 with description First"
+        },
+        {
+          "keyword": "And",
+          "text": "Beta starts at 09:30 on 2027-02-06 with description Second"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens \u003cview\u003e for 2027-02-06",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "both events can be opened from the representation at 09:30"
+        },
+        {
+          "keyword": "And",
+          "text": "Alpha details show description First"
+        },
+        {
+          "keyword": "And",
+          "text": "Beta details show description Second"
+        }
+      ],
+      "examples": [
+        {
+          "view": "Day"
+        },
+        {
+          "view": "Week"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S09 Account for every event in a populated month cell",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the owner created the 18 all-day events E01 through E18 on 2027-02-06"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens Month for 2027-02-06"
+        },
+        {
+          "keyword": "Then",
+          "text": "the date cell shows at least one of those event titles"
+        },
+        {
+          "keyword": "And",
+          "text": "its visible titles and any +N overflow account for exactly 18 distinct events"
+        },
+        {
+          "keyword": "And",
+          "text": "an overflow control is shown whenever any of those titles are hidden"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens the full day using overflow if present or the date cell otherwise"
+        },
+        {
+          "keyword": "Then",
+          "text": "Day displays 2027-02-06"
+        },
+        {
+          "keyword": "And",
+          "text": "every event E01 through E18 can be opened exactly once from that day"
+        }
+      ],
+      "examples": []
+    }
+  ]
+}

@@ -65,6 +65,6 @@ Feature: CAL-001-F01 Empty month calendar
     Examples:
       | locale | month_date | title |
       | English United States | 2028-02-01 | February |
-      | French France | 2028-02-01 | février |
+      | French France | 2028-02-01 | Février |
       | English United States | 2027-12-01 | December 2027 |
-      | French France | 2027-12-01 | décembre 2027 |
+      | French France | 2027-12-01 | Décembre 2027 |

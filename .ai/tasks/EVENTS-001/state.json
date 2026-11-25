@@ -1,31 +1,233 @@
 {
   "id": "EVENTS-001",
   "title": "Create, edit, and delete one-time and recurring events",
-  "status": "ready_for_specification",
+  "status": "ready_for_review",
   "current_role": "specifier",
   "current_feature": null,
   "roles": {
     "init-task": "completed",
-    "specifier": "not_run",
-    "coder": "not_run",
+    "specifier": "completed",
+    "coder": "blocked",
     "cleaner": "not_run",
     "architect": "not_run",
     "hardener": "not_run",
     "qa": "not_run"
   },
   "checks": {
-    "gherkin": "not_run",
+    "gherkin": "passed",
     "crap": "not_run",
     "dry": "not_run",
     "mutation": "not_run",
     "qa": "not_run"
   },
-  "open_questions": [
-    "Which event fields are required or optional, and are all-day events needed?",
-    "Does editing/deleting a recurring event affect one occurrence, future occurrences, or the whole series?",
-    "What recurrence end options are needed?",
-    "How do event time zones, daylight-saving changes, and every-X-days recurrence interact?"
+  "open_questions": [],
+  "features": {
+    "EVENTS-001-F01": {
+      "status": "not_started",
+      "path": "features/creation.feature",
+      "scenario_ids": [
+        "EVENTS-001-S39",
+        "EVENTS-001-S01",
+        "EVENTS-001-S02",
+        "EVENTS-001-S03",
+        "EVENTS-001-S04",
+        "EVENTS-001-S05",
+        "EVENTS-001-S06"
+      ],
+      "qa": "qa/procedure.md",
+      "expanded_cases": 16
+    },
+    "EVENTS-001-F02": {
+      "status": "not_started",
+      "path": "features/calendar-display.feature",
+      "scenario_ids": [
+        "EVENTS-001-S07",
+        "EVENTS-001-S08",
+        "EVENTS-001-S09"
+      ],
+      "qa": "qa/procedure.md",
+      "expanded_cases": 6
+    },
+    "EVENTS-001-F03": {
+      "status": "not_started",
+      "path": "features/recurrence-days-weeks.feature",
+      "scenario_ids": [
+        "EVENTS-001-S10",
+        "EVENTS-001-S11",
+        "EVENTS-001-S12",
+        "EVENTS-001-S13",
+        "EVENTS-001-S14",
+        "EVENTS-001-S15"
+      ],
+      "qa": "qa/procedure.md",
+      "expanded_cases": 15
+    },
+    "EVENTS-001-F04": {
+      "status": "not_started",
+      "path": "features/recurrence-months.feature",
+      "scenario_ids": [
+        "EVENTS-001-S16",
+        "EVENTS-001-S17",
+        "EVENTS-001-S18",
+        "EVENTS-001-S19"
+      ],
+      "qa": "qa/procedure.md",
+      "expanded_cases": 14
+    },
+    "EVENTS-001-F05": {
+      "status": "not_started",
+      "path": "features/editing.feature",
+      "scenario_ids": [
+        "EVENTS-001-S20",
+        "EVENTS-001-S21",
+        "EVENTS-001-S22",
+        "EVENTS-001-S23",
+        "EVENTS-001-S24",
+        "EVENTS-001-S25",
+        "EVENTS-001-S26",
+        "EVENTS-001-S27",
+        "EVENTS-001-S40"
+      ],
+      "qa": "qa/procedure.md",
+      "expanded_cases": 16
+    },
+    "EVENTS-001-F06": {
+      "status": "not_started",
+      "path": "features/deletion.feature",
+      "scenario_ids": [
+        "EVENTS-001-S28",
+        "EVENTS-001-S29",
+        "EVENTS-001-S30",
+        "EVENTS-001-S31"
+      ],
+      "qa": "qa/procedure.md",
+      "expanded_cases": 10
+    },
+    "EVENTS-001-F07": {
+      "status": "not_started",
+      "path": "features/time-zones-and-boundaries.feature",
+      "scenario_ids": [
+        "EVENTS-001-S32",
+        "EVENTS-001-S33",
+        "EVENTS-001-S34",
+        "EVENTS-001-S35",
+        "EVENTS-001-S36",
+        "EVENTS-001-S37",
+        "EVENTS-001-S38"
+      ],
+      "qa": "qa/procedure.md",
+      "expanded_cases": 18
+    }
+  },
+  "updated_at": "2026-11-25T02:00:11.057Z",
+  "confirmed_time_zone_policy": {
+    "origin": "phone zone at creation, retained by timed event",
+    "recurrence": "same local clock time in origin zone across normal DST changes",
+    "display": "converted to current phone zone",
+    "all_day": "calendar dates preserved",
+    "special_DST_times": {
+      "gap": "shift by actual gap duration; requested recurrence clock unchanged on normal dates",
+      "overlap": "earlier instant, one start",
+      "editing": "original event zone shown",
+      "automatic_duration": "60 elapsed minutes"
+    }
+  },
+  "confirmed_event_fields": {
+    "title": "required",
+    "description": "optional",
+    "mode": "all_day_or_timed",
+    "timed_semantics": "date and local start time with automatic 1-hour duration",
+    "duration": "automatic_60_minutes; no user duration/end-time control",
+    "timed_default_duration_minutes": 60,
+    "duration_editable": false,
+    "multi_day_entry": false,
+    "automatic_midnight_crossing": true
+  },
+  "confirmed_recurrence": {
+    "units": [
+      "days",
+      "weeks",
+      "calendar_months"
+    ],
+    "monthly_patterns": [
+      "same_day_of_month_number",
+      "ordinal_weekday_in_month"
+    ],
+    "endings": [
+      "never",
+      "inclusive_end_date",
+      "after_N_occurrences_including_first"
+    ],
+    "edit_delete_scopes": [
+      "one_occurrence",
+      "this_and_future",
+      "whole_series"
+    ],
+    "monthly_selection": "free",
+    "monthly_last_weekday_supported": true,
+    "missing_monthly_target": "last_corresponding_date",
+    "monthly_fallback_details": {
+      "numbered_day": "last calendar day when requested number is absent",
+      "ordinal_weekday": "last matching weekday when requested ordinal is absent",
+      "rule_target": "unchanged for later months"
+    },
+    "first_occurrence": "first matching occurrence on or after chosen lower-bound date",
+    "monthly_interval_anchor": "first matching occurrence month"
+  },
+  "confirmed_creation": {
+    "entry": "plus_control_only",
+    "empty_time_slot_tap_creates_event": false,
+    "month_date_tap": "retains existing Day navigation",
+    "form_defaults": {
+      "recurrence": "one_time",
+      "mode": "all_day",
+      "title": "empty",
+      "description": "empty",
+      "timed_time": "explicit_choice",
+      "date": "Day displayed date; Month/Week today in displayed period, otherwise first date of that month/week"
+    },
+    "save_cancel_navigation": "Save returns to originating view on saved occurrence; cancel/back discards uncommitted changes and restores original period"
+  },
+  "coder_blockers": [
+    "Complete written EVENTS specification is ready_for_review and requires explicit owner approval before implementation."
   ],
-  "features": {},
-  "updated_at": "2026-11-23T23:36:18.416Z"
+  "proposed_remaining_decisions": {
+    "status": "all_approved",
+    "document": "remaining-decisions.md",
+    "D1": "Default one-time/all-day + form, contextual date, explicit chosen hour, return to originating view; cancel commits nothing",
+    "D2": "Gap shifts by gap duration, overlap uses earlier instant; original zone shown for editing; 60 elapsed minutes",
+    "D3": "Text changes preserve individual overrides; temporal/mode/recurrence changes reset affected overrides and cancellations only with explicit warning/confirmation",
+    "D4": "Allow automatic one-hour midnight crossing without multi-day range input; one logical occurrence"
+  },
+  "decision_approvals": {
+    "D1": "approved",
+    "D2": "approved_after_overlap_explanation",
+    "D3": "approved",
+    "D4": "approved"
+  },
+  "confirmed_series_edit_policy": {
+    "text": "Preserve locally overridden fields; other fields inherit changed series values",
+    "temporal_mode_or_recurrence": "Reset affected overrides/cancellations only after explicit warning and confirmation; may restore deleted occurrences",
+    "cancel_warning": "No saved changes"
+  },
+  "gherkin_validation": {
+    "status": "passed",
+    "parser": "parse-gherkin",
+    "dry_checker": "check-gherkin-dry",
+    "dry_review": "completed_with_intentional_advisory_findings",
+    "advisory_findings": 93,
+    "report": "checks/specifier.md",
+    "consistency_report": "checks/specification-consistency.json",
+    "feature_count": 7,
+    "scenario_definitions": 40,
+    "expanded_cases": 95
+  },
+  "specification_approval": {
+    "status": "pending_owner_review",
+    "decisions": "D1-D4 approved; complete written criteria/features/QA now await explicit approval before coding"
+  },
+  "implementation_notes": [
+    "Reuse parse-gherkin and extend the existing CAL-only generator/Gradle/runtime adapter; do not create a parallel parser/runner.",
+    "Coordinate app-private durable storage with PERSISTENCE-001; no storage technology or in-memory-only product decision is made by this specification."
+  ]
 }

@@ -1,0 +1,47 @@
+{
+  "verified_at": "2026-11-24T03:57:47.887Z",
+  "version_name": "0.1.1",
+  "version_code": 2,
+  "application_id": "app.local.calendar",
+  "unit_tests": 18,
+  "generator_tests": 4,
+  "release_artifact_tests": 3,
+  "development_acceptance_cases": 49,
+  "scenario_definitions": 21,
+  "lint_debug": {
+    "errors": 0,
+    "warnings": 8
+  },
+  "lint_release": {
+    "errors": 0,
+    "warnings": 8
+  },
+  "reproduced_before_fix": "At 440 dpi, old Day 01:00 occupied two lines",
+  "release_upgrade": {
+    "status": "passed_api35",
+    "from": "0.1.0 / code 1",
+    "to": "0.1.1 / code 2",
+    "method": "install -r, no uninstall between versions, firstInstallTime unchanged"
+  },
+  "real_release_smoke": {
+    "status": "passed_api35",
+    "format": "24h",
+    "font_scale": 1.6,
+    "screenshots": [
+      "v011-large-font-day.png",
+      "v011-large-font-week.png"
+    ]
+  },
+  "public_certificate_sha256": "2c7e0aee6bf1d8dbebc0e2741e7a5578c88700724e4dfb6ea739a4e1f04360b4",
+  "artifact": "app/build/outputs/apk/release/app-release.apk",
+  "apk_sha256": "11a09dacd8f90475c09200efcadc734754ccd5407b4f0b7c256f3c80a000cfb5",
+  "deployment": {
+    "avd": "android-dev",
+    "serial": "emulator-5554",
+    "install": "passed_in_place_debug",
+    "launch": "passed",
+    "data_preserved": true
+  },
+  "github_publication": "not_performed_by_agent",
+  "postfix_phone_validation": "awaiting_owner_Obtainium_update"
+}

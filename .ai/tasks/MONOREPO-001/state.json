@@ -1,0 +1,96 @@
+{
+  "id": "MONOREPO-001",
+  "title": "Transformer Calendar en monorepo multi-apps avec un design réutilisable",
+  "status": "approved",
+  "current_role": "coder",
+  "current_feature": "MONOREPO-001-F03",
+  "roles": {
+    "init-task": "completed",
+    "specifier": "completed",
+    "coder": "blocked",
+    "cleaner": "not_run",
+    "architect": "not_run",
+    "hardener": "not_run",
+    "qa": "not_run"
+  },
+  "checks": {
+    "gherkin": "passed",
+    "crap": "not_run",
+    "dry": "not_run",
+    "mutation": "not_run",
+    "qa": "not_run"
+  },
+  "open_questions": [],
+  "features": {
+    "MONOREPO-001-F01": {
+      "status": "completed",
+      "path": "features/calendar-migration.feature",
+      "scenario_ids": [
+        "MONOREPO-001-S01",
+        "MONOREPO-001-S02",
+        "MONOREPO-001-S03"
+      ]
+    },
+    "MONOREPO-001-F02": {
+      "status": "completed",
+      "path": "features/reusable-design.feature",
+      "scenario_ids": [
+        "MONOREPO-001-S04",
+        "MONOREPO-001-S05"
+      ]
+    },
+    "MONOREPO-001-F03": {
+      "status": "needs_input",
+      "path": "features/github-publication.feature",
+      "scenario_ids": [
+        "MONOREPO-001-S06",
+        "MONOREPO-001-S07"
+      ]
+    }
+  },
+  "updated_at": "2026-11-25T03:20:56.846Z",
+  "gherkin_validation": {
+    "status": "passed",
+    "parser": "parse-gherkin",
+    "dry_checker": "check-gherkin-dry",
+    "dry_review": "reviewed_advisories_retained",
+    "advisory_findings": 2,
+    "report": "checks/specifier.md",
+    "scenario_definitions": 7,
+    "expanded_cases": 7
+  },
+  "human_approval": {
+    "status": "approved",
+    "scope": "Specification MONOREPO-001, features F01–F03 and scenarios S01–S07",
+    "source": "Owner message: je valide",
+    "approved_at": "2026-11-25T01:45:49.381Z"
+  },
+  "coder_workflow_exception": {
+    "source": "Owner: oui non pas besoin de nouveaux tests",
+    "scope": "Reuse existing tests and approved delivery checklist; no new tests or acceptance infrastructure",
+    "status": "approved"
+  },
+  "coder_delivery": {
+    "report": "checks/coder-organized.md",
+    "local_implementation": "verified_final_organized_layout",
+    "publication": "not_run",
+    "owner_apk_verification": "not_run",
+    "owner_emulator": "android-dev / emulator-5554",
+    "debug_install": "passed",
+    "debug_launch": "passed",
+    "pending": [
+      "Owner repository visibility",
+      "Owner release tag and highest versionCode to replace",
+      "Owner repository creation, commits and push",
+      "Owner release publication and APK verification"
+    ],
+    "workspace": "/home/anon/Documents/Workspace/app-suite",
+    "calendar_module": ":calendar",
+    "calendar_path": "apps/calendar-app"
+  },
+  "coder_layout_approval": {
+    "status": "approved",
+    "source": "Owner requested an organized maintainable monorepo following the specification and code sharing; history retained",
+    "scope": "Root app-suite, apps/calendar-app with app-local tools/docs, shared/design, adapted build/tool/documentation paths"
+  }
+}

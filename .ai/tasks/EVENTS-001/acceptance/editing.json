@@ -1,0 +1,391 @@
+{
+  "name": "EVENTS-001-F05 Edit events with explicit series scope",
+  "background": [
+    {
+      "keyword": "Given",
+      "text": "the calendar contains no events"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone time zone is UTC"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone language is English United States"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone uses 24-hour time"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "EVENTS-001-S20 Edit a one-time event without creating a duplicate",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Dentist starts at 09:30 on 2027-02-06 with description Checkup"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner edits Dentist to Consultation at 11:00 on 2027-02-07 with description Followup and saves"
+        },
+        {
+          "keyword": "Then",
+          "text": "Consultation is represented at 11:00 on 2027-02-07"
+        },
+        {
+          "keyword": "And",
+          "text": "its details show description Followup"
+        },
+        {
+          "keyword": "And",
+          "text": "the computed interval is 2027-02-07 11:00 to 2027-02-07 12:00 in UTC"
+        },
+        {
+          "keyword": "And",
+          "text": "no event named Dentist exists"
+        },
+        {
+          "keyword": "And",
+          "text": "exactly 1 event exists from 2027-02-06 through 2027-02-07"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "EVENTS-001-S21 Change between all-day and timed modes",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Switch is \u003coriginal_mode\u003e on 2027-02-06",
+          "parameters": [
+            "original_mode"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner changes Switch to \u003ctarget_mode\u003e and saves, choosing 09:00 if timed",
+          "parameters": [
+            "target_mode"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "Switch details show \u003ctarget_mode\u003e on 2027-02-06",
+          "parameters": [
+            "target_mode"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "exactly 1 event named Switch exists"
+        },
+        {
+          "keyword": "And",
+          "text": "no duration, event end-time or event end-date adjustment is offered"
+        }
+      ],
+      "examples": [
+        {
+          "original_mode": "all-day",
+          "target_mode": "timed"
+        },
+        {
+          "original_mode": "timed",
+          "target_mode": "all-day"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S22 Move and customize only one recurring occurrence",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Course repeats daily at 09:00 from 2027-06-01 for 5 occurrences with description Base"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner edits only the occurrence originally on 2027-06-03 to Custom at 11:00 on 2027-06-04 with description Local and saves"
+        },
+        {
+          "keyword": "Then",
+          "text": "no Course occurrence starts on 2027-06-03"
+        },
+        {
+          "keyword": "And",
+          "text": "Custom starts at 11:00 on 2027-06-04 with description Local"
+        },
+        {
+          "keyword": "And",
+          "text": "Course starts at 09:00 on 2027-06-01, 2027-06-02, 2027-06-04 and 2027-06-05"
+        },
+        {
+          "keyword": "And",
+          "text": "no occurrence of the original series starts on 2027-06-06"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "EVENTS-001-S23 Series text edits preserve individual fields and cancellations",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the Course exception fixture is prepared"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner changes the series title to Renamed and description to Shared with scope \u003cscope\u003e from 2027-06-03 and saves",
+          "parameters": [
+            "scope"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "the 2027-06-01 occurrence has title \u003cfirst_title\u003e and description \u003cfirst_description\u003e at 09:00",
+          "parameters": [
+            "first_title",
+            "first_description"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the 2027-06-02 occurrence keeps title Custom and description Local at 09:00"
+        },
+        {
+          "keyword": "And",
+          "text": "the 2027-06-03 occurrence inherits title Renamed and description Shared but stays at 11:00"
+        },
+        {
+          "keyword": "And",
+          "text": "the 2027-06-04 occurrence remains deleted"
+        },
+        {
+          "keyword": "And",
+          "text": "the 2027-06-05 occurrence has title Renamed and description Shared at 09:00"
+        },
+        {
+          "keyword": "And",
+          "text": "no occurrence of the original series starts on 2027-06-06"
+        }
+      ],
+      "examples": [
+        {
+          "first_description": "Shared",
+          "first_title": "Renamed",
+          "scope": "whole series"
+        },
+        {
+          "first_description": "Base",
+          "first_title": "Course",
+          "scope": "this and future"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S24 Confirm before resetting temporal exceptions",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the Course exception fixture is prepared"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner changes the series time to 10:00 with scope \u003cscope\u003e from 2027-06-03 and attempts to save",
+          "parameters": [
+            "scope"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "a warning identifies that affected individual modifications will reset and deleted occurrences may return"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner confirms the reset"
+        },
+        {
+          "keyword": "Then",
+          "text": "the 2027-06-01 occurrence starts at \u003cfirst_time\u003e",
+          "parameters": [
+            "first_time"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the 2027-06-02 occurrence has title \u003csecond_title\u003e at \u003csecond_time\u003e",
+          "parameters": [
+            "second_title",
+            "second_time"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "Course starts at 10:00 on 2027-06-03, 2027-06-04 and 2027-06-05"
+        },
+        {
+          "keyword": "And",
+          "text": "no affected occurrence remains at 11:00"
+        },
+        {
+          "keyword": "And",
+          "text": "no occurrence of the original series starts on 2027-06-06"
+        }
+      ],
+      "examples": [
+        {
+          "first_time": "10:00",
+          "scope": "whole series",
+          "second_time": "10:00",
+          "second_title": "Course"
+        },
+        {
+          "first_time": "09:00",
+          "scope": "this and future",
+          "second_time": "09:00",
+          "second_title": "Custom"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S25 Cancelling a reset warning changes no saved event",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the Course exception fixture is prepared"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner changes the series time to 10:00 with scope \u003cscope\u003e from 2027-06-03 and attempts to save",
+          "parameters": [
+            "scope"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the owner cancels the reset warning and abandons the editor"
+        },
+        {
+          "keyword": "Then",
+          "text": "the Course exception fixture remains unchanged"
+        }
+      ],
+      "examples": [
+        {
+          "scope": "whole series"
+        },
+        {
+          "scope": "this and future"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S26 Recurrence edits keep the remaining occurrence budget unless changed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Course repeats daily at 09:00 from 2027-06-01 for 5 occurrences with description Base"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner changes the recurrence interval to 2 days with scope \u003cscope\u003e from 2027-06-03 without changing the ending and saves",
+          "parameters": [
+            "scope"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "Course starts at 09:00 on exactly \u003cexpected_dates\u003e",
+          "parameters": [
+            "expected_dates"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "no Course occurrence starts on \u003cabsent_date\u003e",
+          "parameters": [
+            "absent_date"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "absent_date": "2027-06-02",
+          "expected_dates": "2027-06-01, 2027-06-03, 2027-06-05, 2027-06-07, 2027-06-09",
+          "scope": "whole series"
+        },
+        {
+          "absent_date": "2027-06-04",
+          "expected_dates": "2027-06-01, 2027-06-02, 2027-06-03, 2027-06-05, 2027-06-07",
+          "scope": "this and future"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S27 A new future count starts with the first affected occurrence",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Course repeats daily at 09:00 from 2027-06-01 for 5 occurrences with description Base"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner sets the ending to after 2 occurrences with scope this and future from 2027-06-03 and saves"
+        },
+        {
+          "keyword": "Then",
+          "text": "Course starts at 09:00 on exactly 2027-06-01, 2027-06-02, 2027-06-03 and 2027-06-04"
+        },
+        {
+          "keyword": "And",
+          "text": "no Course occurrence starts on 2027-06-05"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "EVENTS-001-S40 Other structural fields also require reset consent",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the Course exception fixture is prepared"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner changes series field \u003cfield\u003e to \u003cvalue\u003e with scope whole series from 2027-06-03 and attempts to save",
+          "parameters": [
+            "field",
+            "value"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "a warning identifies that affected individual modifications will reset and deleted occurrences may return"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner cancels the reset warning and abandons the editor"
+        },
+        {
+          "keyword": "Then",
+          "text": "the Course exception fixture remains unchanged"
+        }
+      ],
+      "examples": [
+        {
+          "field": "starting date",
+          "value": "2027-06-02"
+        },
+        {
+          "field": "mode",
+          "value": "all-day"
+        },
+        {
+          "field": "recurrence interval",
+          "value": "2 days"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "feature_name": "EVENTS-001-F06 Delete exactly the selected event scope",
+  "summary": {
+    "step_occurrences": 26,
+    "unique_steps": 23,
+    "findings": 7
+  },
+  "findings": [
+    {
+      "kind": "near-duplicate",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "no Course occurrence starts on 2027-06-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S29 Delete the selected recurring scope",
+              "step_index": 6,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "no occurrence starts on 2027-06-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 2,
+              "scenario_name": "EVENTS-001-S30 Cancel a deletion without changing the series",
+              "step_index": 3,
+              "keyword": "And"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts are highly similar after placeholder normalization",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.857
+    },
+    {
+      "kind": "near-duplicate",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "exactly \u003cremaining_count\u003e Course starts remain from 2027-05-31 through 2027-06-10",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S31 Scope follows original series order after a move",
+              "step_index": 3,
+              "keyword": "Then"
+            }
+          ]
+        },
+        {
+          "text": "exactly \u003cremaining_count\u003e Course starts remain from 2027-06-01 through 2027-06-10",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S29 Delete the selected recurring scope",
+              "step_index": 2,
+              "keyword": "Then"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts are highly similar after placeholder normalization",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.75
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the 2027-06-01 occurrence is \u003cfirst_presence\u003e",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S29 Delete the selected recurring scope",
+              "step_index": 4,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "the 2027-06-05 occurrence is \u003clast_presence\u003e",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S29 Delete the selected recurring scope",
+              "step_index": 5,
+              "keyword": "And"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.6
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the 2027-06-01 and 2027-06-02 occurrences are \u003cpast_presence\u003e",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S31 Scope follows original series order after a move",
+              "step_index": 5,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "the 2027-06-01 occurrence is \u003cfirst_presence\u003e",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S29 Delete the selected recurring scope",
+              "step_index": 4,
+              "keyword": "And"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.5
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the 2027-06-01 occurrence is \u003cfirst_presence\u003e",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S29 Delete the selected recurring scope",
+              "step_index": 4,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "the 2027-06-03 occurrence is absent",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S29 Delete the selected recurring scope",
+              "step_index": 3,
+              "keyword": "And"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.5
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the 2027-06-03 occurrence is absent",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S29 Delete the selected recurring scope",
+              "step_index": 3,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "the 2027-06-05 occurrence is \u003clast_presence\u003e",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S29 Delete the selected recurring scope",
+              "step_index": 5,
+              "keyword": "And"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.5
+    },
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "no Course occurrence remains on 2027-05-31, 2027-06-03, 2027-06-04 or 2027-06-05",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 3,
+              "scenario_name": "EVENTS-001-S31 Scope follows original series order after a move",
+              "step_index": 4,
+              "keyword": "And"
+            }
+          ]
+        },
+        {
+          "text": "no Course occurrence starts on 2027-06-06",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "EVENTS-001-S29 Delete the selected recurring scope",
+              "step_index": 6,
+              "keyword": "And"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.462
+    }
+  ]
+}

@@ -191,7 +191,7 @@ No events; date 2028-02-15 UTC. Execute all four Examples rows of CAL-001-S05.
 
 ## Expected observations
 
-- Titles are February / février for February 2028 and December 2027 / décembre 2027 for December 2027 in the corresponding English United States / French France rows.
+- Titles are February / Février for February 2028 and December 2027 / Décembre 2027 for December 2027 in the corresponding English United States / French France rows.
 - The current year is omitted, another year is included, and the first weekday stays Monday.
 
 ## Failure conditions
@@ -739,3 +739,38 @@ Missing, partial, displaced or scrolling header dividers, a gap at the header/gr
 ## Cleanup
 
 Return to Month and Today; preserve evidence and restore original device settings. Create no events and clear no data.
+
+# QA-CAL-001-S23 — Hour labels never wrap or clip on scaled displays
+
+## Purpose
+
+Verify the owner's reported 24h wrapping defect is fixed without clipping or replacing the requested hour format. Gherkin feature: CAL-001-F02. Gherkin scenario: CAL-001-S23. Acceptance criterion: AC-CAL-23.
+
+## Preconditions
+
+Use a dedicated phone-sized test environment (verified: 1080x2400 physical pixels, density 2.75 / 440 dpi), UTC, English United States, date 2028-02-15, no events. Configure normal/enlarged font levels and 12h/24h through public device Settings for each Examples row. The fixture must provide the stated 1.0/1.6 scale levels; if those exact conditions cannot be established, record ENVIRONMENT_ERROR rather than substitute an unrecorded setup. No private app/test-only APIs.
+
+## Initial state
+
+Month displays February 2028 with today selected. Record the row view, device format, density and font scale. Execute all eight Examples rows independently.
+
+## Actions
+
+1. Establish the row's hour format and font scale via device Settings; reopen Calendar.
+2. Open the navigation drawer and choose the row view.
+3. Scroll through the complete day and inspect every hour label, especially 04:00, 12:00 and 23:00 in 24h mode and the longest AM/PM labels in 12h mode.
+4. Capture evidence at normal and enlarged text settings in both views.
+
+## Expected observations
+
+- Every hour retains the selected format, complete on one line; no trailing zero on another line.
+- No character is clipped, replaced by ellipsis, obscured at the axis boundary or drawn outside the time column.
+- Enlarging text expands the time column sufficiently, rather than retaining a fixed 52dp width. Date navigation and header dividers remain usable.
+
+## Failure conditions
+
+Any wrapped, truncated, ellipsized or clipped hour label, changed hour format, or unusable time column is FAIL. Valid setup and all expected observations verified is PASS; missing fixture control is ENVIRONMENT_ERROR; unattempted rows are NOT_RUN.
+
+## Cleanup
+
+Return to Month and Today. Restore the dedicated device's original hour-format/font/display settings; do not apply fixture changes to the owner's personal phone or persistent emulator without approval. Preserve evidence and clear no app data.

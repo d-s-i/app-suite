@@ -258,7 +258,7 @@
         {
           "locale": "French France",
           "month_date": "2028-02-01",
-          "title": "février"
+          "title": "Février"
         },
         {
           "locale": "English United States",
@@ -268,7 +268,7 @@
         {
           "locale": "French France",
           "month_date": "2027-12-01",
-          "title": "décembre 2027"
+          "title": "Décembre 2027"
         }
       ]
     }

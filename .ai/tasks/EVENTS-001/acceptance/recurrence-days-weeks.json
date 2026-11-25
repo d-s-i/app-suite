@@ -1,0 +1,274 @@
+{
+  "name": "EVENTS-001-F03 Repeat events by calendar days or weeks",
+  "background": [
+    {
+      "keyword": "Given",
+      "text": "the calendar contains no events"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone time zone is UTC"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone language is English United States"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone uses 24-hour time"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "EVENTS-001-S10 Count the first occurrence in a day or week series",
+      "steps": [
+        {
+          "keyword": "When",
+          "text": "the owner creates Course at 09:00 starting \u003cstart_date\u003e every \u003cinterval\u003e \u003cunit\u003e ending after 3 occurrences",
+          "parameters": [
+            "start_date",
+            "interval",
+            "unit"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "Course starts at 09:00 on exactly \u003cstart_date\u003e, \u003csecond_date\u003e and \u003cthird_date\u003e",
+          "parameters": [
+            "start_date",
+            "second_date",
+            "third_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "Course has no occurrence on \u003cnext_date\u003e",
+          "parameters": [
+            "next_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "each timed occurrence lasts 60 elapsed minutes"
+        }
+      ],
+      "examples": [
+        {
+          "interval": "3",
+          "next_date": "2027-02-08",
+          "second_date": "2027-02-02",
+          "start_date": "2027-01-30",
+          "third_date": "2027-02-05",
+          "unit": "days"
+        },
+        {
+          "interval": "2",
+          "next_date": "2028-02-07",
+          "second_date": "2028-01-10",
+          "start_date": "2027-12-27",
+          "third_date": "2028-01-24",
+          "unit": "weeks"
+        },
+        {
+          "interval": "1",
+          "next_date": "2028-03-02",
+          "second_date": "2028-02-29",
+          "start_date": "2028-02-28",
+          "third_date": "2028-03-01",
+          "unit": "days"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S11 Include the recurrence end date",
+      "steps": [
+        {
+          "keyword": "When",
+          "text": "the owner creates Course at 09:00 starting \u003cstart_date\u003e every \u003cinterval\u003e \u003cunit\u003e ending on \u003cend_date\u003e",
+          "parameters": [
+            "start_date",
+            "interval",
+            "unit",
+            "end_date"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "exactly 3 Course occurrences start from \u003cstart_date\u003e through \u003cend_date\u003e",
+          "parameters": [
+            "start_date",
+            "end_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "Course starts at 09:00 on \u003cend_date\u003e",
+          "parameters": [
+            "end_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "Course has no occurrence on \u003cnext_date\u003e",
+          "parameters": [
+            "next_date"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "end_date": "2027-02-05",
+          "interval": "3",
+          "next_date": "2027-02-08",
+          "start_date": "2027-01-30",
+          "unit": "days"
+        },
+        {
+          "end_date": "2028-01-24",
+          "interval": "2",
+          "next_date": "2028-02-07",
+          "start_date": "2027-12-27",
+          "unit": "weeks"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S12 A never-ending series remains available in a later window",
+      "steps": [
+        {
+          "keyword": "When",
+          "text": "the owner creates Course at 09:00 starting 2027-01-01 every 1 days ending never"
+        },
+        {
+          "keyword": "And",
+          "text": "the owner navigates to 2030-01-01 through 2030-01-03"
+        },
+        {
+          "keyword": "Then",
+          "text": "Course starts at 09:00 on each of those 3 dates"
+        },
+        {
+          "keyword": "And",
+          "text": "its recurrence details still show no end"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "EVENTS-001-S13 Reject a nonpositive or noninteger recurrence interval",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the owner opened event creation with + for Course on 2027-02-06"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner attempts to configure daily recurrence with interval input \u003cinterval_input\u003e",
+          "parameters": [
+            "interval_input"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "recurrence interval input \u003cinterval_input\u003e is not accepted",
+          "parameters": [
+            "interval_input"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner abandons the editor"
+        },
+        {
+          "keyword": "Then",
+          "text": "no event named Course exists"
+        }
+      ],
+      "examples": [
+        {
+          "interval_input": "0"
+        },
+        {
+          "interval_input": "-1"
+        },
+        {
+          "interval_input": "empty"
+        },
+        {
+          "interval_input": "1.5"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S14 Reject a nonpositive or noninteger occurrence count",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the owner opened event creation with + for Course on 2027-02-06"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner attempts to end daily recurrence after count input \u003ccount_input\u003e",
+          "parameters": [
+            "count_input"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "occurrence count input \u003ccount_input\u003e is not accepted",
+          "parameters": [
+            "count_input"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner abandons the editor"
+        },
+        {
+          "keyword": "Then",
+          "text": "no event named Course exists"
+        }
+      ],
+      "examples": [
+        {
+          "count_input": "0"
+        },
+        {
+          "count_input": "-1"
+        },
+        {
+          "count_input": "empty"
+        },
+        {
+          "count_input": "1.5"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S15 Reject an end date before the first occurrence",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the owner opened event creation with + for Course on 2027-02-10"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner configures daily recurrence ending on 2027-02-09 and attempts to save"
+        },
+        {
+          "keyword": "Then",
+          "text": "the end date is identified as invalid and the editor remains open"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner abandons the editor"
+        },
+        {
+          "keyword": "Then",
+          "text": "no event named Course exists"
+        }
+      ],
+      "examples": []
+    }
+  ]
+}

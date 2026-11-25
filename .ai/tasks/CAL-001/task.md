@@ -27,6 +27,7 @@ Let the owner browse dates through empty Month, Week, and Day views using Proton
 - Drawer view selection, period paging, date selection, Today, and system Back from Day to its containing Month.
 - Owner explicitly removed the expansion arrow/dropdown mini-calendar after implementation; see ui-revision.md for the approved override and retired scenario IDs.
 - The approved Day-only source correction places labels over the time column, uses source-derived hour typography/width/centering, and initially scrolls one hour before now; Week and the global month toolbar are retained. See day-reference-correction.md.
+- Version 0.1.1 follows the owner's phone feedback: complete single-line hour labels with dynamic, pixel-safe widths in both timed views, plus capital initials for localized month headings. See hour-labels-and-headings-v011.md.
 - Three sequential behavior slices: CAL-001-F01, CAL-001-F02, CAL-001-F03. See specification.md for acceptance criteria and complete scenario-to-QA traceability.
 
 ## Out of scope
@@ -55,4 +56,4 @@ An Android implementation, Gradle build, unit tests, generated Compose acceptanc
 - ui-revision.md: approved Back/arrow change and retired scenario IDs.
 - state.json: tracking source of truth for implementation and verification status.
 
-Next action: owner review. The latest APK is verified and installed on the shared android-dev emulator; see state.json and checks/coder-header-dividers.md. External QA and GrapheneOS device checks remain unperformed.
+Next action: owner review. The latest APK is verified and installed on the shared android-dev emulator; see state.json and checks/coder-v011.md. External QA and GrapheneOS device checks remain unperformed.

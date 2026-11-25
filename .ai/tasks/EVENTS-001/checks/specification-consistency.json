@@ -1,0 +1,126 @@
+{
+  "status": "passed",
+  "checked_at": "2026-11-25T01:58:23.798Z",
+  "feature_count": 7,
+  "scenario_definitions": 40,
+  "expanded_cases": 95,
+  "qa_procedures": 40,
+  "advisory_findings": 93,
+  "features": [
+    {
+      "id": "EVENTS-001-F01",
+      "path": "features/creation.feature",
+      "scenario_ids": [
+        "EVENTS-001-S39",
+        "EVENTS-001-S01",
+        "EVENTS-001-S02",
+        "EVENTS-001-S03",
+        "EVENTS-001-S04",
+        "EVENTS-001-S05",
+        "EVENTS-001-S06"
+      ],
+      "scenario_definitions": 7,
+      "expanded_cases": 16,
+      "advisory_findings": 16
+    },
+    {
+      "id": "EVENTS-001-F02",
+      "path": "features/calendar-display.feature",
+      "scenario_ids": [
+        "EVENTS-001-S07",
+        "EVENTS-001-S08",
+        "EVENTS-001-S09"
+      ],
+      "scenario_definitions": 3,
+      "expanded_cases": 6,
+      "advisory_findings": 6
+    },
+    {
+      "id": "EVENTS-001-F03",
+      "path": "features/recurrence-days-weeks.feature",
+      "scenario_ids": [
+        "EVENTS-001-S10",
+        "EVENTS-001-S11",
+        "EVENTS-001-S12",
+        "EVENTS-001-S13",
+        "EVENTS-001-S14",
+        "EVENTS-001-S15"
+      ],
+      "scenario_definitions": 6,
+      "expanded_cases": 15,
+      "advisory_findings": 9
+    },
+    {
+      "id": "EVENTS-001-F04",
+      "path": "features/recurrence-months.feature",
+      "scenario_ids": [
+        "EVENTS-001-S16",
+        "EVENTS-001-S17",
+        "EVENTS-001-S18",
+        "EVENTS-001-S19"
+      ],
+      "scenario_definitions": 4,
+      "expanded_cases": 14,
+      "advisory_findings": 5
+    },
+    {
+      "id": "EVENTS-001-F05",
+      "path": "features/editing.feature",
+      "scenario_ids": [
+        "EVENTS-001-S20",
+        "EVENTS-001-S21",
+        "EVENTS-001-S22",
+        "EVENTS-001-S23",
+        "EVENTS-001-S24",
+        "EVENTS-001-S25",
+        "EVENTS-001-S26",
+        "EVENTS-001-S27",
+        "EVENTS-001-S40"
+      ],
+      "scenario_definitions": 9,
+      "expanded_cases": 16,
+      "advisory_findings": 27
+    },
+    {
+      "id": "EVENTS-001-F06",
+      "path": "features/deletion.feature",
+      "scenario_ids": [
+        "EVENTS-001-S28",
+        "EVENTS-001-S29",
+        "EVENTS-001-S30",
+        "EVENTS-001-S31"
+      ],
+      "scenario_definitions": 4,
+      "expanded_cases": 10,
+      "advisory_findings": 7
+    },
+    {
+      "id": "EVENTS-001-F07",
+      "path": "features/time-zones-and-boundaries.feature",
+      "scenario_ids": [
+        "EVENTS-001-S32",
+        "EVENTS-001-S33",
+        "EVENTS-001-S34",
+        "EVENTS-001-S35",
+        "EVENTS-001-S36",
+        "EVENTS-001-S37",
+        "EVENTS-001-S38"
+      ],
+      "scenario_definitions": 7,
+      "expanded_cases": 18,
+      "advisory_findings": 23
+    }
+  ],
+  "checks": [
+    "Unique feature/scenario IDs",
+    "One fully structured public-GUI QA per scenario",
+    "Exact criterion/feature/scenario/QA links",
+    "Every Examples parameter supplied/used; no constant columns",
+    "ISO date validity",
+    "Day/week spacing and inclusive end fixtures",
+    "Monthly intervals/clamping/weekday ordinal fixtures",
+    "UTC midnight duration and exclusive-end fixtures",
+    "Named-zone/DST conversions checked with host Intl"
+  ],
+  "scope": "Static specification validation only; no application or QA tests executed"
+}

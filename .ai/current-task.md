@@ -1,14 +1,16 @@
 # Current Task
 
-- Task: CAL-001 — Browse empty month, week, and day calendar views
-- Role: coder (completed)
-- Current feature: none
-- Status: ready_for_review
+- Task: MONOREPO-001 — Transformer Calendar en monorepo multi-apps avec un design réutilisable
+- Role: coder
+- Status: local implementation verified; blocked on owner publication inputs/actions
+- Current feature: MONOREPO-001-F03 (needs_input)
 
-Latest approved correction: vertical time-column separator extends through the full date header, with a full-width horizontal header bottom divider, in both Day and Week. Today's outline is retained. Earlier Day typography/positioning and one-hour initial offset, Back-to-Month, global toolbar, and removed expansion control remain unchanged.
+Specification: tasks/MONOREPO-001/specification.md. Three features F01–F03, seven scenarios S01–S07, matching QA delivery checklist in qa/procedure.md. F01/F02 implementation completed; F03 publication pending. parse-gherkin passed again on all MONOREPO features; no new tests or runner were added, as expressly approved by the owner. Prior specifier advisory review remains in checks/specifier.md.
 
-Verification: 17 JVM unit tests, 4 generator tests, 41 generated acceptance cases / 20 scenarios passed. Lint 0 errors / 8 existing update warnings; debug APK built. Report: tasks/CAL-001/checks/coder-header-dividers.md and JSON/XML evidence. External QA, rendered Proton parity and Android-17 GrapheneOS execution remain unverified.
+Owner decisions: create new GitHub repository d-s-i/app-suite; retain d-s-i/calendar without renaming/deleting it; publish Calendar as part of the migration; owner personally verifies the release APK. No second/fake application required for QA. No production/architecture changes or external publication performed during specification. Commits/pushes remain the owner's responsibility.
 
-Installed in place on shared persistent AVD android-dev (emulator-5554), verified by AVD identity. Calendar is running and open on Week; data preserved. The isolated test emulator is stopped. No commits/pushes; no other task started.
+Implementation: workspace /home/anon/Documents/Workspace/app-suite; Calendar is now :calendar in apps/calendar-app/ with its own tools, README, AGENTS and public signing pin; shared :design remains in shared/design/ and is consumed without copying. Root contains only common build/configuration, guides and task tracking. F01/F02 revalidated after the final organization: clean debug/release builds, 18 JVM tests, 4 generator tests, 49 UI acceptance cases, lint and 3 signature checks pass. Missing secrets correctly fail packaging. Final debug installed in place and launched on android-dev / emulator-5554, data/firstInstallTime preserved. See tasks/MONOREPO-001/checks/coder-organized.md for current commands, paths, hashes and verification limits; earlier coder.md is historical.
 
-Android CLI configuration is managed under ~/nixos-config/common. `android`, `android start`, `android stop`, and `android install [APK]` share the existing guarded backend; legacy hyphenated commands remain compatible. Thirteen command tests and SDK entrypoint build passed. Updated Home Manager .bashrc built and checked, NOT activated. Owner can source ~/nixos-config/common/android-shell.sh in the current Bash terminal; automatic startup in new terminals awaits usual Home Manager/NixOS activation. No broad system rebuild was performed.
+Next: owner chooses repository visibility, release tag and update-version baseline, creates d-s-i/app-suite and commits/pushes reviewed work to the explicit app-suite remote (origin still points to calendar). No commit/push or GitHub operation performed. Publication/owner APK control S06/S07 remain NOT_RUN. No complete-task delivery claim until those actions and feedback are recorded.
+
+EVENTS-001 update: owner approved D2 after the repeated-hour explanation; all D1–D4 decisions are now approved. Its written specification is ready_for_review: seven features, 40 scenario definitions / 95 cases, matching public-GUI QA, parser checks passed and advisory findings reviewed. See tasks/EVENTS-001/specification.md, checks/specifier.md and state.json. No EVENTS implementation started; complete-spec owner approval is still pending. This MONOREPO-001 global tracking context is otherwise preserved.

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "feature_name": "MONOREPO-001-F02 Document reuse of the Calendar design for future apps",
+  "summary": {
+    "step_occurrences": 13,
+    "unique_steps": 12,
+    "findings": 1
+  },
+  "findings": [
+    {
+      "kind": "possible-synonym",
+      "confidence": "medium",
+      "members": [
+        {
+          "text": "the developer follows the application addition guide from the repository README",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 1,
+              "scenario_name": "MONOREPO-001-S05 Find the steps for adding and delivering an independent application",
+              "step_index": 1,
+              "keyword": "When"
+            }
+          ]
+        },
+        {
+          "text": "the developer follows the design reuse guide from the repository README",
+          "locations": [
+            {
+              "section": "scenario",
+              "scenario_index": 0,
+              "scenario_name": "MONOREPO-001-S04 Find the reusable design through the developer guide",
+              "step_index": 1,
+              "keyword": "When"
+            }
+          ]
+        }
+      ],
+      "reason": "step texts share many non-placeholder tokens and may describe the same concept",
+      "suggested_action": "Review manually before editing; normalize the Gherkin only when the different wording is accidental drift.",
+      "score": 0.6
+    }
+  ]
+}

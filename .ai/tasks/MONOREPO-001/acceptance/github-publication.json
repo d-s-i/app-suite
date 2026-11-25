@@ -1,0 +1,73 @@
+{
+  "name": "MONOREPO-001-F03 Publish app-suite and its Calendar release on GitHub",
+  "scenarios": [
+    {
+      "name": "MONOREPO-001-S06 Publish the migrated code without renaming the original repository",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the owner can publish to a new GitHub repository d-s-i/app-suite"
+        },
+        {
+          "keyword": "And",
+          "text": "the existing repository d-s-i/calendar is available"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner publishes the reviewed app-suite code to d-s-i/app-suite"
+        },
+        {
+          "keyword": "Then",
+          "text": "d-s-i/app-suite contains the migrated Calendar source, shared design and developer documentation"
+        },
+        {
+          "keyword": "And",
+          "text": "the pre-migration Git history and existing task identifiers remain available in the published project"
+        },
+        {
+          "keyword": "And",
+          "text": "d-s-i/calendar remains available at its existing address without deletion or renaming"
+        },
+        {
+          "keyword": "And",
+          "text": "no private signing credentials are included in the published files or history"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "MONOREPO-001-S07 Owner verifies the Calendar APK in the new repository release",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the reviewed app-suite code is published to d-s-i/app-suite"
+        },
+        {
+          "keyword": "And",
+          "text": "a Calendar release APK has passed verification against the existing release certificate"
+        },
+        {
+          "keyword": "And",
+          "text": "its versionCode is greater than the Calendar release versions it is intended to replace"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner publishes a Calendar release in d-s-i/app-suite and checks its attached APK"
+        },
+        {
+          "keyword": "Then",
+          "text": "the release attachment is the verified Calendar release APK for app.local.calendar"
+        },
+        {
+          "keyword": "And",
+          "text": "the attachment can be downloaded by the owner from that release"
+        },
+        {
+          "keyword": "And",
+          "text": "the delivery record contains the release URL and the owner's verification result"
+        }
+      ],
+      "examples": []
+    }
+  ]
+}

@@ -106,3 +106,22 @@ Feature: CAL-001-F02 Empty week and day time grids
       | view |
       | Day |
       | Week |
+
+  Scenario Outline: CAL-001-S23 Hour labels never wrap or clip on scaled displays
+    Given the device uses <time_format> time
+    And the display uses pixel density 2.75 and font scale <font_scale>
+    And Month displays February 2028 with today selected
+    When the owner opens the navigation drawer and chooses <view>
+    Then every hour label is complete on a single line
+    And every hour label fits inside the time column
+
+    Examples:
+      | view | time_format | font_scale |
+      | Day | 24-hour | 1.0 |
+      | Day | 24-hour | 1.6 |
+      | Day | 12-hour | 1.0 |
+      | Day | 12-hour | 1.6 |
+      | Week | 24-hour | 1.0 |
+      | Week | 24-hour | 1.6 |
+      | Week | 12-hour | 1.0 |
+      | Week | 12-hour | 1.6 |

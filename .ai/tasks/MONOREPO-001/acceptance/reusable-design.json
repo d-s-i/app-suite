@@ -1,0 +1,69 @@
+{
+  "name": "MONOREPO-001-F02 Document reuse of the Calendar design for future apps",
+  "scenarios": [
+    {
+      "name": "MONOREPO-001-S04 Find the reusable design through the developer guide",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the developer has the app-suite checkout"
+        },
+        {
+          "keyword": "When",
+          "text": "the developer follows the design reuse guide from the repository README"
+        },
+        {
+          "keyword": "Then",
+          "text": "each reference to the shared design resolves to a versioned definition or documented public usage example"
+        },
+        {
+          "keyword": "And",
+          "text": "the guide identifies the existing Calendar visual elements that are shared and how a future application uses them without copying their definitions"
+        },
+        {
+          "keyword": "And",
+          "text": "Calendar is documented as a consumer of that shared design"
+        },
+        {
+          "keyword": "And",
+          "text": "the guide distinguishes shared presentation from Calendar-specific date calculations and navigation"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "MONOREPO-001-S05 Find the steps for adding and delivering an independent application",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the developer has the app-suite checkout"
+        },
+        {
+          "keyword": "When",
+          "text": "the developer follows the application addition guide from the repository README"
+        },
+        {
+          "keyword": "Then",
+          "text": "the guide describes how to assign a separate Android application identity and reuse the shared design"
+        },
+        {
+          "keyword": "And",
+          "text": "the guide describes how to build and test one application and locate its APK"
+        },
+        {
+          "keyword": "And",
+          "text": "the guide describes how to keep application versions, private data, permissions and signing credentials independent"
+        },
+        {
+          "keyword": "And",
+          "text": "the guide identifies the Calendar checks to rerun when shared design changes"
+        },
+        {
+          "keyword": "And",
+          "text": "the guide does not require creating a second product to build Calendar"
+        }
+      ],
+      "examples": []
+    }
+  ]
+}

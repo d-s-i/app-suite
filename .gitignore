@@ -6,5 +6,8 @@ local.properties
 *.aab
 *.jks
 *.keystore
+*.p12
+*.pfx
+*.password
 .ai/tasks/*/acceptance/generated/
 .ai/tasks/*/acceptance/*-runtime.json

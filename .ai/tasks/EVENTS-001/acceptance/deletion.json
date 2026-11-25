@@ -1,0 +1,209 @@
+{
+  "name": "EVENTS-001-F06 Delete exactly the selected event scope",
+  "background": [
+    {
+      "keyword": "Given",
+      "text": "the calendar contains no events"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone time zone is UTC"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone language is English United States"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone uses 24-hour time"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "EVENTS-001-S28 Delete a one-time event without deleting its neighbour",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Remove is \u003cmode\u003e on 2027-02-06",
+          "parameters": [
+            "mode"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "Keep is all-day on 2027-02-06 with description Unrelated"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner deletes Remove and confirms"
+        },
+        {
+          "keyword": "Then",
+          "text": "Remove is absent from Month, Week and Day for 2027-02-06"
+        },
+        {
+          "keyword": "And",
+          "text": "Keep is still available with description Unrelated"
+        }
+      ],
+      "examples": [
+        {
+          "mode": "all-day"
+        },
+        {
+          "mode": "timed"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S29 Delete the selected recurring scope",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Course repeats daily at 09:00 from 2027-06-01 for 5 occurrences with description Base"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner deletes the occurrence on 2027-06-03 with scope \u003cscope\u003e and confirms",
+          "parameters": [
+            "scope"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "exactly \u003cremaining_count\u003e Course starts remain from 2027-06-01 through 2027-06-10",
+          "parameters": [
+            "remaining_count"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the 2027-06-03 occurrence is absent"
+        },
+        {
+          "keyword": "And",
+          "text": "the 2027-06-01 occurrence is \u003cfirst_presence\u003e",
+          "parameters": [
+            "first_presence"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the 2027-06-05 occurrence is \u003clast_presence\u003e",
+          "parameters": [
+            "last_presence"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "no Course occurrence starts on 2027-06-06"
+        }
+      ],
+      "examples": [
+        {
+          "first_presence": "present",
+          "last_presence": "present",
+          "remaining_count": "4",
+          "scope": "this occurrence"
+        },
+        {
+          "first_presence": "present",
+          "last_presence": "absent",
+          "remaining_count": "2",
+          "scope": "this and future"
+        },
+        {
+          "first_presence": "absent",
+          "last_presence": "absent",
+          "remaining_count": "0",
+          "scope": "whole series"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S30 Cancel a deletion without changing the series",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Course repeats daily at 09:00 from 2027-06-01 for 5 occurrences with description Base"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner requests deletion from 2027-06-03 with scope \u003cscope\u003e but cancels before confirmation",
+          "parameters": [
+            "scope"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "Course still starts at 09:00 on each date from 2027-06-01 through 2027-06-05"
+        },
+        {
+          "keyword": "And",
+          "text": "no occurrence starts on 2027-06-06"
+        }
+      ],
+      "examples": [
+        {
+          "scope": "this occurrence"
+        },
+        {
+          "scope": "this and future"
+        },
+        {
+          "scope": "whole series"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S31 Scope follows original series order after a move",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Course repeats daily at 09:00 from 2027-06-01 for 5 occurrences with description Base"
+        },
+        {
+          "keyword": "And",
+          "text": "only the occurrence originally on 2027-06-05 was moved to 11:00 on 2027-05-31"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner deletes the occurrence on 2027-06-03 with scope \u003cscope\u003e and confirms",
+          "parameters": [
+            "scope"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "exactly \u003cremaining_count\u003e Course starts remain from 2027-05-31 through 2027-06-10",
+          "parameters": [
+            "remaining_count"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "no Course occurrence remains on 2027-05-31, 2027-06-03, 2027-06-04 or 2027-06-05"
+        },
+        {
+          "keyword": "And",
+          "text": "the 2027-06-01 and 2027-06-02 occurrences are \u003cpast_presence\u003e",
+          "parameters": [
+            "past_presence"
+          ]
+        }
+      ],
+      "examples": [
+        {
+          "past_presence": "present",
+          "remaining_count": "2",
+          "scope": "this and future"
+        },
+        {
+          "past_presence": "absent",
+          "remaining_count": "0",
+          "scope": "whole series"
+        }
+      ]
+    }
+  ]
+}

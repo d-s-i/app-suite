@@ -1,0 +1,331 @@
+{
+  "name": "EVENTS-001-F01 Create and inspect local events",
+  "background": [
+    {
+      "keyword": "Given",
+      "text": "the calendar contains no events"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone time zone is UTC"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone date is 2027-01-20"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone language is English United States"
+    },
+    {
+      "keyword": "And",
+      "text": "the phone uses 24-hour time"
+    }
+  ],
+  "scenarios": [
+    {
+      "name": "EVENTS-001-S39 Timed events require an explicitly chosen hour",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the owner opened event creation with + for Dentist on 2027-02-06"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner switches to timed mode without confirming an hour"
+        },
+        {
+          "keyword": "Then",
+          "text": "no implicit timed hour is adopted"
+        },
+        {
+          "keyword": "And",
+          "text": "a timed event cannot be saved until an hour is chosen"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner abandons the editor"
+        },
+        {
+          "keyword": "Then",
+          "text": "no event was created on 2027-02-06"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "EVENTS-001-S01 Open the form with contextual defaults",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "\u003cview\u003e displays the period containing \u003cview_date\u003e",
+          "parameters": [
+            "view",
+            "view_date"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens event creation with +"
+        },
+        {
+          "keyword": "Then",
+          "text": "the form date is \u003cdefault_date\u003e",
+          "parameters": [
+            "default_date"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "the title and description are empty"
+        },
+        {
+          "keyword": "And",
+          "text": "all-day and no repetition are selected"
+        },
+        {
+          "keyword": "And",
+          "text": "no duration, event end-time or event end-date adjustment is offered"
+        }
+      ],
+      "examples": [
+        {
+          "default_date": "2027-02-06",
+          "view": "Day",
+          "view_date": "2027-02-06"
+        },
+        {
+          "default_date": "2027-01-20",
+          "view": "Month",
+          "view_date": "2027-01-01"
+        },
+        {
+          "default_date": "2027-02-01",
+          "view": "Month",
+          "view_date": "2027-02-01"
+        },
+        {
+          "default_date": "2027-01-20",
+          "view": "Week",
+          "view_date": "2027-01-18"
+        },
+        {
+          "default_date": "2027-02-01",
+          "view": "Week",
+          "view_date": "2027-02-01"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S02 Save an all-day event and return to the originating view",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "\u003cview\u003e displays the period containing 2027-01-20",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner creates Picnic with + as all-day on 2027-02-06 with description Bring papers"
+        },
+        {
+          "keyword": "Then",
+          "text": "\u003cview\u003e displays the period containing 2027-02-06",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "Picnic is represented on 2027-02-06"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens Picnic details"
+        },
+        {
+          "keyword": "Then",
+          "text": "the details show title Picnic and description Bring papers"
+        },
+        {
+          "keyword": "And",
+          "text": "the details show one all-day date 2027-02-06 without a requested hour"
+        }
+      ],
+      "examples": [
+        {
+          "view": "Month"
+        },
+        {
+          "view": "Week"
+        },
+        {
+          "view": "Day"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S03 Create a timed event offline with an automatic hour",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the phone has no network connection and no Google Play services"
+        },
+        {
+          "keyword": "And",
+          "text": "Day displays the period containing 2027-02-06"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner creates Dentist with + at 09:30 on 2027-02-06 without a description"
+        },
+        {
+          "keyword": "Then",
+          "text": "Day displays the period containing 2027-02-06"
+        },
+        {
+          "keyword": "And",
+          "text": "Dentist is represented at 09:30 on 2027-02-06"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner opens Dentist details"
+        },
+        {
+          "keyword": "Then",
+          "text": "the details show an empty description"
+        },
+        {
+          "keyword": "And",
+          "text": "the computed interval is 2027-02-06 09:30 to 2027-02-06 10:30 in UTC"
+        },
+        {
+          "keyword": "And",
+          "text": "the computed duration is 60 elapsed minutes"
+        },
+        {
+          "keyword": "And",
+          "text": "no sign-in, network or shared Android calendar is required"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "EVENTS-001-S04 Reject missing mandatory event input",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the owner opened event creation with + for 2027-02-06"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner attempts to save a timed event at 09:30 with title input \u003ctitle_input\u003e",
+          "parameters": [
+            "title_input"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "the editor remains open and identifies the title as required"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner abandons the editor"
+        },
+        {
+          "keyword": "Then",
+          "text": "no event was created on 2027-02-06"
+        }
+      ],
+      "examples": [
+        {
+          "title_input": "empty"
+        },
+        {
+          "title_input": "three spaces"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S05 Abandoning a draft restores the original calendar period",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "Month displays the period containing 2027-01-20"
+        },
+        {
+          "keyword": "And",
+          "text": "the owner opened event creation with +"
+        },
+        {
+          "keyword": "And",
+          "text": "the draft is Draft at 10:00 on 2027-02-06 with description Unsaved"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner abandons the editor using \u003caction\u003e",
+          "parameters": [
+            "action"
+          ]
+        },
+        {
+          "keyword": "Then",
+          "text": "Month displays the period containing 2027-01-20"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner navigates to 2027-02-06"
+        },
+        {
+          "keyword": "Then",
+          "text": "no event named Draft exists"
+        }
+      ],
+      "examples": [
+        {
+          "action": "Cancel"
+        },
+        {
+          "action": "system Back"
+        }
+      ]
+    },
+    {
+      "name": "EVENTS-001-S06 Empty time slots do not open event creation",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "\u003cview\u003e displays the period containing 2027-02-06",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "When",
+          "text": "the owner taps an empty time slot at 09:30 on 2027-02-06"
+        },
+        {
+          "keyword": "Then",
+          "text": "\u003cview\u003e remains active with no event editor open",
+          "parameters": [
+            "view"
+          ]
+        },
+        {
+          "keyword": "And",
+          "text": "no event was created on 2027-02-06"
+        }
+      ],
+      "examples": [
+        {
+          "view": "Day"
+        },
+        {
+          "view": "Week"
+        }
+      ]
+    }
+  ]
+}

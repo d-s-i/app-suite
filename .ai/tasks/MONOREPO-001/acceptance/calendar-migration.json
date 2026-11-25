@@ -1,0 +1,107 @@
+{
+  "name": "MONOREPO-001-F01 Preserve Calendar when moving to app-suite",
+  "scenarios": [
+    {
+      "name": "MONOREPO-001-S01 Build and verify Calendar from the migrated repository",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the app-suite checkout has the documented Calendar build prerequisites"
+        },
+        {
+          "keyword": "And",
+          "text": "the owner's existing Calendar release credentials are available outside the checkout"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner runs the documented Calendar unit tests, acceptance generator tests, UI acceptance, lint, debug build, release build and release artifact verification"
+        },
+        {
+          "keyword": "Then",
+          "text": "each command exits successfully"
+        },
+        {
+          "keyword": "And",
+          "text": "the documented output paths contain a debug APK and a signed release APK for app.local.calendar"
+        },
+        {
+          "keyword": "And",
+          "text": "release artifact verification confirms the existing release certificate and distinct debug certificate"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "MONOREPO-001-S02 Continue using the installed Calendar after migration",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the dedicated offline Android test device has the pre-migration debug Calendar installed without Google Play services"
+        },
+        {
+          "keyword": "And",
+          "text": "the device date is 2028-02-15 in time zone UTC with English United States locale and 24-hour time"
+        },
+        {
+          "keyword": "When",
+          "text": "the operator updates Calendar with the migrated debug APK without uninstalling it or clearing data"
+        },
+        {
+          "keyword": "And",
+          "text": "the operator launches Calendar, opens February 20 from Month, returns to Month using system Back, and selects Week"
+        },
+        {
+          "keyword": "Then",
+          "text": "the update succeeds for app.local.calendar without a second Calendar installation"
+        },
+        {
+          "keyword": "And",
+          "text": "February contains 7 columns and 6 rows with 42 consecutive dates from 2028-01-31 through 2028-03-12"
+        },
+        {
+          "keyword": "And",
+          "text": "selecting February 20 opens Day for February 20"
+        },
+        {
+          "keyword": "And",
+          "text": "system Back from Day returns to February in Month"
+        },
+        {
+          "keyword": "And",
+          "text": "Week displays February 14 through February 20 without an account or network requirement"
+        }
+      ],
+      "examples": []
+    },
+    {
+      "name": "MONOREPO-001-S03 Refuse a release build without the existing signing credentials",
+      "steps": [
+        {
+          "keyword": "Given",
+          "text": "the app-suite checkout has the documented Calendar build prerequisites"
+        },
+        {
+          "keyword": "And",
+          "text": "the release signing location selected for this invocation contains no credentials"
+        },
+        {
+          "keyword": "When",
+          "text": "the owner runs the documented Calendar release build"
+        },
+        {
+          "keyword": "Then",
+          "text": "the command exits unsuccessfully with a missing signing credentials explanation"
+        },
+        {
+          "keyword": "And",
+          "text": "no newly built Calendar release APK is offered as ready for publication"
+        },
+        {
+          "keyword": "And",
+          "text": "no replacement signing key is created and no debug signing fallback is used"
+        }
+      ],
+      "examples": []
+    }
+  ]
+}

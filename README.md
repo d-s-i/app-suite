@@ -1,49 +1,53 @@
-# Calendar
+# app-suite
 
-Personal, offline Android calendar for GrapheneOS. The current implementation covers **empty month/week/day views and navigation only** (CAL-001). System Back from Day opens its containing Month; the month-expansion arrow/dropdown has been removed. Day's labels sit above the left time axis with reference-derived typography and initial hour positioning; the global month toolbar and Week layout are retained. Events, reminders, storage, and synchronization are not implemented.
+Android application monorepo for independent Kotlin/Compose apps with shared presentation code. Calendar is the first and currently only app. Target repository: `d-s-i/app-suite`; the original `d-s-i/calendar` is retained, not renamed or deleted. Existing Git history is preserved.
 
-Kotlin + Compose UI/Foundation, without Material components, Google Play services, calendar access, or network permission. Proton Calendar Android 2.34.2 is the inspected UI reference; no Proton source or assets are bundled. Exact rendered parity has not been established.
+## Repository layout
 
-## Build
-
-Requires JDK 17, Android SDK platform 35/build-tools 35.0.0, and `ANDROID_HOME` or a local `sdk.dir`. Use the checked-in Gradle wrapper:
-
-```sh
-./gradlew :app:assembleDebug
+```text
+app-suite/
+├── apps/
+│   └── calendar-app/        # :calendar — app, tests, app-specific tools and signing pin
+├── shared/
+│   └── design/              # :design — existing reusable palette, no app behavior
+├── docs/                    # design reuse, adding apps, owner publication
+├── .ai/                     # shared task tracking; original task IDs/artifacts preserved
+├── gradle/                  # one wrapper for all modules
+├── build.gradle.kts         # shared plugin versions
+└── settings.gradle.kts      # module registration and repository policy
 ```
 
-APK: `app/build/outputs/apk/debug/app-debug.apk`. This is a development/debug-signed APK, not a production-signed release. Preserve application ID and signing identity when eventually distributing updates.
+| Module | Guide | Boundary |
+| --- | --- | --- |
+| `:calendar` | [Calendar build, tests and delivery](apps/calendar-app/README.md) | Own Android identity, data, permissions, version, signing and acceptance tools |
+| `:design` | [Reuse the design](docs/design.md) | Public `SuiteColors`, consumed by Calendar; no app navigation, data or signing |
 
-Build baseline: compile/target SDK 35, minimum SDK 26 (native `java.time`). Development tests ran on API 35, **not** the owner's Android-17 GrapheneOS phone. Older Android versions and Android 17 remain unverified. The platform Android theme is not an added Material UI dependency.
+[Add an independent app](docs/adding-apps.md) · [Publish Calendar](docs/publishing-calendar.md).
+No second product, framework, CI or multi-app release scheme is implied.
+
+## Build environment
+
+Run commands from this repository root. Requires JDK 17, Android SDK platform 35/build-tools 35.0.0, Node, the existing `parse-gherkin` command and `ANDROID_HOME` (or local `sdk.dir`). On the owner's NixOS machine:
+
+```sh
+nix develop ~/nixos-config#android
+./gradlew :calendar:assembleDebug
+```
+
+Use the single checked-in wrapper and pinned versions. No per-app Gradle wrapper, replacement parser, Material dependency, Play services or shared private signing state.
 
 ## Verify
 
 ```sh
-./gradlew :app:testDebugUnitTest
-./gradlew :app:testAcceptanceGenerator
-./gradlew :app:lintDebug
+./gradlew :calendar:testDebugUnitTest :calendar:testAcceptanceGenerator :calendar:generateAcceptance
+./gradlew :calendar:lintDebug :design:lintDebug :calendar:assembleDebug
+./gradlew :calendar:assembleRelease :calendar:testReleaseArtifact
 ```
 
-Unit tests cover date ranges, localization, hour formats, and period navigation. Lint correctness errors fail the build; SDK/library-update warnings remain visible, not suppressed.
+Release commands require the owner's existing external credentials. Run the 49 existing UI acceptance cases with `ANDROID_SERIAL=<dedicated-test-serial> ./gradlew :calendar:acceptanceTest` only after following the [Calendar test-device setup](apps/calendar-app/README.md#development-gherkin-acceptance). Do not use the owner emulator for fixtures. After shared changes, verify every actual consuming app; currently that means Calendar only.
 
-### Development Gherkin acceptance
+## Migration and delivery status
 
-Requires Node (built-ins only), the existing `parse-gherkin` command from the owner's tooling, and a connected **dedicated test** Android device/emulator. Use an offline, non-Google-Play AOSP emulator with airplane mode enabled and Wi-Fi disabled. Do not run tests against a personal-data phone by default.
+Calendar now lives at `apps/calendar-app/` and is addressed as `:calendar`, not legacy `:app`. Its generator/artifact tools are in `apps/calendar-app/tools/`; the root has no Calendar-specific tools. APK paths and updated delivery commands are in the Calendar guide. Historical task evidence retains the commands/paths actually used at that time; it is not rewritten to pretend those checks ran on the new layout.
 
-```sh
-./gradlew :app:generateAcceptance
-./gradlew :app:acceptanceTest
-./gradlew :app:acceptanceTest -PacceptanceFeature=CAL-001-F01
-```
-
-Use `ANDROID_SERIAL` to select a device if necessary. Feature selectors are `CAL-001-F01`, `CAL-001-F02`, or `CAL-001-F03`; without a selector, all 41 cases run.
-
-Pipeline: approved `.feature` files → existing `parse-gherkin` IR → `tools/generate-acceptance.mjs` → generated Kotlin tests in `.ai/tasks/CAL-001/acceptance/generated/` → actual Compose UI and explicit regex step handlers on Android. No replacement Gherkin parser or second runner is used. Generated files are disposable and must not be hand-edited.
-
-These development tests inject clock/locale/hour-format inputs at the same UI's environment boundary. UI actions and assertions operate on rendered Compose content, geometry, and pixels. They are **not** external end-to-end QA, proof that device Settings integration was tested, or a Proton screenshot comparison. The separate public-interface QA procedure is `.ai/tasks/CAL-001/qa/procedure.md`; it has not been executed.
-
-Reports: `app/build/test-results/`, `app/build/reports/androidTests/`, and `app/build/reports/lint-results-debug.html`. Task-scoped development evidence is under `.ai/tasks/CAL-001/checks/`.
-
-## Limits
-
-No event data is saved. Backup/cloud/device-transfer extraction is disabled as a privacy-preserving default; decide an explicit export/backup policy during PERSISTENCE-001. No production signing keys or release process have been configured. Project license remains undefined.
+Publication to `d-s-i/app-suite`, release version/tag and the owner's attached-APK verification remain pending. The agent does not commit or push. Do not treat local build success as publication or GrapheneOS device verification. See `.ai/tasks/MONOREPO-001/` for the approved specification and delivery evidence. Project license remains undefined.
