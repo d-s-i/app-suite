@@ -1,0 +1,250 @@
+warning: Git tree '/home/anon/nixos-config' is dirty
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :calendar
+WARNING: The option setting 'android.aapt2FromMavenOverride=/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/build-tools/35.0.0/aapt2' is experimental.
+
+> Task :calendar:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :calendar:preBuild UP-TO-DATE
+> Task :calendar:preDebugBuild UP-TO-DATE
+> Task :design:preBuild UP-TO-DATE
+> Task :design:preDebugBuild UP-TO-DATE
+> Task :design:writeDebugAarMetadata
+> Task :design:processDebugNavigationResources
+> Task :calendar:checkDebugAarMetadata
+> Task :calendar:processDebugNavigationResources
+> Task :calendar:compileDebugNavigationResources
+> Task :calendar:generateDebugResValues
+> Task :design:generateDebugResValues
+> Task :design:generateDebugResources
+> Task :design:packageDebugResources
+> Task :calendar:mapDebugSourceSetPaths
+> Task :calendar:generateDebugResources
+> Task :calendar:packageDebugResources
+> Task :calendar:mergeDebugResources
+> Task :calendar:createDebugCompatibleScreenManifests
+> Task :calendar:extractDeepLinksDebug
+> Task :design:extractDeepLinksDebug
+> Task :calendar:parseDebugLocalResources
+> Task :design:compileDebugLibraryResources
+> Task :design:parseDebugLocalResources
+> Task :design:processDebugManifest
+> Task :calendar:processDebugMainManifest
+> Task :calendar:processDebugManifest
+> Task :calendar:processDebugManifestForPackage
+> Task :design:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :design:javaPreCompileDebug
+> Task :calendar:javaPreCompileDebug
+> Task :calendar:preDebugUnitTestBuild UP-TO-DATE
+> Task :calendar:javaPreCompileDebugUnitTest
+> Task :design:generateDebugRFile
+
+> Task :calendar:testAcceptanceGenerator
+✔ expands all rows and retains background and stable scenario ID (1.601052ms)
+✔ fails closed on missing and unused parameters (2.513635ms)
+✔ generates executable tests with safely escaped Kotlin strings (0.72652ms)
+✔ rejects duplicate scenario IDs (0.276563ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 130.353663
+
+> Task :calendar:processDebugResources
+> Task :design:compileDebugKotlin
+> Task :design:compileDebugJavaWithJavac NO-SOURCE
+> Task :design:bundleLibRuntimeToJarDebug
+> Task :design:bundleLibCompileToJarDebug
+> Task :design:processDebugJavaRes
+> Task :calendar:compileDebugKotlin
+> Task :calendar:compileDebugJavaWithJavac NO-SOURCE
+> Task :calendar:bundleDebugClassesToRuntimeJar
+> Task :calendar:bundleDebugClassesToCompileJar
+> Task :calendar:processDebugJavaRes
+> Task :calendar:compileDebugUnitTestKotlin
+> Task :calendar:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :calendar:processDebugUnitTestJavaRes
+> Task :calendar:testDebugUnitTest
+
+BUILD SUCCESSFUL in 27s
+40 actionable tasks: 40 executed
+monorepo-001-test
+OK
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :calendar
+WARNING: The option setting 'android.aapt2FromMavenOverride=/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/build-tools/35.0.0/aapt2' is experimental.
+
+> Task :calendar:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :calendar:preBuild UP-TO-DATE
+> Task :calendar:preDebugBuild UP-TO-DATE
+> Task :design:preBuild UP-TO-DATE
+> Task :design:preDebugBuild UP-TO-DATE
+> Task :design:writeDebugAarMetadata UP-TO-DATE
+> Task :calendar:checkDebugAarMetadata UP-TO-DATE
+> Task :design:processDebugNavigationResources UP-TO-DATE
+> Task :calendar:processDebugNavigationResources UP-TO-DATE
+> Task :calendar:compileDebugNavigationResources UP-TO-DATE
+> Task :calendar:generateDebugResValues UP-TO-DATE
+> Task :design:generateDebugResValues UP-TO-DATE
+> Task :design:generateDebugResources UP-TO-DATE
+> Task :design:packageDebugResources UP-TO-DATE
+> Task :calendar:mapDebugSourceSetPaths UP-TO-DATE
+> Task :calendar:generateDebugResources UP-TO-DATE
+> Task :calendar:mergeDebugResources UP-TO-DATE
+> Task :calendar:packageDebugResources UP-TO-DATE
+> Task :calendar:parseDebugLocalResources UP-TO-DATE
+> Task :calendar:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :calendar:extractDeepLinksDebug UP-TO-DATE
+> Task :design:extractDeepLinksDebug UP-TO-DATE
+> Task :design:processDebugManifest UP-TO-DATE
+> Task :calendar:processDebugMainManifest UP-TO-DATE
+> Task :calendar:processDebugManifest UP-TO-DATE
+> Task :calendar:processDebugManifestForPackage UP-TO-DATE
+> Task :design:compileDebugLibraryResources UP-TO-DATE
+> Task :design:parseDebugLocalResources UP-TO-DATE
+> Task :design:generateDebugRFile UP-TO-DATE
+> Task :calendar:processDebugResources UP-TO-DATE
+> Task :design:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :design:compileDebugKotlin UP-TO-DATE
+> Task :design:javaPreCompileDebug UP-TO-DATE
+> Task :design:compileDebugJavaWithJavac NO-SOURCE
+> Task :design:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :calendar:compileDebugKotlin UP-TO-DATE
+> Task :calendar:javaPreCompileDebug UP-TO-DATE
+> Task :calendar:compileDebugJavaWithJavac NO-SOURCE
+> Task :calendar:bundleDebugClassesToCompileJar UP-TO-DATE
+
+> Task :calendar:generateAcceptance
+CAL-001-F03: generated 13 executable cases
+CAL-001-F01: generated 13 executable cases
+CAL-001-F02: generated 23 executable cases
+
+> Task :calendar:preDebugAndroidTestBuild SKIPPED
+> Task :calendar:checkDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :calendar:processDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :calendar:compileDebugAndroidTestNavigationResources
+> Task :calendar:generateDebugAndroidTestResValues UP-TO-DATE
+> Task :calendar:mapDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :calendar:generateDebugAndroidTestResources UP-TO-DATE
+> Task :calendar:processDebugAndroidTestManifest UP-TO-DATE
+> Task :calendar:javaPreCompileDebugAndroidTest UP-TO-DATE
+> Task :calendar:mergeDebugShaders UP-TO-DATE
+> Task :calendar:compileDebugShaders NO-SOURCE
+> Task :calendar:generateDebugAssets UP-TO-DATE
+> Task :design:mergeDebugShaders UP-TO-DATE
+> Task :design:compileDebugShaders NO-SOURCE
+> Task :design:generateDebugAssets UP-TO-DATE
+> Task :design:mergeDebugAssets UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestResources
+> Task :calendar:mergeDebugAssets UP-TO-DATE
+> Task :calendar:compressDebugAssets UP-TO-DATE
+> Task :design:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :calendar:desugarDebugFileDependencies UP-TO-DATE
+> Task :calendar:dexBuilderDebug UP-TO-DATE
+> Task :calendar:mergeDebugGlobalSynthetics UP-TO-DATE
+> Task :calendar:processDebugJavaRes UP-TO-DATE
+> Task :design:processDebugJavaRes UP-TO-DATE
+> Task :calendar:mergeDebugJavaResource UP-TO-DATE
+> Task :calendar:checkDebugDuplicateClasses UP-TO-DATE
+> Task :calendar:mergeExtDexDebug UP-TO-DATE
+> Task :calendar:processDebugAndroidTestResources
+> Task :design:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :calendar:compileDebugAndroidTestKotlin UP-TO-DATE
+> Task :calendar:compileDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :calendar:mergeLibDexDebug UP-TO-DATE
+> Task :calendar:mergeProjectDexDebug UP-TO-DATE
+> Task :calendar:mergeDebugJniLibFolders UP-TO-DATE
+> Task :design:mergeDebugJniLibFolders UP-TO-DATE
+> Task :design:mergeDebugNativeLibs NO-SOURCE
+> Task :design:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :calendar:mergeDebugNativeLibs UP-TO-DATE
+> Task :calendar:stripDebugDebugSymbols UP-TO-DATE
+> Task :calendar:validateSigningDebug UP-TO-DATE
+> Task :calendar:writeDebugAppMetadata UP-TO-DATE
+> Task :calendar:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :calendar:packageDebug UP-TO-DATE
+> Task :calendar:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestShaders UP-TO-DATE
+> Task :calendar:compileDebugAndroidTestShaders NO-SOURCE
+> Task :calendar:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestAssets UP-TO-DATE
+> Task :calendar:compressDebugAndroidTestAssets UP-TO-DATE
+> Task :calendar:desugarDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :calendar:dexBuilderDebugAndroidTest UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :calendar:processDebugAndroidTestJavaRes UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestJavaResource UP-TO-DATE
+> Task :calendar:checkDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :calendar:mergeExtDexDebugAndroidTest UP-TO-DATE
+> Task :calendar:mergeLibDexDebugAndroidTest UP-TO-DATE
+> Task :calendar:mergeProjectDexDebugAndroidTest UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :calendar:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :calendar:validateSigningDebugAndroidTest UP-TO-DATE
+> Task :calendar:writeDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :calendar:packageDebugAndroidTest UP-TO-DATE
+> Task :calendar:createDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+> Task :calendar:connectedDebugAndroidTest
+Starting 49 tests on monorepo-001-test(AVD) - 15
+
+monorepo-001-test(AVD) - 15 Tests 0/49 completed. (0 skipped) (0 failed)
+
+> Task :calendar:connectedDebugAndroidTest
+
+app.local.calendar.acceptance.CAL001F01AcceptanceTest > CAL001S01_row1[monorepo-001-test(AVD) - 15] [31mFAILED [0m
+
+
+monorepo-001-test(AVD) - 15 Tests 1/49 completed. (0 skipped) (1 failed)
+
+> Task :calendar:connectedDebugAndroidTest
+Tests on monorepo-001-test(AVD) - 15 failed: There was 1 failure(s).
+
+Finished 1 tests on monorepo-001-test(AVD) - 15
+
+> Task :calendar:connectedDebugAndroidTest FAILED
+Exception thrown during onAfterAll invocation of plugin AndroidTestApkInstallerPlugin: device 'emulator-5580' not found
+device 'emulator-5580' not found
+com.android.ddmlib.AdbCommandRejectedException: device 'emulator-5580' not found
+	at com.android.ddmlib.AdbHelper.setDevice(AdbHelper.java:967)
+	at com.android.ddmlib.AdbHelper.setDevice(AdbHelper.java:986)
+	at com.android.ddmlib.internal.DeviceImpl.lambda$executeRemoteCommand$18(DeviceImpl.java:785)
+	at com.android.ddmlib.internal.DeviceImpl.logRun1(DeviceImpl.java:1801)
+	at com.android.ddmlib.internal.DeviceImpl.executeRemoteCommand(DeviceImpl.java:755)
+	at com.android.ddmlib.internal.DeviceImpl.lambda$executeRemoteCommand$15(DeviceImpl.java:618)
+	at com.android.ddmlib.internal.DeviceImpl.logRun1(DeviceImpl.java:1801)
+	at com.android.ddmlib.internal.DeviceImpl.executeRemoteCommand(DeviceImpl.java:615)
+	at com.android.ddmlib.internal.DeviceImpl.lambda$executeShellCommand$14(DeviceImpl.java:573)
+	at com.android.ddmlib.internal.DeviceImpl.logRun1(DeviceImpl.java:1801)
+	at com.android.ddmlib.internal.DeviceImpl.executeShellCommand(DeviceImpl.java:570)
+	at com.android.tools.utp.plugins.deviceprovider.ddmlib.DdmlibAndroidDevice.executeShellCommand(DdmlibAndroidDevice.kt)
+	at com.android.tools.utp.plugins.deviceprovider.ddmlib.DdmlibAndroidDeviceController$executeAsync$deferred$1.invokeSuspend(DdmlibAndroidDeviceController.kt:171)
+	at kotlin.coroutines.jvm.internal.BaseContinuationImpl.resumeWith(ContinuationImpl.kt:33)
+	at kotlinx.coroutines.DispatchedTask.run(DispatchedTask.kt:108)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler.runSafely(CoroutineScheduler.kt:584)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.executeTask(CoroutineScheduler.kt:793)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.runWorker(CoroutineScheduler.kt:697)
+	at kotlinx.coroutines.scheduling.CoroutineScheduler$Worker.run(CoroutineScheduler.kt:684)
+
+Test run failed to complete. Expected 49 tests, received 0
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':calendar:connectedDebugAndroidTest'.
+> There were failing tests. See the report at: file:///home/anon/Documents/Workspace/app-suite/apps/calendar-app/build/reports/androidTests/connected/debug/index.html
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 5m 37s
+88 actionable tasks: 5 executed, 83 up-to-date

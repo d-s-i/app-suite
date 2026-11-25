@@ -1,0 +1,13 @@
+warning: Git tree '/home/anon/nixos-config' is dirty
+UI hierchary dumped to: /sdcard/monorepo-qa.xml
+/sdcard/monorepo-qa.xml: 1 file pulled, 0 skipped. 36.6 MB/s (19346 bytes in 0.001s)
+RESTORED
+Wed Nov 25 18:20:26 CET 2026
+Europe/Paris
+1
+1
+null
+1
+0
+config: en-rUS-ldltr-sw393dp-w393dp-h698dp-normal-long-notround-nowidecg-lowdr-port-notnight-440dpi-finger-keysexposed-qwerty-navhidden-nonav-1920x1080-v35
+abi: x86_64

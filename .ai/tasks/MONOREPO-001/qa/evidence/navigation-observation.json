@@ -1,0 +1,33 @@
+{
+  "result": "PASS",
+  "source": "Public screenshots and accessibility bounds; no test tags/private APIs",
+  "selected_day": "2028-02-20",
+  "day_visible": [
+    "Sun",
+    "20"
+  ],
+  "system_back": "February Month with 42 consecutive cells restored",
+  "week_weekdays": [
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat",
+    "Sun"
+  ],
+  "week_dates": [
+    "14",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "20"
+  ],
+  "week_header_bounds": {
+    "top": 271,
+    "bottom": 406
+  },
+  "qa_probe_correction": "Initial unscoped numeric selector also included the toolbar Today=15. Restricted to the visible date-header region and verified alignment with each weekday; expected range unchanged."
+}

@@ -1,0 +1,20 @@
+test_abstract_declarations_do_not_become_measured_functions (__main__.CrapperKotlin.test_abstract_declarations_do_not_become_measured_functions) ... ok
+test_anonymous_owner_identity_uses_its_source_line_and_column (__main__.CrapperKotlin.test_anonymous_owner_identity_uses_its_source_line_and_column) ... ok
+test_discovery_does_not_include_android_tests_or_gradle_scripts (__main__.CrapperKotlin.test_discovery_does_not_include_android_tests_or_gradle_scripts) ... ok
+test_explicit_import_of_a_default_package_class_is_a_dependency (__main__.CrapperKotlin.test_explicit_import_of_a_default_package_class_is_a_dependency) ... ok
+test_functions_owners_overloads_locals_and_complexity (__main__.CrapperKotlin.test_functions_owners_overloads_locals_and_complexity) ... ok
+test_graph_metadata_and_references_belong_to_the_innermost_class (__main__.CrapperKotlin.test_graph_metadata_and_references_belong_to_the_innermost_class) ... ok
+test_jacoco_ambiguous_methods_do_not_borrow_each_others_hits (__main__.CrapperKotlin.test_jacoco_ambiguous_methods_do_not_borrow_each_others_hits) ... ok
+test_jacoco_missing_zero_and_positive_are_distinct (__main__.CrapperKotlin.test_jacoco_missing_zero_and_positive_are_distinct) ... ok
+test_local_jvm_method_names_match_the_local_callable_not_its_parent (__main__.CrapperKotlin.test_local_jvm_method_names_match_the_local_callable_not_its_parent) ... ok
+test_mangled_local_method_still_requires_matching_name_and_source_span (__main__.CrapperKotlin.test_mangled_local_method_still_requires_matching_name_and_source_span) ... ok
+test_mangled_overloads_do_not_borrow_each_others_hits (__main__.CrapperKotlin.test_mangled_overloads_do_not_borrow_each_others_hits) ... ok
+test_mangled_value_class_method_preserves_real_jacoco_counters (__main__.CrapperKotlin.test_mangled_value_class_method_preserves_real_jacoco_counters) ... ok
+test_missing_closing_token_is_rejected_at_its_source_line (__main__.CrapperKotlin.test_missing_closing_token_is_rejected_at_its_source_line) ... ok
+test_objects_companions_expression_bodies_and_comments (__main__.CrapperKotlin.test_objects_companions_expression_bodies_and_comments) ... ok
+test_uml_graph_shares_operations_and_only_links_referenced_types (__main__.CrapperKotlin.test_uml_graph_shares_operations_and_only_links_referenced_types) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.031s
+
+OK

@@ -33,9 +33,9 @@ Debug APK: `apps/calendar-app/build/outputs/apk/debug/calendar-debug.apk`. Keep 
 ./gradlew :calendar:testReleaseArtifact
 ```
 
-Signed APK: `apps/calendar-app/build/outputs/apk/release/calendar-release.apk`. Publish this APK in `d-s-i/app-suite`, never a private signing file. Follow the [owner publication checklist](../../docs/publishing-calendar.md). No publication is presumed complete. Obtainium follows its configured repository's release assets; changing that repository remains an unverified owner action.
+Signed APK: `apps/calendar-app/build/outputs/apk/release/calendar-release.apk`. Publish this APK in `d-s-i/app-suite`, never a private signing file. Follow the [publication checklist](../../docs/publishing-calendar.md). The owner confirmed installation through Obtainium from the published app-suite release; this is owner feedback, not agent phone QA.
 
-Keep application ID `app.local.calendar` and the existing release key. Current 0.1.1 / code 2 is preserved pending the owner's publication baseline and tag choice. Choose an approved higher `versionCode` than every release being replaced, with the matching `versionName`, before publishing an update.
+Keep application ID `app.local.calendar` and the existing release key. The published release is 0.1.1 / code 2 (`calendar-v0.1.1`). For the next update, choose an approved higher `versionCode` than every release being replaced, with the matching `versionName`.
 
 The owner-approved key is PKCS12, alias `calendar-release`, RSA-4096, 10,000-day certificate validity. Private state remains outside Git and the Nix store:
 
@@ -58,7 +58,7 @@ Compile/target SDK 35, minSdk 26 (`java.time`). Development tests use API 35, **
 ./gradlew :calendar:lintDebug :design:lintDebug
 ```
 
-Unit tests cover dates, localization, hour formats and navigation. Lint correctness errors remain fatal; dependency/SDK-update advisories remain warnings.
+Unit tests cover dates, localization, hour formats and navigation. Lint correctness errors remain fatal; dependency/SDK-update advisories remain warnings. See [coverage and quality checks](../../docs/quality.md) for `:calendar:coverage --rerun-tasks`, measured scope, the tested canonical Kotlin reader fix and remaining global threshold findings.
 
 ### Development Gherkin acceptance
 
@@ -94,4 +94,4 @@ Both commands must succeed; leave Calendar open on the running visible emulator.
 
 ## Limits
 
-No event data is saved; backup/cloud/device-transfer extraction is disabled. Decide export/backup during PERSISTENCE-001. External signing-key backup, GitHub publication, Obtainium installation and GrapheneOS verification remain owner actions/unverified. No release was uploaded by the agent.
+No event data is saved; backup/cloud/device-transfer extraction is disabled. Decide export/backup during PERSISTENCE-001. External signing-key backup and GrapheneOS verification remain unverified. With explicit owner authorization, the agent published [Calendar 0.1.1](https://github.com/d-s-i/app-suite/releases/tag/calendar-v0.1.1). The owner subsequently made app-suite public and confirmed installation through Obtainium. This is owner feedback, not agent phone/GrapheneOS QA. Coder delivery is closed; no private-repository authentication is needed for this public release.

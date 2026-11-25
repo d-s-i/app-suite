@@ -1,0 +1,13 @@
+warning: Git tree '/home/anon/nixos-config' is dirty
+APK: /tmp/monorepo-f01-debug.apk
+app.local.calendar
+2
+0.1.1
+true
+Signer #1 certificate SHA-256 digest: 24324e7bff5dd16cb5548385e58829fa9c9486bbd2446e39574953b1e76da89a
+APK: apps/calendar-app/build/outputs/apk/debug/calendar-debug.apk
+app.local.calendar
+2
+0.1.1
+true
+Signer #1 certificate SHA-256 digest: 24324e7bff5dd16cb5548385e58829fa9c9486bbd2446e39574953b1e76da89a

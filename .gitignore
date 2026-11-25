@@ -11,3 +11,6 @@ local.properties
 *.password
 .ai/tasks/*/acceptance/generated/
 .ai/tasks/*/acceptance/*-runtime.json
+coverage/
+.metrics/
+.uml-viewer/

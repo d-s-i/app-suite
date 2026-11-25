@@ -1,0 +1,31 @@
+warning: Git tree '/home/anon/nixos-config' is dirty
+UI hierchary dumped to: /sdcard/monorepo-qa.xml
+/sdcard/monorepo-qa.xml: 1 file pulled, 0 skipped. 40.3 MB/s (19322 bytes in 0.000s)
+INITIAL_PUBLIC_STATE
+Tue Feb 15 12:00:03 UTC 2028
+Etc/UTC
+config: en-rUS-ldltr-sw393dp-w393dp-h698dp-normal-long-notround-nowidecg-lowdr-port-notnight-440dpi-finger-keysexposed-qwerty-navhidden-nonav-1920x1080-v35
+abi: x86_64
+0
+0
+24
+package:app.local.calendar uid:10148
+    appId=10148
+    versionCode=2 minSdk=26 targetSdk=35
+      firstInstallTime=2026-11-25 17:10:51
+MIGRATED_UPDATE
+Performing Streamed Install
+Success
+package:app.local.calendar uid:10148
+    appId=10148
+    versionCode=2 minSdk=26 targetSdk=35
+      firstInstallTime=2026-11-25 17:10:51
+Starting: Intent { cmp=app.local.calendar/.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: app.local.calendar/.MainActivity
+TotalTime: 964
+WaitTime: 972
+Complete
+UI hierchary dumped to: /sdcard/monorepo-qa.xml
+/sdcard/monorepo-qa.xml: 1 file pulled, 0 skipped. 28.3 MB/s (48923 bytes in 0.002s)

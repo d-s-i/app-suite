@@ -1,0 +1,120 @@
+warning: Git tree '/home/anon/nixos-config' is dirty
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :calendar
+WARNING: The option setting 'android.aapt2FromMavenOverride=/nix/store/934xgskk1prglfd1dgdpx2zay8rna13m-androidsdk/libexec/android-sdk/build-tools/35.0.0/aapt2' is experimental.
+
+> Task :calendar:generatorCoverage
+✔ expands all rows and retains background and stable scenario ID (1.387107ms)
+✔ fails closed on missing and unused parameters (0.471666ms)
+✔ generates executable tests with safely escaped Kotlin strings (0.362255ms)
+✔ rejects duplicate scenario IDs (0.157922ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 130.532065
+ℹ start of coverage report
+ℹ ---------------------------------------------------------------------------
+ℹ file                       | line % | branch % | funcs % | uncovered lines
+ℹ ---------------------------------------------------------------------------
+ℹ apps                       |        |          |         | 
+ℹ  calendar-app              |        |          |         | 
+ℹ   tools                    |        |          |         | 
+ℹ    generate-acceptance.mjs |  56.86 |    86.96 |   78.57 | 29-50
+ℹ ---------------------------------------------------------------------------
+ℹ all files                  |  56.86 |    86.96 |   78.57 | 
+ℹ ---------------------------------------------------------------------------
+ℹ end of coverage report
+
+> Task :calendar:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :calendar:preBuild UP-TO-DATE
+> Task :calendar:preDebugBuild UP-TO-DATE
+> Task :design:preBuild UP-TO-DATE
+> Task :design:preDebugBuild UP-TO-DATE
+> Task :design:writeDebugAarMetadata
+> Task :design:processDebugNavigationResources
+> Task :calendar:checkDebugAarMetadata
+> Task :calendar:processDebugNavigationResources
+> Task :calendar:generateDebugResValues
+> Task :design:generateDebugResValues
+> Task :calendar:compileDebugNavigationResources
+> Task :design:generateDebugResources
+> Task :design:packageDebugResources
+> Task :calendar:mapDebugSourceSetPaths
+> Task :calendar:generateDebugResources
+> Task :calendar:createDebugCompatibleScreenManifests
+> Task :calendar:mergeDebugResources
+> Task :calendar:extractDeepLinksDebug
+> Task :calendar:packageDebugResources
+> Task :design:extractDeepLinksDebug
+> Task :calendar:parseDebugLocalResources
+> Task :design:processDebugManifest
+> Task :design:compileDebugLibraryResources
+> Task :calendar:processDebugMainManifest
+> Task :calendar:processDebugManifest
+> Task :calendar:processDebugManifestForPackage
+> Task :design:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :design:parseDebugLocalResources
+> Task :design:javaPreCompileDebug
+> Task :calendar:javaPreCompileDebug
+> Task :calendar:preDebugUnitTestBuild UP-TO-DATE
+> Task :calendar:javaPreCompileDebugUnitTest
+> Task :design:generateDebugRFile
+> Task :calendar:processDebugResources
+> Task :design:compileDebugKotlin
+> Task :design:compileDebugJavaWithJavac NO-SOURCE
+> Task :design:bundleLibRuntimeToJarDebug
+> Task :design:bundleLibCompileToJarDebug
+> Task :design:processDebugJavaRes
+> Task :calendar:compileDebugKotlin
+> Task :calendar:compileDebugJavaWithJavac NO-SOURCE
+> Task :calendar:bundleDebugClassesToRuntimeJar
+> Task :calendar:bundleDebugClassesToCompileJar
+> Task :calendar:processDebugJavaRes
+> Task :calendar:compileDebugUnitTestKotlin
+> Task :calendar:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :calendar:processDebugUnitTestJavaRes
+> Task :calendar:testDebugUnitTest
+> Task :calendar:coverage
+
+BUILD SUCCESSFUL in 52s
+41 actionable tasks: 41 executed
+CRAP Report
+===========
+Languages: kotlin, typescript
+
+Function                       Namespace                                     CC    Cov%     CRAP
+------------------------------------------------------------------------------------------------
+CalendarApp                    app.local.calendar.CalendarAppKt               8   0.0%     72.0
+TimedCalendar                  app.local.calendar.TimedCalendarKt             8   0.0%     72.0
+MonthGrid                      app.local.calendar.CalendarAppKt               7   0.0%     56.0
+Modifier.horizontalPaging      app.local.calendar.CalendarAppKt               3   0.0%     12.0
+expandScenarios                apps.calendar-app.tools.generate-acceptance    9  93.8%      9.0
+generateFeature                apps.calendar-app.tools.generate-acceptance    2   0.0%      6.0
+main                           apps.calendar-app.tools.generate-acceptance    2   0.0%      6.0
+prepareOutput                  apps.calendar-app.tools.generate-acceptance    2   0.0%      6.0
+movePeriod                     app.local.calendar.CalendarDatesKt             5 100.0%      5.0
+generateKotlin                 apps.calendar-app.tools.generate-acceptance    3  75.0%      3.1
+monthTitle                     app.local.calendar.CalendarDatesKt             2  96.8%      2.0
+CalendarApp.chooseDate         app.local.calendar.CalendarAppKt               1   0.0%      2.0
+dayInitialHour                 app.local.calendar.CalendarDatesKt             2 100.0%      2.0
+hourLabel                      app.local.calendar.CalendarDatesKt             2 100.0%      2.0
+onCreate                       app.local.calendar.MainActivity                1   0.0%      2.0
+onResume                       app.local.calendar.MainActivity                1   0.0%      2.0
+refreshEnvironment             app.local.calendar.MainActivity                1   0.0%      2.0
+calendarNow                    app.local.calendar.TimedCalendarKt             1   0.0%      2.0
+calendarNow.run                app.local.calendar.anonymous@42:20             1   0.0%      2.0
+monthDates                     app.local.calendar.CalendarDatesKt             1 100.0%      1.0
+timeOfDayHours                 app.local.calendar.CalendarDatesKt             1 100.0%      1.0
+weekDates                      app.local.calendar.CalendarDatesKt             1 100.0%      1.0
+quote                          apps.calendar-app.tools.generate-acceptance    1 100.0%      1.0
+TimeGrid                       app.local.calendar.TimedCalendarKt            10   N/A       N/A
+Wrote /home/anon/Documents/Workspace/app-suite/.metrics/crap.edn
+Incomplete: missing coverage for apps/calendar-app/src/main/java/app/local/calendar/TimedCalendar.kt:app.local.calendar.TimedCalendarKt.TimeGrid
+Incomplete CRAP analysis; available measurements only, no global success.
+CRAP analysis incomplete or failed; any available measurements are partial, not a global success.

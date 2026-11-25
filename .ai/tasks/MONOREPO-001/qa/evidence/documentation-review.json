@@ -1,0 +1,101 @@
+{
+  "S04": "PASS",
+  "S05": "PASS",
+  "method": "Direct developer documentation and versioned public API reference review, no fake second app",
+  "targets": [
+    {
+      "from": "README.md",
+      "target": "apps/calendar-app/README.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/design.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/adding-apps.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/publishing-calendar.md"
+    },
+    {
+      "from": "README.md",
+      "target": "docs/quality.md"
+    },
+    {
+      "from": "README.md",
+      "target": ".ai/architecture.md"
+    },
+    {
+      "from": "README.md",
+      "target": "apps/calendar-app/README.md"
+    },
+    {
+      "from": "README.md",
+      "target": ".ai/tasks/MONOREPO-001/checks/cleaner.md"
+    },
+    {
+      "from": "README.md",
+      "target": ".ai/tasks/MONOREPO-001/checks/architect.md"
+    },
+    {
+      "from": "docs/design.md",
+      "target": "shared/design/build.gradle.kts"
+    },
+    {
+      "from": "docs/design.md",
+      "target": "settings.gradle.kts"
+    },
+    {
+      "from": "docs/design.md",
+      "target": "shared/design/src/main/java/app/suite/design/SuiteColors.kt"
+    },
+    {
+      "from": "docs/design.md",
+      "target": "apps/calendar-app/build.gradle.kts"
+    },
+    {
+      "from": "docs/design.md",
+      "target": "apps/calendar-app/src/main/java/app/local/calendar/CalendarApp.kt"
+    },
+    {
+      "from": "docs/design.md",
+      "target": "apps/calendar-app/src/main/java/app/local/calendar/TimedCalendar.kt"
+    },
+    {
+      "from": "docs/design.md",
+      "target": "apps/calendar-app/README.md"
+    },
+    {
+      "from": "docs/adding-apps.md",
+      "target": "settings.gradle.kts"
+    },
+    {
+      "from": "docs/adding-apps.md",
+      "target": "docs/design.md"
+    },
+    {
+      "from": "docs/adding-apps.md",
+      "target": "docs/publishing-calendar.md"
+    },
+    {
+      "from": "docs/adding-apps.md",
+      "target": "apps/calendar-app/README.md"
+    }
+  ],
+  "versioned": [
+    "apps/calendar-app/build.gradle.kts",
+    "docs/adding-apps.md",
+    "docs/design.md",
+    "shared/design/src/main/java/app/suite/design/SuiteColors.kt"
+  ],
+  "topics_checked": [
+    "separate applicationId/namespace",
+    "module dependency on design without copying",
+    "per-app build/test/APK outputs",
+    "independent versions/private data/permissions/signing state",
+    "rerun Calendar checks after shared changes",
+    "Calendar builds with no second product"
+  ]
+}

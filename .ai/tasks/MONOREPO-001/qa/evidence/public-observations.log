@@ -1,0 +1,5 @@
+PASS month.xml: 7 columns / 6 rows / 42 exact consecutive dates
+PASS month-after-back.xml: 7 columns / 6 rows / 42 exact consecutive dates
+PASS day.xml: Sun 20, single-date time grid observed in screenshot
+PASS week.xml: Mon14 to Sun20, aligned date headers
+QA-owned selector probe reproduced (not a product defect): 15,14,15,16,17,18,19,20

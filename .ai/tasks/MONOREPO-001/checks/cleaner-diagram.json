@@ -1,0 +1,217 @@
+{
+  "formatVersion": 1,
+  "context": "real",
+  "modules": [
+    {
+      "id": "apps.calendar-app.tools.generate-acceptance",
+      "name": "generate-acceptance",
+      "component": "apps",
+      "file": "apps/calendar-app/tools/generate-acceptance.mjs",
+      "ops": [
+        {
+          "name": "expandScenarios",
+          "kind": "function",
+          "line": 7
+        },
+        {
+          "name": "generateKotlin",
+          "kind": "function",
+          "line": 23
+        }
+      ]
+    },
+    {
+      "id": "app.local.calendar.CalendarView",
+      "name": "CalendarView",
+      "component": "app",
+      "file": "apps/calendar-app/src/main/java/app/local/calendar/CalendarApp.kt",
+      "ops": []
+    },
+    {
+      "id": "app.local.calendar.CalendarAppKt",
+      "name": "CalendarAppKt",
+      "component": "app",
+      "file": "apps/calendar-app/src/main/java/app/local/calendar/CalendarApp.kt",
+      "ops": [
+        {
+          "name": "CalendarApp",
+          "kind": "function",
+          "line": 42
+        },
+        {
+          "name": "CalendarApp.chooseDate",
+          "kind": "function",
+          "line": 51
+        },
+        {
+          "name": "Modifier.horizontalPaging",
+          "kind": "function",
+          "line": 98
+        },
+        {
+          "name": "MonthGrid",
+          "kind": "function",
+          "line": 108
+        }
+      ]
+    },
+    {
+      "id": "app.local.calendar.CalendarDatesKt",
+      "name": "CalendarDatesKt",
+      "component": "app",
+      "file": "apps/calendar-app/src/main/java/app/local/calendar/CalendarDates.kt",
+      "ops": [
+        {
+          "name": "monthDates",
+          "kind": "function",
+          "line": 12
+        },
+        {
+          "name": "weekDates",
+          "kind": "function",
+          "line": 17
+        },
+        {
+          "name": "hourLabel",
+          "kind": "function",
+          "line": 22
+        },
+        {
+          "name": "timeOfDayHours",
+          "kind": "function",
+          "line": 25
+        },
+        {
+          "name": "dayInitialHour",
+          "kind": "function",
+          "line": 27
+        },
+        {
+          "name": "movePeriod",
+          "kind": "function",
+          "line": 29
+        },
+        {
+          "name": "monthTitle",
+          "kind": "function",
+          "line": 38
+        }
+      ]
+    },
+    {
+      "id": "app.local.calendar.CalendarEnvironment",
+      "name": "CalendarEnvironment",
+      "component": "app",
+      "file": "apps/calendar-app/src/main/java/app/local/calendar/MainActivity.kt",
+      "ops": []
+    },
+    {
+      "id": "app.local.calendar.MainActivity",
+      "name": "MainActivity",
+      "component": "app",
+      "file": "apps/calendar-app/src/main/java/app/local/calendar/MainActivity.kt",
+      "ops": [
+        {
+          "name": "onCreate",
+          "kind": "function",
+          "line": 19
+        },
+        {
+          "name": "onResume",
+          "kind": "function",
+          "line": 25
+        },
+        {
+          "name": "refreshEnvironment",
+          "kind": "function",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "id": "app.local.calendar.anonymous@42:20",
+      "name": "anonymous@42:20",
+      "component": "app",
+      "file": "apps/calendar-app/src/main/java/app/local/calendar/TimedCalendar.kt",
+      "ops": [
+        {
+          "name": "calendarNow.run",
+          "kind": "function",
+          "line": 43
+        }
+      ]
+    },
+    {
+      "id": "app.local.calendar.TimedCalendarKt",
+      "name": "TimedCalendarKt",
+      "component": "app",
+      "file": "apps/calendar-app/src/main/java/app/local/calendar/TimedCalendar.kt",
+      "ops": [
+        {
+          "name": "calendarNow",
+          "kind": "function",
+          "line": 37
+        },
+        {
+          "name": "TimedCalendar",
+          "kind": "function",
+          "line": 54
+        },
+        {
+          "name": "TimeGrid",
+          "kind": "function",
+          "line": 119
+        }
+      ]
+    },
+    {
+      "id": "app.suite.design.SuiteColors",
+      "name": "SuiteColors",
+      "component": "app",
+      "file": "shared/design/src/main/java/app/suite/design/SuiteColors.kt",
+      "ops": []
+    }
+  ],
+  "edges": [
+    {
+      "from": "app.local.calendar.CalendarAppKt",
+      "to": "app.local.calendar.CalendarEnvironment",
+      "kind": "dependency"
+    },
+    {
+      "from": "app.local.calendar.CalendarAppKt",
+      "to": "app.local.calendar.CalendarView",
+      "kind": "dependency"
+    },
+    {
+      "from": "app.local.calendar.CalendarAppKt",
+      "to": "app.suite.design.SuiteColors",
+      "kind": "dependency"
+    },
+    {
+      "from": "app.local.calendar.CalendarDatesKt",
+      "to": "app.local.calendar.CalendarView",
+      "kind": "dependency"
+    },
+    {
+      "from": "app.local.calendar.MainActivity",
+      "to": "app.local.calendar.CalendarEnvironment",
+      "kind": "dependency"
+    },
+    {
+      "from": "app.local.calendar.TimedCalendarKt",
+      "to": "app.local.calendar.CalendarEnvironment",
+      "kind": "dependency"
+    },
+    {
+      "from": "app.local.calendar.TimedCalendarKt",
+      "to": "app.local.calendar.CalendarView",
+      "kind": "dependency"
+    },
+    {
+      "from": "app.local.calendar.TimedCalendarKt",
+      "to": "app.suite.design.SuiteColors",
+      "kind": "dependency"
+    }
+  ]
+}

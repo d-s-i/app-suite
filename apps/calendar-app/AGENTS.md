@@ -31,6 +31,7 @@ Current implementation is CAL-001 empty views/navigation only. System Back from 
 
 - `./gradlew :calendar:testDebugUnitTest`: pure calendar/date tests.
 - `./gradlew :calendar:testAcceptanceGenerator`: generator tests using Node built-ins.
+- `./gradlew :calendar:coverage --rerun-tasks`: native Node LCOV and JaCoCo JVM counters (not Android UI coverage); see root `docs/quality.md` for limitations and canonical quality commands.
 - `./gradlew :calendar:generateAcceptance`: existing parser IR to generated Kotlin entrypoints.
 - `./gradlew :calendar:acceptanceTest`: all 49 development UI acceptance cases on a connected dedicated offline AOSP test device without Play services.
 - `./gradlew :calendar:acceptanceTest -PacceptanceFeature=CAL-001-F01`: run one feature; valid selectors end in F01, F02, F03.
@@ -98,5 +99,5 @@ These are verification surfaces, not claims of implemented functionality or exis
 - Specify day-based offset and recurrence behavior across daylight-saving changes.
 - Confirm the minimum supported Android version; target device is recorded above.
 - Clarify the granularity of approval and expected reporting.
-- Establish CI, verified release-key backup, GitHub/Obtainium release delivery, and Android-17 GrapheneOS device verification. Development commands exist above; external QA and Proton rendered comparison remain unverified.
+- Establish CI, verified release-key backup, and Android-17 GrapheneOS device verification. Calendar 0.1.1 is published in app-suite and Obtainium installation is owner-confirmed; independent external QA and Proton rendered comparison remain unverified.
 - Decide event backup/export needs and confirm secure external backup/recovery of the owner's release-signing credentials before relying on the app or distributing updates.

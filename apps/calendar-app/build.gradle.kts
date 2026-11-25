@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.compose")
+    jacoco
 }
 
 val taskRoot = rootProject.layout.projectDirectory.dir(".ai/tasks/CAL-001")
@@ -51,6 +52,9 @@ android {
     lint { abortOnError = true }
 }
 kotlin { jvmToolchain(17) }
+
+// Reuse the locally available JaCoCo version; instrumentation is test-only.
+jacoco { toolVersion = "0.8.13" }
 
 dependencies {
     implementation(project(":design"))
@@ -102,4 +106,34 @@ tasks.register<Exec>("testAcceptanceGenerator") {
     group = "verification"
     workingDir(project.projectDir)
     commandLine("node", "--test", "tools/generate-acceptance.test.mjs")
+}
+
+val generatorCoverage by tasks.registering(Exec::class) {
+    group = "verification"
+    description = "Run existing generator tests with Node's native LCOV reporter."
+    workingDir(rootProject.projectDir)
+    doFirst { rootProject.file("coverage").mkdirs() }
+    commandLine("node", "--test", "--experimental-test-coverage",
+        "--test-reporter=spec", "--test-reporter-destination=stdout",
+        "--test-reporter=lcov", "--test-reporter-destination=coverage/lcov.info",
+        "apps/calendar-app/tools/generate-acceptance.test.mjs")
+}
+
+tasks.register<JacocoReport>("coverage") {
+    group = "verification"
+    description = "Fresh JVM instruction counters for all Calendar/design classes plus generator LCOV."
+    dependsOn("testDebugUnitTest", generatorCoverage)
+    executionData.setFrom(layout.buildDirectory.file("jacoco/testDebugUnitTest.exec"))
+    sourceDirectories.setFrom(files("src/main/java", rootProject.file("shared/design/src/main/java")))
+    classDirectories.setFrom(
+        fileTree(layout.buildDirectory.dir("tmp/kotlin-classes/debug")),
+        fileTree(layout.buildDirectory.dir("intermediates/javac/debug/compileDebugJavaWithJavac/classes")),
+        fileTree(rootProject.layout.projectDirectory.dir("shared/design/build/tmp/kotlin-classes/debug")),
+    )
+    reports {
+        xml.required.set(true)
+        xml.outputLocation.set(layout.buildDirectory.file("reports/jacoco/debug/jacoco.xml"))
+        html.required.set(true)
+    }
+    outputs.upToDateWhen { false }
 }

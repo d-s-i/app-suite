@@ -1,0 +1,19 @@
+warning: Git tree '/home/anon/nixos-config' is dirty
+PASS preflight: Play services absent (pm path exit 1 expected)
+PASS preflight: Play Store absent
+config: en-rUS-ldltr-sw393dp-w393dp-h698dp-normal-long-notround-nowidecg-lowdr-port-notnight-440dpi-finger-keysexposed-qwerty-navhidden-nonav-1920x1080-v35
+abi: x86_64
+Performing Streamed Install
+Success
+    versionCode=2 minSdk=26 targetSdk=35
+    versionName=0.1.1
+      firstInstallTime=2026-11-25 18:10:51
+Starting: Intent { act=android.settings.DATE_SETTINGS }
+Status: ok
+LaunchState: WARM
+Activity: com.android.settings/.Settings$DateTimeSettingsActivity
+TotalTime: 768
+WaitTime: 773
+Complete
+UI hierchary dumped to: /sdcard/monorepo-qa.xml
+/sdcard/monorepo-qa.xml: 1 file pulled, 0 skipped. 21.1 MB/s (17254 bytes in 0.001s)

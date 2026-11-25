@@ -1,0 +1,13 @@
+warning: Git tree '/home/anon/nixos-config' is dirty
+List of devices attached
+emulator-5554          device product:sdk_phone64_x86_64 model:Android_SDK_built_for_x86_64 device:emu64x transport_id:10
+
+android-dev
+OK
+Starting: Intent { cmp=app.local.calendar/.MainActivity }
+Status: ok
+LaunchState: COLD
+Activity: app.local.calendar/.MainActivity
+TotalTime: 768
+WaitTime: 770
+Complete

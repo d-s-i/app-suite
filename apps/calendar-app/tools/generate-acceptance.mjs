@@ -26,20 +26,26 @@ export function generateKotlin(ir) {
   const methods = expandScenarios(ir).map(c => `    @Test fun ${c.id.replaceAll('-', '')}_row${c.row}() = runScenario(${quote(c.id)}, listOf(\n${c.steps.map(s => `        ${quote(s.keyword)} to ${quote(s.text)}`).join(',\n')}\n    ))`).join('\n\n');
   return `// Generated from approved Gherkin via parse-gherkin; do not edit.\npackage app.local.calendar.acceptance\n\nimport org.junit.Test\n\nclass ${featureId.replaceAll('-', '')}AcceptanceTest : CalendarSteps() {\n${methods}\n}\n`;
 }
+function prepareOutput(output) {
+  fs.mkdirSync(output, { recursive: true });
+  for (const file of fs.readdirSync(output).filter(f => /^CAL001F\d+AcceptanceTest\.kt$/.test(f))) fs.unlinkSync(path.join(output, file));
+}
+function generateFeature(task, output, file) {
+  const irPath = path.join(task, 'acceptance', file.replace('.feature', '.json'));
+  execFileSync('parse-gherkin', [path.join(task, 'features', file), irPath], { stdio: 'inherit' });
+  const ir = JSON.parse(fs.readFileSync(irPath, 'utf8'));
+  const featureId = ir.name.match(/^CAL-001-F\d+/)?.[0];
+  const kotlin = generateKotlin(ir);
+  fs.writeFileSync(path.join(output, `${featureId.replaceAll('-', '')}AcceptanceTest.kt`), kotlin);
+  console.log(`${featureId}: generated ${expandScenarios(ir).length} executable cases`);
+}
 function main() {
   const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../..');
   const task = path.join(root, '.ai/tasks/CAL-001');
   const output = path.join(task, 'acceptance/generated');
-  fs.mkdirSync(output, { recursive: true });
-  for (const file of fs.readdirSync(output).filter(f => /^CAL001F\d+AcceptanceTest\.kt$/.test(f))) fs.unlinkSync(path.join(output, file));
+  prepareOutput(output);
   for (const file of fs.readdirSync(path.join(task, 'features')).filter(f => f.endsWith('.feature')).sort()) {
-    const irPath = path.join(task, 'acceptance', file.replace('.feature', '.json'));
-    execFileSync('parse-gherkin', [path.join(task, 'features', file), irPath], { stdio: 'inherit' });
-    const ir = JSON.parse(fs.readFileSync(irPath, 'utf8'));
-    const featureId = ir.name.match(/^CAL-001-F\d+/)?.[0];
-    const kotlin = generateKotlin(ir);
-    fs.writeFileSync(path.join(output, `${featureId.replaceAll('-', '')}AcceptanceTest.kt`), kotlin);
-    console.log(`${featureId}: generated ${expandScenarios(ir).length} executable cases`);
+    generateFeature(task, output, file);
   }
 }
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();

@@ -1,0 +1,222 @@
+INFO         | Android emulator version 36.5.11.0 (build_id 15261927) (CL:N/A)
+INFO         | Graphics backend: gfxstream
+INFO         | Found systemPath /nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/system-images/android-35/default/x86_64/
+INFO         | Increasing RAM size to 2048MB
+INFO         | Guest GLES Driver: Auto (ext controls)
+ERROR        | Your GPU cannot be used for hardware rendering. Consider using software rendering.
+INFO         | emuglConfig_init: vulkan_mode_selected:host gles_mode_selected:host
+INFO         | emuglConfig_get_vulkan_hardware_gpu_support_info: Found physical GPU 'NVIDIA GeForce RTX 4070 Ti SUPER', type: VK_PHYSICAL_DEVICE_TYPE_DISCRETE_GPU, apiVersion: 1.4.329, driverVersion: 595.71
+
+INFO         | Checking system compatibility:
+INFO         |   Checking: hasSufficientDiskSpace
+INFO         |      Ok: Disk space requirements to run avd: `monorepo-001-test` are met
+INFO         |   Checking: hasSufficientHwGpu
+INFO         |      Ok: Hardware GPU requirements to run avd: `monorepo-001-test` are passed
+INFO         |   Checking: hasSufficientSystem
+INFO         |      Ok: System requirements to run avd: `monorepo-001-test` are met
+INFO         | Storing crashdata in: /tmp/android-anon/emu-crash-36.5.11.db, detection is enabled for process: 750139
+INFO         | Initializing gfxstream backend
+INFO         | android_startOpenglesRenderer: gpu info
+INFO         | 
+INFO         | SharedLibrary::open for [/nix/store/vxmjky7h44aw1c3gxdw6kbj5d731550h-android-sdk-emulator-36.5.11/libexec/android-sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so]
+INFO         | SharedLibrary::open for [/nix/store/vxmjky7h44aw1c3gxdw6kbj5d731550h-android-sdk-emulator-36.5.11/libexec/android-sdk/emulator/qemu/linux-x86_64/lib64/vulkan/libvulkan.so.1]
+INFO         | SharedLibrary::open for [/nix/store/vxmjky7h44aw1c3gxdw6kbj5d731550h-android-sdk-emulator-36.5.11/libexec/android-sdk/emulator/lib64/vulkan/libvulkan.so]
+INFO         | Added library: /nix/store/vxmjky7h44aw1c3gxdw6kbj5d731550h-android-sdk-emulator-36.5.11/libexec/android-sdk/emulator/lib64/vulkan/libvulkan.so
+INFO         | Selecting Vulkan device: NVIDIA GeForce RTX 4070 Ti SUPER, Version: 1.4.329
+INFO         | SharedLibrary::open for [libX11]
+INFO         | SharedLibrary::open for [libX11-xcb]
+INFO         | SharedLibrary::open for [libGL.so.1]
+INFO         | Initializing VkEmulation features:
+INFO         |     glInteropSupported: true
+INFO         |     useDeferredCommands: true
+INFO         |     createResourceWithRequirements: true
+INFO         |     useVulkanComposition: false
+INFO         |     useVulkanNativeSwapchain: false
+INFO         |     enable guestRenderDoc: false
+INFO         |     ASTC LDR emulation mode: Gpu
+INFO         |     enable ETC2 emulation: true
+INFO         |     enable Ycbcr emulation: false
+INFO         |     guestVulkanOnly: false
+INFO         |     useDedicatedAllocations: false
+INFO         |     guestVulkanMaxApiVersion: 1.3.0
+INFO         | Graphics Adapter Vendor Google (NVIDIA Corporation)
+INFO         | Graphics Adapter Android Emulator OpenGL ES Translator (NVIDIA GeForce RTX 4070 Ti SUPER/PCIe/SSE2)
+INFO         | Graphics API Version OpenGL ES 3.0 (4.5.0 NVIDIA 595.71.05)
+INFO         | Graphics API Extensions GL_OES_EGL_sync GL_OES_EGL_image GL_OES_EGL_image_external GL_OES_depth24 GL_OES_depth32 GL_OES_element_index_uint GL_OES_texture_float GL_OES_texture_float_linear GL_OES_compressed_paletted_texture GL_OES_compressed_ETC1_RGB8_texture GL_OES_depth_texture GL_OES_texture_half_float GL_OES_texture_half_float_linear GL_OES_packed_depth_stencil GL_OES_vertex_half_float GL_OES_texture_npot GL_OES_rgb8_rgba8 GL_OVR_multiview2 GL_EXT_multiview_texture_multisample GL_EXT_color_buffer_float GL_EXT_color_buffer_half_float GL_EXT_texture_format_BGRA8888 GL_APPLE_texture_format_BGRA8888 GL_EXT_texture_buffer 
+INFO         | Graphics Device Extensions N/A
+INFO         | Disabling sparse binding feature support
+INFO         | Sending adb public key [QAAAADmVxvH3NkzRcGjrLinHj3P4RP8OY5bm/+9W+d+BQUqN7PBz+F3iKaT4+VvjxADbUjaZM5udabhNKaWqPJ4mYwXooY/+a48OPdWQsewJAjsDHM3S2amIgerRRtYRkdNBLhjWD3Rxmym5GMaFpmJwEGjckWGzpT9PoCLA6QdXNw9PEnR2TqqUW35euhh6Z7cNQ0GcRDM87C3kPBh0T+R68kclzAlA4JvZOlUQvhUqpG9faMVtrBPHFEU0LFkA+1h5jFRJrS+bj/5uaBkrXYipaKlhAumeWJl9K6zgq1OmKy7w7v2yHdbF2P4T0q9kRUR5qKK8q3JbPxjp+pCbvrH4ZeM/9zrieJJ5hxxE/5fkvVwyd21aXawU94SlrhqRKT29JmX14o1RRHyQMN9JbjVAA4f2SD8f94nkWC4ngFEAN5vR1/llFa9D/8jm7jCcz/Wzs98kJU92MlMloPuwqJmzgY2fpaUV9aHPaJuot1ZCcbRVgXrW3n0XdRvMtkOPMjZwrp8OTFo+fRyJFp/nOamVtrhpDBRDgYlk3LuCi1V6kHkICRkjHrD0iDJUtt1FyU2S7djTnmJ+a4tJA3iU8BARrSjTfsvx6YvxQAryfbB8avXsXt0hrTtGArblOUdIjX2qvLB8yrAcqHlB/9kmeU4Cv1r5V/zHFNw3v+kcv5Idt57HJSzQRgEAAQA= anon@unknown]
+INFO         | Userspace boot properties:
+INFO         |   androidboot.boot_devices=pci0000:00/0000:00:03.0 pci0000:00/0000:00:06.0
+INFO         |   androidboot.dalvik.vm.heapsize=512m
+INFO         |   androidboot.debug.hwui.renderer=skiagl
+INFO         |   androidboot.hardware=ranchu
+INFO         |   androidboot.hardware.gltransport=pipe
+INFO         |   androidboot.hardware.vulkan=ranchu
+INFO         |   androidboot.logcat=*:V
+INFO         |   androidboot.opengles.version=196609
+INFO         |   androidboot.qemu=1
+INFO         |   androidboot.qemu.adb.pubkey=QAAAADmVxvH3NkzRcGjrLinHj3P4RP8OY5bm/+9W+d+BQUqN7PBz+F3iKaT4+VvjxADbUjaZM5udabhNKaWqPJ4mYwXooY/+a48OPdWQsewJAjsDHM3S2amIgerRRtYRkdNBLhjWD3Rxmym5GMaFpmJwEGjckWGzpT9PoCLA6QdXNw9PEnR2TqqUW35euhh6Z7cNQ0GcRDM87C3kPBh0T+R68kclzAlA4JvZOlUQvhUqpG9faMVtrBPHFEU0LFkA+1h5jFRJrS+bj/5uaBkrXYipaKlhAumeWJl9K6zgq1OmKy7w7v2yHdbF2P4T0q9kRUR5qKK8q3JbPxjp+pCbvrH4ZeM/9zrieJJ5hxxE/5fkvVwyd21aXawU94SlrhqRKT29JmX14o1RRHyQMN9JbjVAA4f2SD8f94nkWC4ngFEAN5vR1/llFa9D/8jm7jCcz/Wzs98kJU92MlMloPuwqJmzgY2fpaUV9aHPaJuot1ZCcbRVgXrW3n0XdRvMtkOPMjZwrp8OTFo+fRyJFp/nOamVtrhpDBRDgYlk3LuCi1V6kHkICRkjHrD0iDJUtt1FyU2S7djTnmJ+a4tJA3iU8BARrSjTfsvx6YvxQAryfbB8avXsXt0hrTtGArblOUdIjX2qvLB8yrAcqHlB/9kmeU4Cv1r5V/zHFNw3v+kcv5Idt57HJSzQRgEAAQA= anon@unknown
+INFO         |   androidboot.qemu.avd_name=monorepo-001-test
+INFO         |   androidboot.qemu.camera_hq_edge_processing=0
+INFO         |   androidboot.qemu.camera_protocol_ver=1
+INFO         |   androidboot.qemu.cpuvulkan.version=4202496
+INFO         |   androidboot.qemu.gltransport.drawFlushInterval=800
+INFO         |   androidboot.qemu.gltransport.name=pipe
+INFO         |   androidboot.qemu.hwcodec.avcdec=2
+INFO         |   androidboot.qemu.hwcodec.hevcdec=2
+INFO         |   androidboot.qemu.hwcodec.vpxdec=2
+INFO         |   androidboot.qemu.settings.system.screen_off_timeout=2147483647
+INFO         |   androidboot.qemu.skin=320x640
+INFO         |   androidboot.qemu.virtiowifi=1
+INFO         |   androidboot.qemu.vsync=60
+INFO         |   androidboot.serialno=EMULATOR36X5X11X0
+INFO         |   androidboot.vbmeta.digest=602b0c809848f3be570a96601071931225108ec3b3739d99a1dc41db38efe83c
+INFO         |   androidboot.vbmeta.hash_alg=sha256
+INFO         |   androidboot.vbmeta.size=6720
+INFO         |   androidboot.veritymode=enforcing
+pulseaudio: Failed to initialize PA contextCould not init `pa' audio driver
+INFO         | Monitoring duration of emulator setup.
+INFO         | Activated packet streamer for bluetooth emulation
+INFO         | Successfully initialized netsim WiFi
+INFO         | Setting display: 0 configuration to: 320x640, dpi: 160x160 
+INFO         | setDisplayActiveConfig: id:0, 320x640
+INFO         | emulatorSetupEnvironment: Setting up screen background view and display layout at env:320x640, lcd:320x640
+INFO         | emulatorSetupEnvironment: Environment scene is not required
+USER_INFO    | Emulator is performing a full startup. This may take upto two minutes, or more.
+INFO         | Boot completed in 26678 ms
+INFO         | Increasing screen off timeout, logcat buffer size to 2M.
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/platform-tools/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+WARNING      | adb command '/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/bin/adb -e shell settings put system screen_off_timeout 2147483647 ' failed: 'adb: more than one emulator'
+ERROR        | detected a hanging thread 'QEMU2 main loop'. No response for 15956 ms
+ERROR        | detected a hanging thread 'QEMU2 CPU0 thread'. No response for 18458 ms
+ERROR        | detected a hanging thread 'QEMU2 CPU1 thread'. No response for 19590 ms
+ERROR        | detected a hanging thread 'QEMU2 CPU1 thread'. No response for 15248 ms
+ERROR        | detected a hanging thread 'QEMU2 CPU0 thread'. No response for 16471 ms
+ERROR        | detected a hanging thread 'QEMU2 CPU1 thread'. No response for 15501 ms
+ERROR        | detected a hanging thread 'QEMU2 main loop'. No response for 18799 ms
+ERROR        | detected a hanging thread 'QEMU2 main loop'. No response for 15307 ms
+[750149:750149:20261125,052823.395003:ERROR process_memory_range.cc:75] read out of range
+[750149:750149:20261125,052828.777785:ERROR process_memory_range.cc:75] read out of range
+[750149:750149:20261125,052829.875245:ERROR ptracer.cc:454] ptrace: No such process (3)
+[750149:750149:20261125,052830.066558:ERROR ptracer.cc:480] Unexpected registers size 0 != 216
+[750149:750149:20261125,052830.147418:WARNING process_reader_linux.cc:400] Couldn't initialize main thread.
+[750149:750149:20261125,053011.066969:ERROR scoped_ptrace_attach.cc:37] process not stopped
+[750149:750149:20261125,053011.071332:ERROR scoped_ptrace_attach.cc:37] process not stopped
+[750149:750149:20261125,053011.071362:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071385:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071392:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071399:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071406:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071412:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071419:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071426:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071433:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071440:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071447:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071453:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071460:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071467:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071473:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071480:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071487:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071495:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071978:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.071992:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072000:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072006:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072012:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072019:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072025:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072031:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072038:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072044:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072051:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072057:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072063:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072069:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072089:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072094:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072099:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072104:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072110:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072115:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072120:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072126:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072131:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072136:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072141:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072146:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072151:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072156:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072161:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072167:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072172:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072177:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072182:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072187:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072192:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072197:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.072203:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745151:ERROR scoped_ptrace_attach.cc:37] process not stopped
+[750149:750149:20261125,053011.745202:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745213:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745220:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745227:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745233:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745239:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745253:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745260:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745266:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745273:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745279:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745285:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745291:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745297:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745303:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745309:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745315:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745329:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745335:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745342:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745348:ERROR scoped_ptrace_attach.cc:27] ptrace: No such process (3)
+[750149:750149:20261125,053011.745373:ERROR process_memory.cc:41] short read
+[750149:750149:20261125,053011.745385:ERROR process_snapshot_linux.cc:78] Couldn't read exception info
+[750149:750149:20261125,053011.745612:ERROR scoped_ptrace_attach.cc:45] ptrace: No such process (3)

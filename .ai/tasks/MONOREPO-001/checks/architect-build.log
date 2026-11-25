@@ -1,0 +1,271 @@
+warning: Git tree '/home/anon/nixos-config' is dirty
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :calendar
+WARNING: The option setting 'android.aapt2FromMavenOverride=/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/build-tools/35.0.0/aapt2' is experimental.
+
+> Task :calendar:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :calendar:preBuild UP-TO-DATE
+> Task :calendar:preDebugBuild UP-TO-DATE
+> Task :design:preBuild UP-TO-DATE
+> Task :design:preDebugBuild UP-TO-DATE
+> Task :design:processDebugNavigationResources
+> Task :design:writeDebugAarMetadata
+> Task :calendar:checkDebugAarMetadata
+> Task :calendar:processDebugNavigationResources
+> Task :calendar:generateDebugResValues
+> Task :design:generateDebugResValues
+> Task :calendar:compileDebugNavigationResources
+> Task :design:generateDebugResources
+> Task :design:packageDebugResources
+> Task :calendar:mapDebugSourceSetPaths
+> Task :calendar:generateDebugResources
+> Task :calendar:mergeDebugResources
+> Task :calendar:packageDebugResources
+> Task :calendar:createDebugCompatibleScreenManifests
+> Task :calendar:extractDeepLinksDebug
+> Task :design:extractDeepLinksDebug
+> Task :calendar:parseDebugLocalResources
+> Task :design:compileDebugLibraryResources
+> Task :design:processDebugManifest
+> Task :design:parseDebugLocalResources
+> Task :calendar:processDebugMainManifest
+> Task :calendar:processDebugManifest
+> Task :calendar:processDebugManifestForPackage
+> Task :design:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :design:javaPreCompileDebug
+> Task :calendar:javaPreCompileDebug
+> Task :calendar:preDebugUnitTestBuild UP-TO-DATE
+> Task :calendar:javaPreCompileDebugUnitTest
+> Task :design:generateDebugRFile
+
+> Task :calendar:testAcceptanceGenerator
+✔ expands all rows and retains background and stable scenario ID (1.274344ms)
+✔ fails closed on missing and unused parameters (0.38411ms)
+✔ generates executable tests with safely escaped Kotlin strings (0.329133ms)
+✔ rejects duplicate scenario IDs (0.172711ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 51.650641
+
+> Task :calendar:processDebugResources
+
+> Task :calendar:generateAcceptance
+CAL-001-F03: generated 13 executable cases
+CAL-001-F01: generated 13 executable cases
+CAL-001-F02: generated 23 executable cases
+
+> Task :design:checkDebugAarMetadata
+> Task :design:mergeDebugJniLibFolders
+> Task :design:mergeDebugNativeLibs NO-SOURCE
+> Task :design:stripDebugDebugSymbols NO-SOURCE
+> Task :design:copyDebugJniLibsProjectAndLocalJars
+> Task :design:extractDeepLinksForAarDebug
+> Task :design:mergeDebugShaders
+> Task :design:compileDebugShaders NO-SOURCE
+> Task :design:generateDebugAssets UP-TO-DATE
+> Task :design:mergeDebugAssets
+> Task :design:prepareDebugArtProfile
+> Task :design:prepareLintJarForPublish
+> Task :calendar:preDebugAndroidTestBuild SKIPPED
+> Task :calendar:generateDebugAndroidTestResValues
+> Task :design:writeDebugLintModelMetadata
+> Task :calendar:extractProguardFiles
+> Task :design:extractProguardFiles
+> Task :design:preDebugAndroidTestBuild UP-TO-DATE
+> Task :design:generateDebugAndroidTestResValues
+> Task :design:preDebugUnitTestBuild UP-TO-DATE
+> Task :calendar:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :calendar:mergeDebugShaders
+> Task :calendar:compileDebugShaders NO-SOURCE
+> Task :calendar:generateDebugAssets UP-TO-DATE
+> Task :calendar:mergeDebugAssets
+> Task :calendar:compressDebugAssets
+> Task :calendar:desugarDebugFileDependencies
+> Task :calendar:checkDebugDuplicateClasses
+> Task :design:compileDebugKotlin
+> Task :design:compileDebugJavaWithJavac NO-SOURCE
+> Task :calendar:mergeExtDexDebug
+> Task :design:bundleLibCompileToJarDebug
+> Task :design:bundleLibRuntimeToJarDebug
+> Task :design:processDebugJavaRes
+> Task :design:extractDebugAnnotations
+> Task :design:mergeDebugGeneratedProguardFiles
+> Task :design:mergeDebugConsumerProguardFiles
+> Task :design:mergeDebugJavaResource
+> Task :design:syncDebugLibJars
+> Task :design:bundleDebugLocalLintAar
+> Task :design:createFullJarDebug
+> Task :design:generateDebugLintModel
+> Task :calendar:compileDebugKotlin
+> Task :calendar:compileDebugJavaWithJavac NO-SOURCE
+> Task :calendar:bundleDebugClassesToRuntimeJar
+> Task :calendar:bundleDebugClassesToCompileJar
+> Task :calendar:compileDebugUnitTestKotlin
+> Task :calendar:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :calendar:processDebugJavaRes
+> Task :calendar:processDebugUnitTestJavaRes
+> Task :design:lintAnalyzeDebug
+> Task :calendar:testDebugUnitTest
+> Task :calendar:generateDebugAndroidTestLintModel
+> Task :calendar:generateDebugLintReportModel
+> Task :calendar:generateDebugUnitTestLintModel
+> Task :calendar:lintAnalyzeDebugAndroidTest
+> Task :calendar:lintAnalyzeDebugUnitTest
+> Task :calendar:lintAnalyzeDebug
+> Task :design:generateDebugAndroidTestLintModel
+> Task :design:generateDebugUnitTestLintModel
+> Task :design:lintAnalyzeDebugAndroidTest
+> Task :design:generateDebugLintReportModel
+> Task :design:lintAnalyzeDebugUnitTest
+> Task :calendar:dexBuilderDebug
+
+> Task :calendar:lintReportDebug
+Wrote HTML report to file:///home/anon/Documents/Workspace/app-suite/apps/calendar-app/build/reports/lint-results-debug.html
+
+> Task :calendar:lintDebug
+
+> Task :design:lintReportDebug
+Wrote HTML report to file:///home/anon/Documents/Workspace/app-suite/shared/design/build/reports/lint-results-debug.html
+
+> Task :design:lintDebug
+> Task :calendar:mergeDebugGlobalSynthetics
+> Task :design:bundleLibRuntimeToDirDebug
+> Task :calendar:mergeLibDexDebug
+> Task :calendar:mergeProjectDexDebug
+> Task :calendar:mergeDebugJniLibFolders
+> Task :design:copyDebugJniLibsProjectOnly
+> Task :calendar:mergeDebugNativeLibs
+
+> Task :calendar:stripDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so. Run with --info option to learn more.
+
+> Task :calendar:validateSigningDebug
+> Task :calendar:writeDebugAppMetadata
+> Task :calendar:writeDebugSigningConfigVersions
+> Task :calendar:preReleaseBuild UP-TO-DATE
+> Task :calendar:mergeReleaseJniLibFolders
+> Task :design:preReleaseBuild UP-TO-DATE
+> Task :design:mergeReleaseJniLibFolders
+> Task :design:mergeReleaseNativeLibs NO-SOURCE
+> Task :design:copyReleaseJniLibsProjectOnly
+> Task :calendar:mergeReleaseNativeLibs
+
+> Task :calendar:stripReleaseDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so. Run with --info option to learn more.
+
+> Task :calendar:extractReleaseNativeSymbolTables
+> Task :calendar:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :design:generateReleaseResValues
+> Task :design:generateReleaseResources
+> Task :design:packageReleaseResources
+> Task :design:processReleaseNavigationResources
+> Task :calendar:mergeDebugJavaResource
+> Task :design:parseReleaseLocalResources
+> Task :design:generateReleaseRFile
+> Task :design:compileReleaseKotlin
+> Task :design:javaPreCompileRelease
+> Task :design:compileReleaseJavaWithJavac NO-SOURCE
+> Task :design:bundleLibRuntimeToDirRelease
+> Task :calendar:packageDebug
+> Task :calendar:checkReleaseDuplicateClasses
+> Task :calendar:createDebugApkListingFileRedirect
+> Task :calendar:assembleDebug
+> Task :calendar:buildKotlinToolingMetadata
+> Task :design:writeReleaseAarMetadata
+> Task :calendar:processReleaseNavigationResources
+> Task :calendar:compileReleaseNavigationResources
+> Task :calendar:checkReleaseAarMetadata
+> Task :calendar:generateReleaseResValues
+> Task :calendar:mapReleaseSourceSetPaths
+> Task :calendar:generateReleaseResources
+> Task :calendar:packageReleaseResources
+> Task :calendar:mergeReleaseResources
+> Task :calendar:parseReleaseLocalResources
+> Task :calendar:createReleaseCompatibleScreenManifests
+> Task :calendar:extractDeepLinksRelease
+> Task :design:extractDeepLinksRelease
+> Task :design:compileReleaseLibraryResources
+> Task :design:processReleaseManifest
+> Task :calendar:processReleaseMainManifest
+> Task :calendar:processReleaseManifest
+> Task :calendar:processReleaseManifestForPackage
+> Task :design:bundleLibCompileToJarRelease
+> Task :calendar:javaPreCompileRelease
+> Task :calendar:desugarReleaseFileDependencies
+> Task :calendar:mergeReleaseStartupProfile
+> Task :calendar:processReleaseResources
+> Task :calendar:mergeExtDexRelease
+> Task :design:prepareReleaseArtProfile
+> Task :calendar:mergeReleaseArtProfile
+> Task :design:bundleLibRuntimeToJarRelease
+> Task :calendar:mergeReleaseShaders
+> Task :calendar:compileReleaseShaders NO-SOURCE
+> Task :calendar:generateReleaseAssets UP-TO-DATE
+> Task :design:mergeReleaseShaders
+> Task :design:compileReleaseShaders NO-SOURCE
+> Task :design:generateReleaseAssets UP-TO-DATE
+> Task :design:mergeReleaseAssets
+> Task :calendar:mergeReleaseAssets
+> Task :calendar:compressReleaseAssets
+> Task :calendar:extractReleaseVersionControlInfo
+> Task :design:processReleaseJavaRes
+> Task :design:createFullJarRelease
+> Task :design:generateReleaseLintModel
+> Task :design:checkReleaseAarMetadata
+> Task :design:stripReleaseDebugSymbols NO-SOURCE
+> Task :design:copyReleaseJniLibsProjectAndLocalJars
+> Task :design:extractDeepLinksForAarRelease
+> Task :design:extractReleaseAnnotations
+> Task :design:mergeReleaseGeneratedProguardFiles
+> Task :design:mergeReleaseConsumerProguardFiles
+> Task :design:mergeReleaseJavaResource
+> Task :design:syncReleaseLibJars
+> Task :design:bundleReleaseLocalLintAar
+> Task :design:lintVitalAnalyzeRelease
+> Task :design:writeReleaseLintModelMetadata
+> Task :design:generateReleaseLintVitalModel
+> Task :calendar:optimizeReleaseResources
+> Task :calendar:collectReleaseDependencies
+> Task :calendar:sdkReleaseDependencyData
+> Task :calendar:validateReleaseCredentials
+> Task :calendar:validateSigningRelease
+> Task :calendar:writeReleaseAppMetadata
+> Task :calendar:writeReleaseSigningConfigVersions
+> Task :calendar:compileReleaseKotlin
+> Task :calendar:compileReleaseJavaWithJavac NO-SOURCE
+> Task :calendar:dexBuilderRelease
+> Task :calendar:mergeReleaseGlobalSynthetics
+> Task :calendar:generateReleaseLintVitalReportModel
+> Task :calendar:mergeDexRelease
+> Task :calendar:compileReleaseArtProfile
+> Task :calendar:processReleaseJavaRes
+> Task :calendar:mergeReleaseJavaResource
+> Task :calendar:lintVitalAnalyzeRelease
+> Task :calendar:lintVitalReportRelease
+> Task :calendar:lintVitalRelease
+> Task :calendar:packageRelease
+> Task :calendar:createReleaseApkListingFileRedirect
+> Task :calendar:assembleRelease
+
+> Task :calendar:testReleaseArtifact
+✔ release APK verifies against the independently exported public certificate (181.842651ms)
+✔ release is not debuggable and retains the application identity (1579.769155ms)
+✔ debug retains a distinct development signature (1186.39884ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2996.036581
+
+BUILD SUCCESSFUL in 40s
+185 actionable tasks: 185 executed

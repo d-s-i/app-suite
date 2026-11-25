@@ -9,9 +9,9 @@
 
 - [ ] CAL-001 — Browse empty month, week, and day calendar views
 
-## Approved for implementation
+## Ready for owner closure decision
 
-- [ ] MONOREPO-001 — Transformer Calendar en monorepo multi-apps avec un design réutilisable
+- [ ] MONOREPO-001 — Coder/Cleaner/Architect and targeted QA completed (qa/report.md); S02 public UI PASS, full fresh exclusions/owner S07 feedback and existing limits documented; hardener not_run
 
 ## Ready for specification review
 

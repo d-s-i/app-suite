@@ -1,0 +1,242 @@
+{
+  "schema_version": 1,
+  "task_id": "MONOREPO-001",
+  "result": "PASS",
+  "scope": {
+    "kind": "human_approved_targeted_qa",
+    "primary_external_scenario": "MONOREPO-001-S02",
+    "additional_direct_documentary_checks": [
+      "MONOREPO-001-S04",
+      "MONOREPO-001-S05"
+    ],
+    "other_scenarios": "Existing evidence reviewed; full scenarios intentionally not re-executed as explicitly requested",
+    "full_external_procedure_reexecuted": false,
+    "no_blanket_S01_to_S07_pass": true
+  },
+  "preflight": {
+    "authorized_scope_setup_complete": true,
+    "mode": "Manual public Android Settings and UI, existing adb/SDK commands; no new QA script/runner/test/app",
+    "http_replay_fixtures": "not applicable to this Android GUI workflow",
+    "oracle": "Approved QA-MONOREPO-001-S02 date/range/navigation expectations; captured public XML and PNG observations",
+    "device": {
+      "avd": "monorepo-001-test",
+      "serial": "emulator-5580",
+      "api": 35,
+      "screen": "1080x1920 at 440 dpi",
+      "renderer": "SwiftShader",
+      "play_services": "absent",
+      "play_store": "absent",
+      "airplane_mode": 1,
+      "wifi_on": 0
+    },
+    "baseline": {
+      "original_path": "/tmp/monorepo-f01-debug.apk",
+      "preserved_ignored_fixture": "evidence/baseline-debug.apk",
+      "provenance": "Existing F01 archive before production palette extraction/app relocation; Gradle root naming had already changed, not a newly rebuilt pre-task checkout",
+      "sha256": "8b4e9a504828b19e9435d24bd4613e8df406c18061532af578926b434f224222",
+      "application_id": "app.local.calendar",
+      "version_name": "0.1.1",
+      "version_code": 2,
+      "debuggable": true,
+      "certificate_sha256": "24324e7bff5dd16cb5548385e58829fa9c9486bbd2446e39574953b1e76da89a"
+    },
+    "target": {
+      "path": "apps/calendar-app/build/outputs/apk/debug/calendar-debug.apk",
+      "sha256": "0c254b5b3c3c2b64159dafd394ad0478f513a72e8b3ba3e032715edd82ffc2cd",
+      "application_id": "app.local.calendar",
+      "version_name": "0.1.1",
+      "version_code": 2,
+      "debuggable": true,
+      "certificate_sha256": "24324e7bff5dd16cb5548385e58829fa9c9486bbd2446e39574953b1e76da89a"
+    },
+    "fixture": {
+      "initial_device_clock": "2028-02-15T12:00:03Z",
+      "timezone_id": "Etc/UTC",
+      "locale_config": "en-rUS",
+      "time_12_24": "24",
+      "setup_interface": "Visible Android Settings toggles/date/time/zone pickers; no settings put or date setter"
+    }
+  },
+  "scenarios": [
+    {
+      "id": "MONOREPO-001-S01",
+      "qa_id": "QA-MONOREPO-001-S01",
+      "feature": "MONOREPO-001-F01",
+      "result": "NOT_RUN",
+      "mode": "full-scenario fresh execution excluded by human-approved scope after evidence-review preflight",
+      "evidence_review": "Recent Architect build/unit/generator/UI/lint/debug/release/signature receipts examined; ordinary unit/UI regression freshly repeated, not a fresh full S01 suite",
+      "references": [
+        "../checks/architect-repeat-build.log",
+        "../checks/architect-repeat-acceptance.log",
+        "evidence/development-regression.log"
+      ]
+    },
+    {
+      "id": "MONOREPO-001-S02",
+      "qa_id": "QA-MONOREPO-001-S02",
+      "feature": "MONOREPO-001-F01",
+      "result": "PASS",
+      "mode": "fresh public-interface execution",
+      "observed": {
+        "update": "adb install -r Success, no uninstall/clear/wipe",
+        "package_count": 1,
+        "uid_before": 10148,
+        "uid_after": 10148,
+        "first_install_time_before_utc": "2026-11-25 17:10:51",
+        "first_install_time_after_utc": "2026-11-25 17:10:51",
+        "month": {
+          "columns": 7,
+          "rows": 6,
+          "dates": 42,
+          "first": "2028-01-31",
+          "last": "2028-03-12",
+          "consecutive_unique": true
+        },
+        "selected_day": "2028-02-20",
+        "back": "February Month restored",
+        "week": "2028-02-14 through 2028-02-20",
+        "offline_use": "All views available without account/network prompt"
+      },
+      "evidence": [
+        "evidence/apk-preflight.log",
+        "evidence/in-place-update.log",
+        "evidence/settings-fixture.xml",
+        "evidence/settings-fixture.png",
+        "evidence/month.xml",
+        "evidence/month.png",
+        "evidence/day.xml",
+        "evidence/day.png",
+        "evidence/month-after-back.xml",
+        "evidence/month-after-back.png",
+        "evidence/week.xml",
+        "evidence/week.png",
+        "evidence/public-observations.log",
+        "evidence/week-and-offline.log",
+        "evidence/interactions.md"
+      ]
+    },
+    {
+      "id": "MONOREPO-001-S03",
+      "qa_id": "QA-MONOREPO-001-S03",
+      "feature": "MONOREPO-001-F01",
+      "result": "NOT_RUN",
+      "mode": "Human-approved evidence review, no new release-signing failure invocation",
+      "evidence_review": "Prior actual empty-credential build rejection and absence of replacement key/APK recorded; not asserted freshly executed",
+      "references": [
+        "../checks/organized-missing-signing.log",
+        "../checks/coder-organized.md"
+      ]
+    },
+    {
+      "id": "MONOREPO-001-S04",
+      "qa_id": "QA-MONOREPO-001-S04",
+      "feature": "MONOREPO-001-F02",
+      "result": "PASS",
+      "mode": "direct public developer-documentation review",
+      "observed": "README guide links resolve; public API definition/module files versioned; dependency consumption without copying and Calendar-specific behavior boundary explicit",
+      "evidence": [
+        "evidence/documentation-review.json"
+      ]
+    },
+    {
+      "id": "MONOREPO-001-S05",
+      "qa_id": "QA-MONOREPO-001-S05",
+      "feature": "MONOREPO-001-F02",
+      "result": "PASS",
+      "mode": "direct public developer-documentation review",
+      "observed": "Independent app identity/version/data/permissions/signing, per-app commands/APK paths and shared-change Calendar regression covered; no second product required",
+      "evidence": [
+        "evidence/documentation-review.json"
+      ]
+    },
+    {
+      "id": "MONOREPO-001-S06",
+      "qa_id": "QA-MONOREPO-001-S06",
+      "feature": "MONOREPO-001-F03",
+      "result": "NOT_RUN",
+      "mode": "Human-approved review of existing publication evidence, no fresh GitHub/history/old-repository check",
+      "evidence_review": "Owner-pushed 39ac557 and public app-suite release recorded; no claim of a new remote verification or general secret audit",
+      "references": [
+        "../checks/github-release.md",
+        "../checks/coder-organized.md"
+      ]
+    },
+    {
+      "id": "MONOREPO-001-S07",
+      "qa_id": "QA-MONOREPO-001-S07",
+      "feature": "MONOREPO-001-F03",
+      "result": "NOT_RUN",
+      "mode": "Agent does not repeat owner-exclusive release APK control; explicitly approved human reason",
+      "owner_feedback": {
+        "source": "Owner: oui installé after configuring Obtainium for app-suite",
+        "installation": "confirmed_by_owner",
+        "checksum_comparison": "not_reported",
+        "new_agent_download_or_phone_install": false
+      },
+      "references": [
+        "../checks/github-release.md"
+      ]
+    }
+  ],
+  "development_regression": {
+    "result": "PASS",
+    "command": "ANDROID_SERIAL=emulator-5580 ./gradlew :calendar:testDebugUnitTest :calendar:testAcceptanceGenerator :calendar:acceptanceTest --rerun-tasks",
+    "jvm_tests": 18,
+    "generator_tests": 4,
+    "ui_cases": 49,
+    "role": "Separate existing developer regression AFTER external S02 and Settings cleanup, not S02 proof",
+    "evidence": "evidence/development-regression.log"
+  },
+  "qa_owned_probe_corrections": [
+    {
+      "kind": "preflight command handling",
+      "observed": "pm path exits 1 for absent GMS; initial set -e stopped",
+      "fix": "Explicitly handle expected package absence and continue setup; no product change",
+      "reproduced": true
+    },
+    {
+      "kind": "UI observation selector",
+      "observed": "Unscoped Week number extraction also captured toolbar Today=15",
+      "fix": "Select public date-header bounds and assert weekday alignment; unchanged expected 14-20 dates",
+      "reproduced": true,
+      "evidence": "evidence/public-observations.log"
+    }
+  ],
+  "cleanup": {
+    "result": "PASS",
+    "settings_restored_via_android_ui": {
+      "timezone": "Europe/Paris",
+      "auto_time": 1,
+      "auto_time_zone": 1,
+      "time_12_24": null,
+      "locale_config": "en-rUS",
+      "airplane_mode": 1,
+      "wifi_on": 0
+    },
+    "device_clock_resynchronized_with_host": true,
+    "verified_again_after_regression": true,
+    "owned_sdcard_dump_removed": true,
+    "dedicated_emulator_stopped": true,
+    "owner_device_or_phone_modified": false,
+    "evidence": [
+      "evidence/cleanup.log",
+      "evidence/post-regression-cleanup.log"
+    ]
+  },
+  "changes": {
+    "qa_scripts": [],
+    "product_files": [],
+    "test_files": [],
+    "source_configuration": [],
+    "qa_evidence_and_tracking_only": true
+  },
+  "limits": [
+    "PASS applies to the authorized targeted scope, not a fresh independent rerun of all seven scenarios",
+    "No non-empty event-data preservation claim: current Calendar has no event storage; in-place installation continuity and no destructive commands verified",
+    "Migration updates the same app/versionCode 2, not a new version upgrade",
+    "Owner release installation feedback retained; no owner SHA comparison invented",
+    "No GrapheneOS/owner phone QA, secure external key-backup check, live old-repo availability check or full mutation campaign",
+    "Existing CRAP/DRY reports reviewed as prior evidence only; no QA producer rerun or product/threshold change"
+  ],
+  "reported_at": "2026-11-25T17:36:06.096Z"
+}

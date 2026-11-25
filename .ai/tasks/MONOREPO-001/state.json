@@ -2,23 +2,24 @@
   "id": "MONOREPO-001",
   "title": "Transformer Calendar en monorepo multi-apps avec un design réutilisable",
   "status": "approved",
-  "current_role": "coder",
-  "current_feature": "MONOREPO-001-F03",
+  "current_role": "qa",
+  "current_feature": null,
   "roles": {
     "init-task": "completed",
     "specifier": "completed",
-    "coder": "blocked",
-    "cleaner": "not_run",
-    "architect": "not_run",
+    "coder": "completed",
+    "cleaner": "completed",
+    "architect": "completed",
     "hardener": "not_run",
-    "qa": "not_run"
+    "qa": "completed"
   },
   "checks": {
     "gherkin": "passed",
-    "crap": "not_run",
-    "dry": "not_run",
+    "crap": "passed_in_scope",
+    "dry": "passed",
     "mutation": "not_run",
-    "qa": "not_run"
+    "qa": "passed_targeted_scope",
+    "architecture": "passed"
   },
   "open_questions": [],
   "features": {
@@ -40,7 +41,7 @@
       ]
     },
     "MONOREPO-001-F03": {
-      "status": "needs_input",
+      "status": "completed",
       "path": "features/github-publication.feature",
       "scenario_ids": [
         "MONOREPO-001-S06",
@@ -48,7 +49,7 @@
       ]
     }
   },
-  "updated_at": "2026-11-25T03:20:56.846Z",
+  "updated_at": "2026-11-25T17:36:06.096Z",
   "gherkin_validation": {
     "status": "passed",
     "parser": "parse-gherkin",
@@ -73,24 +74,288 @@
   "coder_delivery": {
     "report": "checks/coder-organized.md",
     "local_implementation": "verified_final_organized_layout",
-    "publication": "not_run",
-    "owner_apk_verification": "not_run",
+    "publication": "published_public",
+    "owner_apk_verification": "confirmed_by_owner",
+    "owner_feedback": {
+      "source": "Owner: ok j'ai mit en public; oui installé; ok go et cloture",
+      "result": "Owner confirms installation through Obtainium and requests coder closure",
+      "limits": "No owner checksum comparison reported; no agent phone or GrapheneOS QA claimed"
+    },
     "owner_emulator": "android-dev / emulator-5554",
     "debug_install": "passed",
     "debug_launch": "passed",
-    "pending": [
-      "Owner repository visibility",
-      "Owner release tag and highest versionCode to replace",
-      "Owner repository creation, commits and push",
-      "Owner release publication and APK verification"
-    ],
+    "pending": [],
     "workspace": "/home/anon/Documents/Workspace/app-suite",
     "calendar_module": ":calendar",
-    "calendar_path": "apps/calendar-app"
+    "calendar_path": "apps/calendar-app",
+    "release_url": "https://github.com/d-s-i/app-suite/releases/tag/calendar-v0.1.1",
+    "release_commit": "39ac557211188e3bbc03c39406e1914c0e8c7c6d",
+    "release_sha256": "1952c5d328e6fa749f660c42e360b92467ad274b83e08ac6c4b86cd2977c0e39",
+    "publication_report": "checks/github-release.md"
   },
   "coder_layout_approval": {
     "status": "approved",
     "source": "Owner requested an organized maintainable monorepo following the specification and code sharing; history retained",
     "scope": "Root app-suite, apps/calendar-app with app-local tools/docs, shared/design, adapted build/tool/documentation paths"
+  },
+  "cleaner_validation": {
+    "status": "passed_in_scope",
+    "report": "checks/cleaner.md",
+    "reviewed_features": [
+      "MONOREPO-001-F01",
+      "MONOREPO-001-F02",
+      "MONOREPO-001-F03"
+    ],
+    "coverage_inputs": "fresh native JaCoCo XML and Node LCOV; real JVM-only counters, not Android UI coverage",
+    "crap": {
+      "exit_code": 2,
+      "status": "complete_with_documented_preexisting_violations",
+      "changed_cli_functions": {
+        "main": 6,
+        "prepareOutput": 6,
+        "generateFeature": 6
+      },
+      "preexisting_violations_documented": true,
+      "missing_source_measurements": [],
+      "TimeGrid": {
+        "coverage": 0,
+        "complexity": 10,
+        "crap": 110
+      }
+    },
+    "dry": {
+      "status": "passed",
+      "candidates": 0
+    },
+    "mutation_scan": {
+      "status": "passed",
+      "total_sites": 129,
+      "full_mutation_executed": false
+    },
+    "uml": {
+      "diagram": "generated",
+      "modules": 9,
+      "edges": 8,
+      "quality_overlay": "updated"
+    },
+    "tests": {
+      "jvm": 18,
+      "generator": 4,
+      "ui_acceptance": 49,
+      "artifact_checks": 3,
+      "result": "passed"
+    },
+    "owner_delivery": {
+      "avd": "android-dev",
+      "serial": "emulator-5554",
+      "install": "not_run_in_final_attempt",
+      "launch": "environment_error_gpu_unavailable",
+      "data_preserved": true,
+      "note": "Normal launcher attempted; Vulkan/hardware-GPU initialization fatal; no new app implementation in this report-only pass; prior successful delivery retained separately"
+    },
+    "previous_report": "checks/kotlin-reader-fix.md",
+    "canonical_reader_fix": {
+      "status": "verified",
+      "source_root": "/home/anon/nixos-config",
+      "files": [
+        "config/uml-viewer/crapper-kotlin-jacoco.py",
+        "config/uml-viewer/kotlin-tools.test.py",
+        "config/uml-viewer/README.md"
+      ],
+      "suite": "/nix/store/26qkypsw3amszr7c7gvz1ijlr65vwrz6-uml-quality-tools",
+      "deployment": "corrected deployed reader verified in this recheck; no installation/activation performed by the agent",
+      "tests": {
+        "kotlin": 15,
+        "local_extensions": 14,
+        "upstream_regressions": 59,
+        "wrappers": 24
+      },
+      "red_before_green": true,
+      "deployed_crapper": "/nix/store/47gkhza13x2lrxmc0fz17bv3jr245x9i-unclebob-crapper-0.1.0/bin/crapper",
+      "deployed_crap": "/nix/store/6awnd5kcp8yxzxycd3kw83g8bzf11rsd-crap/bin/crap"
+    },
+    "scope_review": {
+      "criterion": "Documented pre-existing/out-of-scope violations do not block validation of in-scope functions",
+      "modified_functions_pass": true,
+      "global_threshold_pass": false,
+      "global_threshold_exit_code": 2,
+      "new_production_changes_this_pass": false,
+      "initial_ui_interruption": "QEMU hang/device disappearance; unmodified retry passed all 49 cases"
+    },
+    "previous_owner_delivery": {
+      "avd": "android-dev",
+      "serial": "emulator-5554",
+      "install": "passed",
+      "launch": "passed",
+      "data_preserved": true
+    },
+    "post_architect_recheck": {
+      "checked_at": "2026-11-25T15:10:14.949Z",
+      "production_changes": false,
+      "tests_changed": false,
+      "configuration_changes": false,
+      "documentation_change": "Correct stale quality-tool deployment wording",
+      "baseline_unit_tests": "passed",
+      "baseline_acceptance": "passed_all_49_first_attempt",
+      "coverage": "fresh_native_JaCoCo_and_LCOV",
+      "raw_crap_exit_code": 2,
+      "raw_report_identical_to_previous": true,
+      "in_scope_functions": {
+        "main": 6,
+        "prepareOutput": 6,
+        "generateFeature": 6
+      },
+      "dry_candidates": 0,
+      "mutation_sites": 129,
+      "full_mutation_executed": false,
+      "uml_overlay": "updated",
+      "architect_validation_invalidated": false,
+      "owner_device": "not_started_or_modified_in_this_pass; historical GPU warning not re-diagnosed",
+      "evidence_prefix": "checks/cleaner-post-architect-"
+    }
+  },
+  "architect_validation": {
+    "status": "passed",
+    "report": "checks/architect.md",
+    "architecture_document": ".ai/architecture.md",
+    "module_graph": {
+      "modules": [
+        ":calendar",
+        ":design"
+      ],
+      "internal_edges": [
+        [
+          ":calendar",
+          ":design"
+        ]
+      ],
+      "reverse_edges": [],
+      "cycles": []
+    },
+    "production_changes": false,
+    "tests_changed": false,
+    "properties": {
+      "status": "not_run",
+      "reason": "No configured command or meaningful new transformation property for the structural migration; existing tests reused"
+    },
+    "architecture_checks": {
+      "dedicated_command": "not_configured",
+      "source_api_import_review": "passed",
+      "resolved_gradle_dependency_reports": "passed",
+      "standalone_design_aar": "passed"
+    },
+    "verification": {
+      "jvm_tests": 18,
+      "generator_tests": 4,
+      "ui_acceptance": 49,
+      "artifact_checks": 3,
+      "build": "passed",
+      "lint": "passed",
+      "dedicated_test_avd": "monorepo-001-test",
+      "dedicated_test_serial": "emulator-5580",
+      "renderer": "swiftshader"
+    },
+    "cleaner_reports": {
+      "reviewed": true,
+      "rerun": false,
+      "invalidated": false,
+      "rerun_required": false
+    },
+    "owner_delivery": {
+      "status": "not_run",
+      "reason": "Documentation-only review; prior owner hardware-GPU warning not repaired or claimed as resolved"
+    },
+    "human_decisions_required": [],
+    "recheck_after_cleaner": {
+      "checked_at": "2026-11-25T15:24:38.496Z",
+      "source_review": "unchanged boundaries confirmed from tree/imports/contracts and resolved Gradle dependencies",
+      "production_changes": false,
+      "tests_changed": false,
+      "configuration_changes": false,
+      "internal_module_edges": [
+        [
+          ":calendar",
+          ":design"
+        ]
+      ],
+      "jvm_tests": 18,
+      "generator_tests": 4,
+      "ui_acceptance": 49,
+      "artifact_checks": 3,
+      "build": "passed",
+      "lint": "passed",
+      "standalone_design_aar": "passed",
+      "property_tests": "not_run_not_applicable",
+      "dedicated_architecture_checker": "not_configured",
+      "crap_dry_rerun": false,
+      "cleaner_reports_invalidated": false,
+      "owner_device": "not_touched; no new implementation or delivery claim",
+      "evidence_prefix": "checks/architect-recheck-"
+    },
+    "latest_requested_recheck": {
+      "checked_at": "2026-11-25T16:15:19.959Z",
+      "reason": "Repeated explicit Architect invocation on unchanged sources",
+      "production_changes": false,
+      "tests_changed": false,
+      "configuration_changes": false,
+      "internal_module_edges": [
+        [
+          ":calendar",
+          ":design"
+        ]
+      ],
+      "new_boundary_findings": [],
+      "jvm_tests": 18,
+      "generator_tests": 4,
+      "ui_acceptance": 49,
+      "artifact_checks": 3,
+      "compilation_build_lint": "passed",
+      "resolved_dependencies": "passed",
+      "design_aar": "passed",
+      "property_tests": "not_run_not_applicable",
+      "dedicated_architecture_checker": "not_configured",
+      "cleaner_reports_invalidated": false,
+      "crap_dry_rerun": false,
+      "owner_device": "not_touched",
+      "evidence_prefix": "checks/architect-repeat-"
+    }
+  },
+  "qa_validation": {
+    "status": "passed_targeted_scope",
+    "report": "qa/report.md",
+    "result": "qa/result.json",
+    "authorized_scope": "Fresh public S02; direct documentary S04/S05; other full scenario executions intentionally excluded for approved evidence-review/owner-only scope",
+    "independent_public_scenarios": [
+      "MONOREPO-001-S02"
+    ],
+    "documentary_scenarios": [
+      "MONOREPO-001-S04",
+      "MONOREPO-001-S05"
+    ],
+    "fresh_full_scenarios_not_run": [
+      "MONOREPO-001-S01",
+      "MONOREPO-001-S03",
+      "MONOREPO-001-S06",
+      "MONOREPO-001-S07"
+    ],
+    "owner_release_feedback": "Existing installation via Obtainium confirmation retained; no owner checksum comparison invented",
+    "full_external_procedure_reexecuted": false,
+    "product_changes": false,
+    "test_changes": false,
+    "qa_scripts_created": false,
+    "source_configuration_changes": false,
+    "baseline_archive": "F01 saved debug before production palette extraction/app relocation; no baseline rebuild",
+    "uid_preserved": 10148,
+    "first_install_time_preserved_utc": "2026-11-25 17:10:51",
+    "normal_regression": {
+      "status": "passed",
+      "jvm": 18,
+      "generator": 4,
+      "ui_acceptance": 49
+    },
+    "fixture_restored": true,
+    "owner_device_touched": false,
+    "independent_grapheneos_qa": false,
+    "completed_at": "2026-11-25T17:36:06.096Z"
   }
 }

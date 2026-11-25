@@ -1,0 +1,49 @@
+warning: Git tree '/home/anon/nixos-config' is dirty
+/nix/store/swv6469r8n70zcpghv41z3w9ibg58xjw-openjdk-17.0.21.1+2/bin/jar
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :calendar
+WARNING: The option setting 'android.aapt2FromMavenOverride=/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/build-tools/35.0.0/aapt2' is experimental.
+
+> Task :design:preBuild UP-TO-DATE
+> Task :design:preDebugBuild UP-TO-DATE
+> Task :design:checkDebugAarMetadata UP-TO-DATE
+> Task :design:mergeDebugJniLibFolders UP-TO-DATE
+> Task :design:mergeDebugNativeLibs NO-SOURCE
+> Task :design:stripDebugDebugSymbols NO-SOURCE
+> Task :design:copyDebugJniLibsProjectAndLocalJars UP-TO-DATE
+> Task :design:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :design:generateDebugResValues UP-TO-DATE
+> Task :design:generateDebugResources UP-TO-DATE
+> Task :design:packageDebugResources UP-TO-DATE
+> Task :design:processDebugNavigationResources UP-TO-DATE
+> Task :design:parseDebugLocalResources UP-TO-DATE
+> Task :design:generateDebugRFile UP-TO-DATE
+> Task :design:compileDebugKotlin UP-TO-DATE
+> Task :design:extractDebugAnnotations UP-TO-DATE
+> Task :design:extractDeepLinksForAarDebug UP-TO-DATE
+> Task :design:mergeDebugShaders UP-TO-DATE
+> Task :design:compileDebugShaders NO-SOURCE
+> Task :design:generateDebugAssets UP-TO-DATE
+> Task :design:mergeDebugAssets UP-TO-DATE
+> Task :design:javaPreCompileDebug UP-TO-DATE
+> Task :design:compileDebugJavaWithJavac NO-SOURCE
+> Task :design:mergeDebugGeneratedProguardFiles UP-TO-DATE
+> Task :design:mergeDebugConsumerProguardFiles UP-TO-DATE
+> Task :design:prepareDebugArtProfile UP-TO-DATE
+> Task :design:prepareLintJarForPublish UP-TO-DATE
+> Task :design:processDebugManifest UP-TO-DATE
+> Task :design:processDebugJavaRes UP-TO-DATE
+> Task :design:mergeDebugJavaResource UP-TO-DATE
+> Task :design:syncDebugLibJars UP-TO-DATE
+> Task :design:writeDebugAarMetadata UP-TO-DATE
+> Task :design:bundleDebugAar
+> Task :design:assembleDebug
+
+BUILD SUCCESSFUL in 6s
+25 actionable tasks: 1 executed, 24 up-to-date
+R.txt
+AndroidManifest.xml
+classes.jar
+META-INF/com/android/build/gradle/aar-metadata.properties

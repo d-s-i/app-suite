@@ -1,0 +1,82 @@
+warning: Git tree '/home/anon/nixos-config' is dirty
+/nix/store/wy5hcn776smvvrrd6v7psdzxhswc475c-openjdk-17.0.20.1+1/bin/java
+/nix/store/934xgskk1prglfd1dgdpx2zay8rna13m-androidsdk/bin/adb
+/nix/store/934xgskk1prglfd1dgdpx2zay8rna13m-androidsdk/bin/emulator
+List of devices attached
+emulator-5554          device product:sdk_phone64_x86_64 model:Android_SDK_built_for_x86_64 device:emu64x transport_id:6
+
+android-dev
+monorepo-001-test
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :calendar
+WARNING: The option setting 'android.aapt2FromMavenOverride=/nix/store/934xgskk1prglfd1dgdpx2zay8rna13m-androidsdk/libexec/android-sdk/build-tools/35.0.0/aapt2' is experimental.
+
+> Task :calendar:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :calendar:preBuild UP-TO-DATE
+> Task :calendar:preDebugBuild UP-TO-DATE
+> Task :design:preBuild UP-TO-DATE
+> Task :design:preDebugBuild UP-TO-DATE
+> Task :design:processDebugNavigationResources
+> Task :design:writeDebugAarMetadata
+> Task :calendar:checkDebugAarMetadata
+> Task :calendar:processDebugNavigationResources
+> Task :calendar:generateDebugResValues
+> Task :calendar:compileDebugNavigationResources
+> Task :design:generateDebugResValues
+> Task :design:generateDebugResources
+> Task :design:packageDebugResources
+> Task :calendar:mapDebugSourceSetPaths
+> Task :calendar:generateDebugResources
+> Task :calendar:mergeDebugResources
+> Task :calendar:packageDebugResources
+> Task :calendar:createDebugCompatibleScreenManifests
+> Task :calendar:extractDeepLinksDebug
+> Task :design:extractDeepLinksDebug
+> Task :calendar:parseDebugLocalResources
+> Task :design:compileDebugLibraryResources
+> Task :design:processDebugManifest
+> Task :design:parseDebugLocalResources
+> Task :calendar:processDebugMainManifest
+> Task :calendar:processDebugManifest
+> Task :calendar:processDebugManifestForPackage
+> Task :design:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :design:javaPreCompileDebug
+> Task :calendar:javaPreCompileDebug
+> Task :calendar:preDebugUnitTestBuild UP-TO-DATE
+> Task :calendar:javaPreCompileDebugUnitTest
+> Task :design:generateDebugRFile
+
+> Task :calendar:testAcceptanceGenerator
+✔ expands all rows and retains background and stable scenario ID (1.214186ms)
+✔ fails closed on missing and unused parameters (1.197257ms)
+✔ generates executable tests with safely escaped Kotlin strings (0.412346ms)
+✔ rejects duplicate scenario IDs (0.197112ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 63.184144
+
+> Task :calendar:processDebugResources
+> Task :design:compileDebugKotlin
+> Task :design:compileDebugJavaWithJavac NO-SOURCE
+> Task :design:bundleLibRuntimeToJarDebug
+> Task :design:bundleLibCompileToJarDebug
+> Task :design:processDebugJavaRes
+> Task :calendar:compileDebugKotlin
+> Task :calendar:compileDebugJavaWithJavac NO-SOURCE
+> Task :calendar:bundleDebugClassesToRuntimeJar
+> Task :calendar:bundleDebugClassesToCompileJar
+> Task :calendar:processDebugJavaRes
+> Task :calendar:compileDebugUnitTestKotlin
+> Task :calendar:compileDebugUnitTestJavaWithJavac NO-SOURCE
+> Task :calendar:processDebugUnitTestJavaRes
+> Task :calendar:testDebugUnitTest
+
+BUILD SUCCESSFUL in 20s
+40 actionable tasks: 40 executed

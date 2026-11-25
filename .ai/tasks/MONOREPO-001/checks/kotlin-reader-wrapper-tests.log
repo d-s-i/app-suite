@@ -1,0 +1,35 @@
+$ pnpm build:uml:quality-tools && node --test config/uml-viewer/quality-crap.test.ts config/uml-viewer/quality-run.test.ts config/uml-viewer/quality-adapter.test.ts
+$ nix build --no-link --print-out-paths --impure --expr 'let p=import ./common/locked-pkgs.nix {};in (p.callPackage ./config/uml-viewer/quality-tools.nix {}).suite'
+/nix/store/26qkypsw3amszr7c7gvz1ijlr65vwrz6-uml-quality-tools
+✔ converts producer identities and percent coverage without inventing unreported metrics (3.736131ms)
+✔ matches upstream TypeScript namespaces stripped of src to the viewer module path (1.047164ms)
+✔ rejects an ambiguous upstream namespace instead of attributing it to either module (0.853202ms)
+✔ does not attribute a source operation to a similarly named module without a matching file (0.969944ms)
+✔ ignores modules without exported operations when matching quality reports (0.75655ms)
+✔ preserves measured zero while leaving nil coverage unknown (0.949673ms)
+✔ replaces old snapshot instead of retaining values absent from current reports (0.881742ms)
+✔ rejects malformed and duplicate entries without replacing a previous snapshot (0.7698ms)
+✔ rejects incomplete CRAP identities and invalid complexity before publishing (0.864572ms)
+✔ rejects malformed and duplicated mutation forms without replacing a previous snapshot (1.665193ms)
+✔ reads mutation reports in nested directories without inventing other modules (0.884752ms)
+✔ rejects a mutation report without a namespace instead of dropping its measurements (0.480126ms)
+✔ rejects positive strings as CRAP measurements (0.78603ms)
+✔ rejects missing reports instead of presenting stale snapshot as newly measured (0.248583ms)
+✔ rejects previous CRAP values after a failed coverage run (0.357384ms)
+✔ rejects a previous mutation snapshot after a failed baseline (0.498987ms)
+✔ rejects a quality directory symlink outside the project (0.577798ms)
+✔ failed configured coverage never invokes crapper or claims a valid zero (15.605102ms)
+✔ successful coverage runs before crapper and forwards selected paths safely (21.767044ms)
+✔ incomplete producer preserves available reports without clearing the failure marker (20.63067ms)
+✔ missing coverage configuration fails instead of making up a result (4.326488ms)
+✔ coverage commands run in a CPU/memory/swap-limited user scope and preserve exit status (10.697085ms)
+✔ coverage fails closed without a valid machine limit profile (4.939017ms)
+✔ Pi Web coverage and full acceptance run inside the bounded scope (4.261468ms)
+ℹ tests 24
+ℹ suites 0
+ℹ pass 24
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 158.08001

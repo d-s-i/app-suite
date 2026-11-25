@@ -1,0 +1,10 @@
+warning: Git tree '/home/anon/nixos-config' is dirty
+UI hierchary dumped to: /sdcard/monorepo-qa.xml
+/sdcard/monorepo-qa.xml: 1 file pulled, 0 skipped. 14.9 MB/s (15767 bytes in 0.001s)
+Tue Feb 15 12:01:48 UTC 2028
+1
+0
+package:app.local.calendar uid:10148
+    appId=10148
+    lastUpdateTime=2028-02-15 12:00:03
+      firstInstallTime=2026-11-25 17:10:51

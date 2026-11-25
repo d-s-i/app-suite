@@ -1,0 +1,24 @@
+{:entries [
+  {:name "CalendarApp", :namespace "app.local.calendar.CalendarAppKt", :complexity 8, :coverage 0.0, :crap 72.0}
+  {:name "TimedCalendar", :namespace "app.local.calendar.TimedCalendarKt", :complexity 8, :coverage 0.0, :crap 72.0}
+  {:name "MonthGrid", :namespace "app.local.calendar.CalendarAppKt", :complexity 7, :coverage 0.0, :crap 56.0}
+  {:name "main", :namespace "apps.calendar-app.tools.generate-acceptance", :complexity 4, :coverage 0.0, :crap 20.0}
+  {:name "Modifier.horizontalPaging", :namespace "app.local.calendar.CalendarAppKt", :complexity 3, :coverage 0.0, :crap 12.0}
+  {:name "expandScenarios", :namespace "apps.calendar-app.tools.generate-acceptance", :complexity 9, :coverage 93.75, :crap 9.0198}
+  {:name "movePeriod", :namespace "app.local.calendar.CalendarDatesKt", :complexity 5, :coverage 100.0, :crap 5.0}
+  {:name "generateKotlin", :namespace "apps.calendar-app.tools.generate-acceptance", :complexity 3, :coverage 75.0, :crap 3.1406}
+  {:name "monthTitle", :namespace "app.local.calendar.CalendarDatesKt", :complexity 2, :coverage 96.8254, :crap 2.0001}
+  {:name "CalendarApp.chooseDate", :namespace "app.local.calendar.CalendarAppKt", :complexity 1, :coverage 0.0, :crap 2.0}
+  {:name "dayInitialHour", :namespace "app.local.calendar.CalendarDatesKt", :complexity 2, :coverage 100.0, :crap 2.0}
+  {:name "hourLabel", :namespace "app.local.calendar.CalendarDatesKt", :complexity 2, :coverage 100.0, :crap 2.0}
+  {:name "onCreate", :namespace "app.local.calendar.MainActivity", :complexity 1, :coverage 0.0, :crap 2.0}
+  {:name "onResume", :namespace "app.local.calendar.MainActivity", :complexity 1, :coverage 0.0, :crap 2.0}
+  {:name "refreshEnvironment", :namespace "app.local.calendar.MainActivity", :complexity 1, :coverage 0.0, :crap 2.0}
+  {:name "calendarNow", :namespace "app.local.calendar.TimedCalendarKt", :complexity 1, :coverage 0.0, :crap 2.0}
+  {:name "calendarNow.run", :namespace "app.local.calendar.anonymous@42:20", :complexity 1, :coverage 0.0, :crap 2.0}
+  {:name "monthDates", :namespace "app.local.calendar.CalendarDatesKt", :complexity 1, :coverage 100.0, :crap 1.0}
+  {:name "timeOfDayHours", :namespace "app.local.calendar.CalendarDatesKt", :complexity 1, :coverage 100.0, :crap 1.0}
+  {:name "weekDates", :namespace "app.local.calendar.CalendarDatesKt", :complexity 1, :coverage 100.0, :crap 1.0}
+  {:name "quote", :namespace "apps.calendar-app.tools.generate-acceptance", :complexity 1, :coverage 100.0, :crap 1.0}
+  {:name "TimeGrid", :namespace "app.local.calendar.TimedCalendarKt", :complexity 10, :coverage nil, :crap nil}
+]}

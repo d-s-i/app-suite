@@ -2,7 +2,7 @@
 
 Destination: **`d-s-i/app-suite`**, a new repository. Keep **`d-s-i/calendar`** at
 its existing address; do not rename, delete, archive or publish changes there as
-part of this migration. No GitHub publication has been performed by the agent.
+part of this migration. Current release: [Calendar 0.1.1](https://github.com/d-s-i/app-suite/releases/tag/calendar-v0.1.1), published by the agent with explicit owner authorization, after the owner pushed the code. The owner subsequently made app-suite public and confirmed installation through Obtainium; coder delivery is closed. For the artifact record and verification limits, see [publication evidence](../.ai/tasks/MONOREPO-001/checks/github-release.md). The following checklist applies to future publications as well.
 
 ## Before publishing
 

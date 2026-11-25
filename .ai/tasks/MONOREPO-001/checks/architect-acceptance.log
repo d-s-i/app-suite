@@ -1,0 +1,133 @@
+warning: Git tree '/home/anon/nixos-config' is dirty
+monorepo-001-test
+OK
+To honour the JVM settings for this build a single-use Daemon process will be forked. For more on this, please refer to https://docs.gradle.org/8.13/userguide/gradle_daemon.html#sec:disabling_the_daemon in the Gradle documentation.
+Daemon will be stopped at the end of the build 
+
+> Configure project :calendar
+WARNING: The option setting 'android.aapt2FromMavenOverride=/nix/store/2mkzybhndrrkkxxn6awb2gp0jbx7xs12-androidsdk/libexec/android-sdk/build-tools/35.0.0/aapt2' is experimental.
+
+> Task :calendar:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :calendar:preBuild UP-TO-DATE
+> Task :calendar:preDebugBuild UP-TO-DATE
+> Task :design:preBuild UP-TO-DATE
+> Task :design:preDebugBuild UP-TO-DATE
+> Task :design:writeDebugAarMetadata UP-TO-DATE
+> Task :calendar:checkDebugAarMetadata UP-TO-DATE
+> Task :design:processDebugNavigationResources UP-TO-DATE
+> Task :calendar:processDebugNavigationResources UP-TO-DATE
+> Task :calendar:compileDebugNavigationResources UP-TO-DATE
+> Task :calendar:generateDebugResValues UP-TO-DATE
+> Task :design:generateDebugResValues UP-TO-DATE
+> Task :design:generateDebugResources UP-TO-DATE
+> Task :design:packageDebugResources UP-TO-DATE
+> Task :calendar:mapDebugSourceSetPaths UP-TO-DATE
+> Task :calendar:generateDebugResources UP-TO-DATE
+> Task :calendar:mergeDebugResources UP-TO-DATE
+> Task :calendar:packageDebugResources UP-TO-DATE
+> Task :calendar:parseDebugLocalResources UP-TO-DATE
+> Task :calendar:createDebugCompatibleScreenManifests UP-TO-DATE
+> Task :calendar:extractDeepLinksDebug UP-TO-DATE
+> Task :design:extractDeepLinksDebug UP-TO-DATE
+> Task :design:processDebugManifest UP-TO-DATE
+> Task :calendar:processDebugMainManifest UP-TO-DATE
+> Task :calendar:processDebugManifest UP-TO-DATE
+> Task :calendar:processDebugManifestForPackage UP-TO-DATE
+> Task :design:compileDebugLibraryResources UP-TO-DATE
+> Task :design:parseDebugLocalResources UP-TO-DATE
+> Task :design:generateDebugRFile UP-TO-DATE
+> Task :calendar:processDebugResources UP-TO-DATE
+> Task :design:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :design:compileDebugKotlin UP-TO-DATE
+> Task :design:javaPreCompileDebug UP-TO-DATE
+> Task :design:compileDebugJavaWithJavac NO-SOURCE
+> Task :design:bundleLibCompileToJarDebug UP-TO-DATE
+> Task :calendar:compileDebugKotlin UP-TO-DATE
+> Task :calendar:javaPreCompileDebug UP-TO-DATE
+> Task :calendar:compileDebugJavaWithJavac NO-SOURCE
+> Task :calendar:bundleDebugClassesToCompileJar UP-TO-DATE
+
+> Task :calendar:generateAcceptance
+CAL-001-F03: generated 13 executable cases
+CAL-001-F01: generated 13 executable cases
+CAL-001-F02: generated 23 executable cases
+
+> Task :calendar:preDebugAndroidTestBuild SKIPPED
+> Task :calendar:checkDebugAndroidTestAarMetadata UP-TO-DATE
+> Task :calendar:processDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :calendar:compileDebugAndroidTestNavigationResources UP-TO-DATE
+> Task :calendar:generateDebugAndroidTestResValues UP-TO-DATE
+> Task :calendar:mapDebugAndroidTestSourceSetPaths UP-TO-DATE
+> Task :calendar:generateDebugAndroidTestResources UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestResources UP-TO-DATE
+> Task :calendar:processDebugAndroidTestManifest UP-TO-DATE
+> Task :calendar:processDebugAndroidTestResources UP-TO-DATE
+> Task :calendar:compileDebugAndroidTestKotlin UP-TO-DATE
+> Task :calendar:javaPreCompileDebugAndroidTest UP-TO-DATE
+> Task :calendar:compileDebugAndroidTestJavaWithJavac NO-SOURCE
+> Task :calendar:mergeDebugShaders UP-TO-DATE
+> Task :calendar:compileDebugShaders NO-SOURCE
+> Task :calendar:generateDebugAssets UP-TO-DATE
+> Task :design:mergeDebugShaders UP-TO-DATE
+> Task :design:compileDebugShaders NO-SOURCE
+> Task :design:generateDebugAssets UP-TO-DATE
+> Task :design:mergeDebugAssets UP-TO-DATE
+> Task :calendar:mergeDebugAssets UP-TO-DATE
+> Task :calendar:compressDebugAssets UP-TO-DATE
+> Task :design:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :calendar:desugarDebugFileDependencies UP-TO-DATE
+> Task :calendar:dexBuilderDebug UP-TO-DATE
+> Task :calendar:mergeDebugGlobalSynthetics UP-TO-DATE
+> Task :calendar:processDebugJavaRes UP-TO-DATE
+> Task :design:processDebugJavaRes UP-TO-DATE
+> Task :calendar:mergeDebugJavaResource UP-TO-DATE
+> Task :calendar:checkDebugDuplicateClasses UP-TO-DATE
+> Task :calendar:mergeExtDexDebug UP-TO-DATE
+> Task :design:bundleLibRuntimeToDirDebug UP-TO-DATE
+> Task :calendar:mergeProjectDexDebug UP-TO-DATE
+> Task :calendar:mergeDebugJniLibFolders UP-TO-DATE
+> Task :calendar:mergeLibDexDebug UP-TO-DATE
+> Task :design:mergeDebugJniLibFolders UP-TO-DATE
+> Task :design:mergeDebugNativeLibs NO-SOURCE
+> Task :design:copyDebugJniLibsProjectOnly UP-TO-DATE
+> Task :calendar:mergeDebugNativeLibs UP-TO-DATE
+> Task :calendar:stripDebugDebugSymbols UP-TO-DATE
+> Task :calendar:validateSigningDebug UP-TO-DATE
+> Task :calendar:writeDebugAppMetadata UP-TO-DATE
+> Task :calendar:writeDebugSigningConfigVersions UP-TO-DATE
+> Task :calendar:packageDebug UP-TO-DATE
+> Task :calendar:createDebugApkListingFileRedirect UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestShaders UP-TO-DATE
+> Task :calendar:compileDebugAndroidTestShaders NO-SOURCE
+> Task :calendar:generateDebugAndroidTestAssets UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestAssets UP-TO-DATE
+> Task :calendar:compressDebugAndroidTestAssets UP-TO-DATE
+> Task :calendar:desugarDebugAndroidTestFileDependencies UP-TO-DATE
+> Task :calendar:dexBuilderDebugAndroidTest UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestGlobalSynthetics UP-TO-DATE
+> Task :calendar:processDebugAndroidTestJavaRes UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestJavaResource UP-TO-DATE
+> Task :calendar:checkDebugAndroidTestDuplicateClasses UP-TO-DATE
+> Task :calendar:mergeExtDexDebugAndroidTest UP-TO-DATE
+> Task :calendar:mergeLibDexDebugAndroidTest UP-TO-DATE
+> Task :calendar:mergeProjectDexDebugAndroidTest UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestJniLibFolders UP-TO-DATE
+> Task :calendar:mergeDebugAndroidTestNativeLibs NO-SOURCE
+> Task :calendar:stripDebugAndroidTestDebugSymbols NO-SOURCE
+> Task :calendar:validateSigningDebugAndroidTest UP-TO-DATE
+> Task :calendar:writeDebugAndroidTestSigningConfigVersions UP-TO-DATE
+> Task :calendar:packageDebugAndroidTest UP-TO-DATE
+> Task :calendar:createDebugAndroidTestApkListingFileRedirect UP-TO-DATE
+
+> Task :calendar:connectedDebugAndroidTest
+Starting 49 tests on monorepo-001-test(AVD) - 15
+
+monorepo-001-test(AVD) - 15 Tests 11/49 completed. (0 skipped) (0 failed)
+monorepo-001-test(AVD) - 15 Tests 29/49 completed. (0 skipped) (0 failed)
+monorepo-001-test(AVD) - 15 Tests 47/49 completed. (0 skipped) (0 failed)
+Finished 49 tests on monorepo-001-test(AVD) - 15
+
+> Task :calendar:acceptanceTest
+
+BUILD SUCCESSFUL in 45s
+88 actionable tasks: 2 executed, 86 up-to-date
